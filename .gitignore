@@ -1,0 +1,20 @@
+# secrets
+.env
+*.key
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+
+# caches (regenerable, but expensive — see note below)
+# NOTE: results/cache.sqlite holds paid API responses. It is git-ignored to keep
+# the repo small, but MUST be backed up separately; losing it means re-paying.
+results/cache.sqlite
+results/cache.sqlite-*
+
+# HF / model caches
+.cache/
