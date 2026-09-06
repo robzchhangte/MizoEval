@@ -71,3 +71,19 @@ class Provider(ABC):
     @abstractmethod
     def complete(self, model: str, messages: list[Message], **params: Any) -> Response:
         """Single call, no caching and no retry -- both are applied by the runner."""
+
+
+@dataclass
+class ModelSpec:
+    """One roster entry. `model_id` is pinned to an exact version, never an alias.
+
+    Aliases like "latest" silently change the system under test between runs and
+    make a published number unreproducible.
+    """
+
+    name: str
+    provider: str
+    model_id: str
+    price_in: float = 0.0   # USD per 1M prompt tokens
+    price_out: float = 0.0  # USD per 1M completion tokens
+    params: dict[str, Any] | None = None

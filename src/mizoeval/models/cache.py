@@ -43,8 +43,10 @@ CREATE INDEX IF NOT EXISTS idx_responses_model ON responses(model);
 
 
 class ResponseCache:
-    def __init__(self, path: Path | str = DEFAULT_PATH) -> None:
-        self.path = Path(path)
+    def __init__(self, path: Path | str | None = None) -> None:
+        # Resolved at call time, not bound as a default, so tests can redirect
+        # the cache by patching DEFAULT_PATH.
+        self.path = Path(path) if path is not None else DEFAULT_PATH
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self._lock = threading.Lock()
         with closing(self._connect()) as conn:

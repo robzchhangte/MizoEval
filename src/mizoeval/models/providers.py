@@ -11,11 +11,16 @@ from __future__ import annotations
 import os
 import random
 import time
-from dataclasses import dataclass
 from typing import Any
 
-from mizoeval.models.base import Message, Provider, Response
+from mizoeval.models.base import Message, ModelSpec, Provider, Response
 from mizoeval.models.cache import ResponseCache
+
+__all__ = [
+    "ModelSpec", "ModelClient", "PROVIDERS", "OpenAIProvider", "OpenRouterProvider",
+    "AnthropicProvider", "GoogleProvider", "VertexProvider", "OllamaCloudProvider",
+    "MockProvider",
+]
 
 # --------------------------------------------------------------------------- adapters
 
@@ -94,13 +99,18 @@ class AnthropicProvider(Provider):
 
 
 class GoogleProvider(Provider):
+    """Gemini via the public Generative Language API (API-key auth)."""
+
     name = "google"
 
     def __init__(self, api_key: str | None = None) -> None:
         from google import genai
 
         self.genai = genai
-        self.client = genai.Client(
+        self.client = self._make_client(api_key)
+
+    def _make_client(self, api_key: str | None):
+        return self.genai.Client(
             api_key=api_key or os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY")
         )
 
@@ -132,6 +142,50 @@ class GoogleProvider(Provider):
         )
 
 
+class VertexProvider(GoogleProvider):
+    """Gemini via Vertex AI.
+
+    Same request/response handling as `GoogleProvider` -- only the client
+    construction differs. Vertex authenticates with Application Default
+    Credentials (`gcloud auth application-default login`), not an API key, and
+    needs a GCP project and region. Set `GOOGLE_CLOUD_PROJECT` and, optionally,
+    `GOOGLE_CLOUD_LOCATION` (default `us-central1`).
+    """
+
+    name = "vertex"
+
+    def _make_client(self, api_key: str | None):  # noqa: ARG002 - Vertex uses ADC
+        project = os.environ.get("GOOGLE_CLOUD_PROJECT") or os.environ.get("GCP_PROJECT")
+        if not project:
+            raise RuntimeError(
+                "VertexProvider needs GOOGLE_CLOUD_PROJECT set, plus "
+                "`gcloud auth application-default login` completed."
+            )
+        return self.genai.Client(
+            vertexai=True,
+            project=project,
+            location=os.environ.get("GOOGLE_CLOUD_LOCATION", "us-central1"),
+        )
+
+
+class OllamaCloudProvider(OpenAIProvider):
+    """Open-weight models hosted on Ollama Cloud.
+
+    Ollama Cloud exposes an OpenAI-compatible endpoint, so the OpenAI adapter is
+    reused verbatim against a different base URL. The free tier covers the
+    open-weight models in this project's roster; price is left at zero in the
+    roster config and the cost accounting reflects that.
+    """
+
+    name = "ollama_cloud"
+
+    def __init__(self, api_key: str | None = None) -> None:
+        super().__init__(
+            api_key=api_key or os.environ.get("OLLAMA_API_KEY") or "ollama",
+            base_url=os.environ.get("OLLAMA_HOST", "https://ollama.com/v1"),
+        )
+
+
 class MockProvider(Provider):
     """Deterministic offline provider, for exercising the pipeline without spend.
 
@@ -152,11 +206,14 @@ class MockProvider(Provider):
             text = self.reply
         else:
             rng = random.Random(f"{self.seed}:{prompt}")
-            if "Answer with the correct option letter" in prompt:
+            low = prompt.lower()
+            if "[answer: x]" in low:  # MCQ chain-of-thought
+                text = f"Reasoning about the question.\n[ANSWER: {rng.choice('ABCD')}]"
+            elif "option letter (a, b, c, or d)" in low:  # MCQ zero/few-shot
                 text = rng.choice("ABCD")
-            elif "Positive, Neutral, or Negative" in prompt:
+            elif "positive, neutral, or negative" in low:  # sentiment
                 text = rng.choice(["Positive", "Neutral", "Negative"])
-            elif "named entities" in prompt.lower():
+            elif "entities:" in low and "json array" in low:  # NER
                 text = "[]"
             else:
                 text = "mock translation output"
@@ -169,27 +226,13 @@ PROVIDERS: dict[str, type[Provider]] = {
     "openrouter": OpenRouterProvider,
     "anthropic": AnthropicProvider,
     "google": GoogleProvider,
+    "vertex": VertexProvider,
+    "ollama_cloud": OllamaCloudProvider,
     "mock": MockProvider,
 }
 
 
 # --------------------------------------------------------------------------- client
-
-
-@dataclass
-class ModelSpec:
-    """One roster entry. `model_id` is pinned to an exact version, never an alias.
-
-    Aliases like "latest" silently change the system under test between runs and
-    make a published number unreproducible.
-    """
-
-    name: str
-    provider: str
-    model_id: str
-    price_in: float = 0.0   # USD per 1M prompt tokens
-    price_out: float = 0.0  # USD per 1M completion tokens
-    params: dict[str, Any] | None = None
 
 
 class ModelClient:

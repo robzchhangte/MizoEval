@@ -1,0 +1,100 @@
+# MizoEval model roster
+# ---------------------------------------------------------------------------
+# One file, one source of truth for which models appear in the paper.
+#
+# Every `model_id` must be an EXACT, pinned version string as the provider's
+# API expects it -- no "latest"/"preview" aliases (the loader rejects them),
+# because an alias silently changes the system under test between runs and
+# makes a published number unreproducible.
+#
+# `price_in` / `price_out` are USD per 1,000,000 tokens and feed the cost
+# accounting in ModelClient. Leave at 0 for free-tier models.
+#
+# --- ACTION REQUIRED before the first paid run -----------------------------
+# The `model_id` and price values below are PLACEHOLDERS. Confirm each against
+# the provider before running:
+#   OpenAI  : `openai api models.list`  (or the dashboard) + current pricing
+#   Vertex  : `gcloud ai models list` / the Vertex model garden
+#   Ollama  : https://ollama.com/library  (cloud-eligible tags)
+# A wrong id fails loudly on the first call rather than corrupting results.
+#
+# Auth (via .env or the shell environment):
+#   OPENAI_API_KEY
+#   GOOGLE_CLOUD_PROJECT   + `gcloud auth application-default login`   (Vertex)
+#   GOOGLE_CLOUD_LOCATION  (optional, default us-central1)
+#   OLLAMA_API_KEY         (Ollama Cloud)
+# ---------------------------------------------------------------------------
+
+defaults:
+  params:
+    temperature: 0        # primary condition; sampled runs use --temperature
+    max_tokens: 1024      # raised per-task for chain-of-thought
+
+models:
+  # -- primary: cheap paid --------------------------------------------------
+  - name: gpt-5-mini
+    provider: openai
+    model_id: "gpt-5-mini"          # CONFIRM exact string (user referred to "gpt-5.4-mini")
+    price_in: 0.25                  # CONFIRM current pricing
+    price_out: 2.00                 # CONFIRM current pricing
+    enabled: true
+
+  # -- cheap paid via Vertex ---------------------------------------------------
+  - name: gemini-flash
+    provider: vertex
+    model_id: "gemini-2.0-flash-001"   # CONFIRM available id in your Vertex project
+    price_in: 0.15                      # CONFIRM current pricing
+    price_out: 0.60                     # CONFIRM current pricing
+    enabled: true
+
+  # -- free open-weight via Ollama Cloud ---------------------------------------
+  # model_id must match an Ollama Cloud-eligible tag exactly.
+  - name: gemma3
+    provider: ollama_cloud
+    model_id: "gemma3:27b"             # CONFIRM ("gemma4" mentioned -- use the real tag)
+    price_in: 0.0
+    price_out: 0.0
+    enabled: true
+
+  - name: qwen3
+    provider: ollama_cloud
+    model_id: "qwen3:32b"             # CONFIRM
+    price_in: 0.0
+    price_out: 0.0
+    enabled: true
+
+  - name: deepseek-v3
+    provider: ollama_cloud
+    model_id: "deepseek-v3.1:671b"   # CONFIRM (cloud-only large model)
+    price_in: 0.0
+    price_out: 0.0
+    enabled: true
+
+  - name: llama3.3
+    provider: ollama_cloud
+    model_id: "llama3.3:70b"         # CONFIRM
+    price_in: 0.0
+    price_out: 0.0
+    enabled: true
+
+  # -- always available: no network, no spend --------------------------------
+  - name: mock
+    provider: mock
+    model_id: "mock-v1"
+    enabled: true
+
+  # -- deferred: flagship reference runs (user chose cheap/free only for now).
+  #    Flip `enabled: true` and confirm ids/prices to add upper-bound points.
+  - name: gpt-5
+    provider: openai
+    model_id: "gpt-5"               # CONFIRM
+    price_in: 1.25                  # CONFIRM
+    price_out: 10.00               # CONFIRM
+    enabled: false
+
+  - name: gemini-pro
+    provider: vertex
+    model_id: "gemini-2.5-pro"      # CONFIRM
+    price_in: 1.25                  # CONFIRM
+    price_out: 10.00               # CONFIRM
+    enabled: false
