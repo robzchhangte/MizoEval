@@ -18,3 +18,6 @@ results/cache.sqlite-*
 
 # HF / model caches
 .cache/
+
+# large public-domain reference text, re-downloaded on demand by mt_stratify
+data/external/kjv.txt
