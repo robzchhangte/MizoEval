@@ -1,6 +1,9 @@
 # secrets
 .env
 *.key
+keys.txt
+keys*.txt
+*.secret
 
 # python
 __pycache__/

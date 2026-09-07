@@ -1,0 +1,5 @@
+{"id": "sent00000", "gold": "Neutral", "predicted": "Negative", "parse_strategy": "exact", "oov_rate": 0.1304, "raw_text": "Negative", "cached": false, "error": null, "prompt_tokens": 100, "completion_tokens": 2}
+{"id": "sent00001", "gold": "Positive", "predicted": "Positive", "parse_strategy": "exact", "oov_rate": 0.0, "raw_text": "Positive", "cached": false, "error": null, "prompt_tokens": 74, "completion_tokens": 2}
+{"id": "sent00002", "gold": "Positive", "predicted": "Positive", "parse_strategy": "exact", "oov_rate": 0.0571, "raw_text": "Positive", "cached": false, "error": null, "prompt_tokens": 118, "completion_tokens": 2}
+{"id": "sent00003", "gold": "Positive", "predicted": "Positive", "parse_strategy": "exact", "oov_rate": 0.0, "raw_text": "Positive", "cached": false, "error": null, "prompt_tokens": 83, "completion_tokens": 2}
+{"id": "sent00004", "gold": "Negative", "predicted": "Negative", "parse_strategy": "exact", "oov_rate": 0.1429, "raw_text": "Negative", "cached": false, "error": null, "prompt_tokens": 81, "completion_tokens": 2}

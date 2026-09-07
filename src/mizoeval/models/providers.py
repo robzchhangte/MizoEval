@@ -168,22 +168,102 @@ class VertexProvider(GoogleProvider):
         )
 
 
-class OllamaCloudProvider(OpenAIProvider):
-    """Open-weight models hosted on Ollama Cloud.
+class OllamaCloudProvider(Provider):
+    """Open-weight models hosted on Ollama Cloud, via the native `ollama` client.
 
-    Ollama Cloud exposes an OpenAI-compatible endpoint, so the OpenAI adapter is
-    reused verbatim against a different base URL. The free tier covers the
-    open-weight models in this project's roster; price is left at zero in the
-    roster config and the cost accounting reflects that.
+    The free tier is rate-limited per key, so this adapter drives a `KeyPool`
+    (`keys.txt`, git-ignored) and rotates to the next key when one reports
+    itself exhausted -- a 429, or an auth error that means the key is spent.
+    Rotation is transparent to the caller: `complete()` retries on the new key
+    and only raises once every key is cooling down.
+
+    Free tier => price stays 0 in the roster and the cost accounting reflects that.
     """
 
     name = "ollama_cloud"
 
-    def __init__(self, api_key: str | None = None) -> None:
-        super().__init__(
-            api_key=api_key or os.environ.get("OLLAMA_API_KEY") or "ollama",
-            base_url=os.environ.get("OLLAMA_HOST", "https://ollama.com/v1"),
+    # Substrings that mean "this key is out of quota", not "the request was bad".
+    _EXHAUSTED_MARKERS = (
+        "rate limit", "ratelimit", "too many requests", "quota", "exhaust",
+        "limit reached", "429", "capacity",
+    )
+
+    def __init__(self, api_key: str | None = None, key_pool=None) -> None:
+        from ollama import Client
+
+        self._Client = Client
+        self._host = os.environ.get("OLLAMA_HOST", "https://ollama.com")
+        if key_pool is not None:
+            self._pool = key_pool
+        elif api_key:
+            from mizoeval.models.keypool import KeyPool
+
+            self._pool = KeyPool(keys=[api_key])
+        else:
+            self._pool = self._default_pool()
+        self._client = self._build_client()
+
+    @staticmethod
+    def _default_pool():
+        """Prefer keys.txt (rotation); fall back to a single env key."""
+        from mizoeval.models.keypool import DEFAULT_KEYS_FILE, KeyPool
+
+        if DEFAULT_KEYS_FILE.exists():
+            return KeyPool.from_file(DEFAULT_KEYS_FILE)
+        env = os.environ.get("OLLAMA_API_KEY")
+        if not env:
+            raise RuntimeError(
+                "no Ollama credentials: create keys.txt (one key per line) or set OLLAMA_API_KEY"
+            )
+        return KeyPool(keys=[env])
+
+    def _build_client(self):
+        return self._Client(
+            host=self._host,
+            headers={"Authorization": "Bearer " + self._pool.current()},
         )
+
+    def _is_exhaustion(self, exc: Exception) -> bool:
+        status = getattr(exc, "status_code", None)
+        if status in (401, 403, 429):
+            return True
+        msg = str(exc).lower()
+        return any(m in msg for m in self._EXHAUSTED_MARKERS)
+
+    def complete(self, model: str, messages: list[Message], **params: Any) -> Response:
+        from mizoeval.models.keypool import AllKeysExhausted
+
+        options: dict[str, Any] = {}
+        if params.get("temperature") is not None:
+            options["temperature"] = params["temperature"]
+        if params.get("max_tokens") is not None:
+            options["num_predict"] = params["max_tokens"]
+        payload = [{"role": m.role, "content": m.content} for m in messages]
+
+        attempts = 0
+        while True:
+            attempts += 1
+            t0 = time.time()
+            try:
+                r = self._client.chat(
+                    model=model, messages=payload, stream=False, options=options or None
+                )
+                return Response(
+                    text=(r.get("message", {}) or {}).get("content", "") or "",
+                    model=model,
+                    provider=self.name,
+                    prompt_tokens=r.get("prompt_eval_count", 0) or 0,
+                    completion_tokens=r.get("eval_count", 0) or 0,
+                    finish_reason=r.get("done_reason"),
+                    latency_s=time.time() - t0,
+                )
+            except AllKeysExhausted:
+                raise
+            except Exception as exc:  # noqa: BLE001 - ollama raises ResponseError and httpx errors
+                if not self._is_exhaustion(exc) or attempts > len(self._pool.keys):
+                    raise
+                self._pool.rotate(reason=f"{type(exc).__name__}: {str(exc)[:80]}")
+                self._client = self._build_client()
 
 
 class MockProvider(Provider):

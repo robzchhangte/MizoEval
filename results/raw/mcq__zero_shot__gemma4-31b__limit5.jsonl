@@ -1,0 +1,5 @@
+{"id": "87318a8e-5940-46e1-aaaa-e50bcf39908e", "category": "Geography", "gold": "A", "predicted": "A", "parse_strategy": "bare_letter", "raw_text": "A", "cached": false, "error": null, "prompt_tokens": 107, "completion_tokens": 2}
+{"id": "ec3783c2-f2d5-481a-b222-42e7d9c543ca", "category": "General Knowledge", "gold": "B", "predicted": "B", "parse_strategy": "bare_letter", "raw_text": "B", "cached": false, "error": null, "prompt_tokens": 110, "completion_tokens": 2}
+{"id": "20210849-2ba1-443d-a7bf-659775db5b73", "category": "Geography", "gold": "B", "predicted": "B", "parse_strategy": "bare_letter", "raw_text": "B", "cached": false, "error": null, "prompt_tokens": 129, "completion_tokens": 2}
+{"id": "f933d5fc-fd2f-4c51-9d75-97157bca671b", "category": "History", "gold": "A", "predicted": "A", "parse_strategy": "bare_letter", "raw_text": "A", "cached": false, "error": null, "prompt_tokens": 117, "completion_tokens": 2}
+{"id": "48168c8f-3111-44e4-a655-91a63a040fd7", "category": "Culture & Literature", "gold": "A", "predicted": "A", "parse_strategy": "bare_letter", "raw_text": "A", "cached": false, "error": null, "prompt_tokens": 116, "completion_tokens": 2}

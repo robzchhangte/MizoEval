@@ -1,0 +1,55 @@
+{
+  "run_key": "mcq__zero_shot__gemma4-31b__limit5",
+  "task": "mcq",
+  "regime": "zero_shot",
+  "model_name": "gemma4-31b",
+  "model_id": "gemma4:31b-cloud",
+  "provider": "ollama_cloud",
+  "params": {
+    "temperature": 0,
+    "max_tokens": 1024
+  },
+  "template_id": "mcq/zero_shot/v1",
+  "template_hash": "5893d4a61c7082f8",
+  "template_system": "You are answering multiple-choice questions about Mizoram, a state in northeast India, drawn from its civil-service examinations. Use only your own knowledge.",
+  "seed": 20260907,
+  "n_items": 5,
+  "n_api_errors": 0,
+  "cache_hits": 0,
+  "live_calls": 5,
+  "cost_usd": 0.0,
+  "prompt_tokens": 579,
+  "completion_tokens": 10,
+  "started_utc": "2026-09-07T02:24:44.468046+00:00",
+  "finished_utc": "2026-09-07T02:24:52.560550+00:00",
+  "summary": {
+    "accuracy": 1.0,
+    "accuracy_ci": [
+      0.5655085052479191,
+      1.0
+    ],
+    "parse_failure_rate": 0.0,
+    "n": 5
+  },
+  "keypool": {
+    "n_keys": 15,
+    "active_index": 0,
+    "cooling": [],
+    "total_rotations": 0
+  },
+  "cli": {
+    "task": "mcq",
+    "regime": "zero_shot",
+    "model": "gemma4-31b",
+    "direction": null,
+    "mcq_subset": "mcq4",
+    "permuted": false,
+    "ner_split": "test",
+    "docsplit": false,
+    "limit": 5,
+    "temperature": null,
+    "no_cache": false,
+    "cache": null,
+    "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
+  }
+}

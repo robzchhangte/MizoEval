@@ -224,6 +224,7 @@ def main(argv: list[str] | None = None) -> None:
     finished = dt.datetime.now(dt.timezone.utc)
 
     errors = sum(1 for r in records if r.get("error"))
+    pool = getattr(client._provider, "_pool", None)
     manifest = {
         "run_key": _run_key(args),
         "task": args.task, "regime": args.regime,
@@ -238,6 +239,7 @@ def main(argv: list[str] | None = None) -> None:
         "completion_tokens": sum(r.get("completion_tokens", 0) for r in records),
         "started_utc": started.isoformat(), "finished_utc": finished.isoformat(),
         "summary": _summarise(args.task, records),
+        "keypool": pool.status() if pool is not None else None,
         "cli": {k: (str(v) if isinstance(v, Path) else v) for k, v in vars(args).items()},
     }
 

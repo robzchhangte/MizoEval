@@ -1,0 +1,52 @@
+{
+  "run_key": "ner__few_shot__gemma4-31b__test__limit5",
+  "task": "ner",
+  "regime": "few_shot",
+  "model_name": "gemma4-31b",
+  "model_id": "gemma4:31b-cloud",
+  "provider": "ollama_cloud",
+  "params": {
+    "temperature": 0,
+    "max_tokens": 1024
+  },
+  "template_id": "ner/few_shot/v1",
+  "template_hash": "47886b287bc4c475",
+  "template_system": "You extract named entities from Mizo (Lushai) news sentences. Return only entities that are explicitly present in the text.",
+  "seed": 20260907,
+  "n_items": 5,
+  "n_api_errors": 0,
+  "cache_hits": 0,
+  "live_calls": 5,
+  "cost_usd": 0.0,
+  "prompt_tokens": 3394,
+  "completion_tokens": 211,
+  "started_utc": "2026-09-07T02:32:54.185063+00:00",
+  "finished_utc": "2026-09-07T02:33:03.570190+00:00",
+  "summary": {
+    "micro_f1": 0.0,
+    "macro_f1": 0.0,
+    "parse_failure_rate": 0.0,
+    "n": 5
+  },
+  "keypool": {
+    "n_keys": 15,
+    "active_index": 0,
+    "cooling": [],
+    "total_rotations": 0
+  },
+  "cli": {
+    "task": "ner",
+    "regime": "few_shot",
+    "model": "gemma4-31b",
+    "direction": null,
+    "mcq_subset": "mcq4",
+    "permuted": false,
+    "ner_split": "test",
+    "docsplit": false,
+    "limit": 5,
+    "temperature": null,
+    "no_cache": false,
+    "cache": null,
+    "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
+  }
+}

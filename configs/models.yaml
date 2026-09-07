@@ -37,7 +37,7 @@ models:
     model_id: "gpt-5-mini"          # CONFIRM exact string (user referred to "gpt-5.4-mini")
     price_in: 0.25                  # CONFIRM current pricing
     price_out: 2.00                 # CONFIRM current pricing
-    enabled: true
+    enabled: false
 
   # -- cheap paid via Vertex ---------------------------------------------------
   - name: gemini-flash
@@ -45,37 +45,39 @@ models:
     model_id: "gemini-2.0-flash-001"   # CONFIRM available id in your Vertex project
     price_in: 0.15                      # CONFIRM current pricing
     price_out: 0.60                     # CONFIRM current pricing
-    enabled: true
+    enabled: false
 
   # -- free open-weight via Ollama Cloud ---------------------------------------
-  # model_id must match an Ollama Cloud-eligible tag exactly.
-  - name: gemma3
+  # model_id must match an Ollama Cloud-eligible tag exactly (see ollama.com/library,
+  # "-cloud" tags). Auth: keys.txt (one API key per line, git-ignored) with automatic
+  # rotation when a key hits its rate limit; falls back to OLLAMA_API_KEY.
+  - name: gemma4-31b
     provider: ollama_cloud
-    model_id: "gemma3:27b"             # CONFIRM ("gemma4" mentioned -- use the real tag)
+    model_id: "gemma4:31b-cloud"
     price_in: 0.0
     price_out: 0.0
     enabled: true
+
+  - name: gpt-oss-120b
+    provider: ollama_cloud
+    model_id: "gpt-oss:120b"          # CONFIRM exact cloud tag
+    price_in: 0.0
+    price_out: 0.0
+    enabled: false
 
   - name: qwen3
     provider: ollama_cloud
-    model_id: "qwen3:32b"             # CONFIRM
+    model_id: "qwen3:32b"            # CONFIRM
     price_in: 0.0
     price_out: 0.0
-    enabled: true
+    enabled: false
 
   - name: deepseek-v3
     provider: ollama_cloud
-    model_id: "deepseek-v3.1:671b"   # CONFIRM (cloud-only large model)
+    model_id: "deepseek-v3.1:671b-cloud"   # CONFIRM
     price_in: 0.0
     price_out: 0.0
-    enabled: true
-
-  - name: llama3.3
-    provider: ollama_cloud
-    model_id: "llama3.3:70b"         # CONFIRM
-    price_in: 0.0
-    price_out: 0.0
-    enabled: true
+    enabled: false
 
   # -- always available: no network, no spend --------------------------------
   - name: mock
