@@ -27,7 +27,9 @@ from typing import Any
 from mizoeval.datasets import loaders as L
 from mizoeval.metrics.tasks import score_mcq, score_mt_by_stratum, score_ner, score_sentiment
 from mizoeval.models.base import Message
+from mizoeval.models.budget import BudgetExceeded, TokenBudget
 from mizoeval.models.cache import ResponseCache
+from mizoeval.env import load_env
 from mizoeval.models.providers import ModelClient
 from mizoeval.models.roster import get_spec
 from mizoeval.parsing.answers import (
@@ -57,11 +59,14 @@ def _run_mcq(client: ModelClient, regime: str, args: argparse.Namespace) -> list
     if args.limit:
         items = items[: args.limit]
 
-    out = []
+    out: list[dict[str, Any]] = []
     for it in items:
         user = tmpl.render(question=it["question"], choices=it["choices"], exemplars=exemplars)
-        resp = client.chat([Message("system", tmpl.system), Message("user", user)],
-                           max_tokens=768 if regime == "cot" else 16)
+        try:
+            resp = client.chat([Message("system", tmpl.system), Message("user", user)],
+                               max_tokens=768 if regime == "cot" else 16)
+        except BudgetExceeded:
+            break
         parsed = parse_mcq(resp.text)
         out.append({
             "id": it["id"], "category": it.get("category"), "gold": it["answer"],
@@ -79,10 +84,13 @@ def _run_sentiment(client: ModelClient, regime: str, args: argparse.Namespace) -
     if args.limit:
         items = items[: args.limit]
 
-    out = []
+    out: list[dict[str, Any]] = []
     for it in items:
         user = tmpl.render(text=it["text"], exemplars=exemplars)
-        resp = client.chat([Message("system", tmpl.system), Message("user", user)], max_tokens=16)
+        try:
+            resp = client.chat([Message("system", tmpl.system), Message("user", user)], max_tokens=16)
+        except BudgetExceeded:
+            break
         parsed = parse_sentiment(resp.text)
         out.append({
             "id": it["id"], "gold": it["label"], "predicted": parsed.value,
@@ -103,12 +111,15 @@ def _run_mt(client: ModelClient, regime: str, args: argparse.Namespace) -> list[
     if args.limit:
         items = items[: args.limit]
 
-    out = []
+    out: list[dict[str, Any]] = []
     for it in items:
         source = it["en"] if src == "en" else it["mz"]
         reference = it["en"] if tgt == "en" else it["mz"]
         user = tmpl.render(source=source, direction=args.direction, exemplars=exemplars)
-        resp = client.chat([Message("system", tmpl.system), Message("user", user)], max_tokens=512)
+        try:
+            resp = client.chat([Message("system", tmpl.system), Message("user", user)], max_tokens=512)
+        except BudgetExceeded:
+            break
         out.append({
             "id": it["id"], "stratum": it["stratum"], "direction": args.direction,
             "source": source, "reference": reference,
@@ -126,10 +137,13 @@ def _run_ner(client: ModelClient, regime: str, args: argparse.Namespace) -> list
     if args.limit:
         sents = sents[: args.limit]
 
-    out = []
+    out: list[dict[str, Any]] = []
     for s in sents:
         user = tmpl.render(tokens=s["tokens"], exemplars=exemplars)
-        resp = client.chat([Message("system", tmpl.system), Message("user", user)], max_tokens=512)
+        try:
+            resp = client.chat([Message("system", tmpl.system), Message("user", user)], max_tokens=512)
+        except BudgetExceeded:
+            break
         parsed = parse_entity_json(resp.text)
         if parsed.ok:
             pred_tags = align_spans_to_tokens(s["tokens"], parsed.value, NER_TYPES)
@@ -210,11 +224,19 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--no-cache", action="store_true", help="bypass the response cache")
     ap.add_argument("--cache", type=Path, default=None,
                     help="response-cache path (default: results/cache.sqlite)")
+    ap.add_argument("--token-budget", type=int, default=0,
+                    help="hard cap on total tokens spent this run (prompt+completion, "
+                         "reasoning included); 0 = no cap. The run stops cleanly and "
+                         "writes partial results when the cap is hit.")
     ap.add_argument("--out-dir", type=Path, default=RAW_DIR)
     args = ap.parse_args(argv)
 
+    load_env()  # pick up .env (OPENAI_API_KEY etc.) without overriding the shell
+
     spec = get_spec(args.model)
-    client = ModelClient(spec, cache=ResponseCache(args.cache), use_cache=not args.no_cache)
+    budget = TokenBudget(cap=args.token_budget) if args.token_budget else None
+    client = ModelClient(spec, cache=ResponseCache(args.cache),
+                         use_cache=not args.no_cache, budget=budget)
     if args.temperature is not None:
         client.spec.params = {**(client.spec.params or {}), "temperature": args.temperature}
 
@@ -223,6 +245,7 @@ def main(argv: list[str] | None = None) -> None:
     records = _DRIVERS[args.task](client, args.regime, args)
     finished = dt.datetime.now(dt.timezone.utc)
 
+    budget_stopped = budget is not None and budget.remaining == 0
     errors = sum(1 for r in records if r.get("error"))
     pool = getattr(client._provider, "_pool", None)
     manifest = {
@@ -240,6 +263,8 @@ def main(argv: list[str] | None = None) -> None:
         "started_utc": started.isoformat(), "finished_utc": finished.isoformat(),
         "summary": _summarise(args.task, records),
         "keypool": pool.status() if pool is not None else None,
+        "token_budget": budget.status() if budget is not None else None,
+        "budget_stopped": budget_stopped,
         "cli": {k: (str(v) if isinstance(v, Path) else v) for k, v in vars(args).items()},
     }
 
@@ -256,8 +281,14 @@ def main(argv: list[str] | None = None) -> None:
     print(f"  items={len(records)}  live_calls={client.n_calls}  cache_hits={client.n_cache_hits}  "
           f"api_errors={errors}  cost=${client.cost_usd:.4f}")
     print(f"  summary: {json.dumps(manifest['summary'], ensure_ascii=False)}")
+    if budget is not None:
+        b = budget.status()
+        print(f"  tokens: {b['spent']:,} / {b['cap']:,} ({b['fraction_used']:.0%})"
+              + ("  <-- BUDGET REACHED, run stopped early" if budget_stopped else ""))
     if errors:
         print(f"  WARNING: {errors} API errors -- rerun to fill gaps (cache keeps the successes)")
+
+    return manifest
 
 
 if __name__ == "__main__":

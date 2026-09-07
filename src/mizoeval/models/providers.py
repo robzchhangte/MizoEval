@@ -34,7 +34,20 @@ class OpenAIProvider(Provider):
         self.client = OpenAI(api_key=api_key or os.environ.get("OPENAI_API_KEY"),
                              base_url=base_url)
 
+    # Reasoning-family models (gpt-5*, o1/o3/o4) reject `max_tokens` and want
+    # `max_completion_tokens`; the completion count they report includes hidden
+    # reasoning tokens, which is what the budget must see.
+    _REASONING_PREFIXES = ("gpt-5", "o1", "o3", "o4")
+
+    def _adapt_params(self, model: str, params: dict[str, Any]) -> dict[str, Any]:
+        p = dict(params)
+        if any(model.startswith(pre) for pre in self._REASONING_PREFIXES):
+            if "max_tokens" in p:
+                p["max_completion_tokens"] = p.pop("max_tokens")
+        return p
+
     def complete(self, model: str, messages: list[Message], **params: Any) -> Response:
+        params = self._adapt_params(model, params)
         t0 = time.time()
         r = self.client.chat.completions.create(
             model=model,
@@ -42,6 +55,8 @@ class OpenAIProvider(Provider):
             **params,
         )
         u = r.usage
+        details = getattr(u, "completion_tokens_details", None)
+        reasoning = getattr(details, "reasoning_tokens", 0) or 0
         return Response(
             text=r.choices[0].message.content or "",
             model=model,
@@ -50,6 +65,7 @@ class OpenAIProvider(Provider):
             completion_tokens=getattr(u, "completion_tokens", 0) or 0,
             finish_reason=r.choices[0].finish_reason,
             latency_s=time.time() - t0,
+            raw={"reasoning_tokens": reasoning} if reasoning else {},
         )
 
 
@@ -324,11 +340,13 @@ class ModelClient:
         cache: ResponseCache | None = None,
         max_retries: int = 5,
         use_cache: bool = True,
+        budget=None,
     ) -> None:
         self.spec = spec
         self.cache = cache if cache is not None else ResponseCache()
         self.max_retries = max_retries
         self.use_cache = use_cache
+        self.budget = budget  # optional TokenBudget; raises BudgetExceeded when spent
         self._provider: Provider | None = None
         self.n_calls = 0
         self.n_cache_hits = 0
@@ -349,7 +367,10 @@ class ModelClient:
             hit = self.cache.get(self.spec.model_id, messages, params)
             if hit is not None:
                 self.n_cache_hits += 1
-                return hit
+                return hit  # cache hits are free, so they never touch the budget
+
+        if self.budget is not None:
+            self.budget.check()  # raises BudgetExceeded before spending more
 
         resp = self._call_with_retry(messages, params)
         self.n_calls += 1
@@ -358,6 +379,8 @@ class ModelClient:
                 resp.prompt_tokens * self.spec.price_in
                 + resp.completion_tokens * self.spec.price_out
             ) / 1_000_000
+            if self.budget is not None:
+                self.budget.record(resp.prompt_tokens, resp.completion_tokens)
             if self.use_cache:
                 self.cache.put(self.spec.model_id, messages, params, resp)
         return resp

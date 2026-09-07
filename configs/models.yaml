@@ -32,12 +32,15 @@ defaults:
 
 models:
   # -- primary: cheap paid --------------------------------------------------
-  - name: gpt-5-mini
+  # gpt-5.4-mini is a reasoning model: it rejects `max_tokens` (the adapter
+  # sends `max_completion_tokens`) and bills hidden reasoning tokens as output,
+  # which the token budget counts. Pinned to the dated snapshot for reproducibility.
+  - name: gpt-5.4-mini
     provider: openai
-    model_id: "gpt-5-mini"          # CONFIRM exact string (user referred to "gpt-5.4-mini")
+    model_id: "gpt-5.4-mini-2026-03-17"
     price_in: 0.25                  # CONFIRM current pricing
     price_out: 2.00                 # CONFIRM current pricing
-    enabled: false
+    enabled: true
 
   # -- cheap paid via Vertex ---------------------------------------------------
   - name: gemini-flash

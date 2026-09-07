@@ -43,6 +43,15 @@ def _cell_argv(cell: dict, model: str) -> list[str]:
     return argv
 
 
+def _manifest_spent(manifest: dict) -> int:
+    """Tokens a finished cell actually spent on live calls (cache hits are free)."""
+    tb = manifest.get("token_budget") or {}
+    return int(
+        tb.get("spent")
+        or manifest.get("prompt_tokens", 0) + manifest.get("completion_tokens", 0)
+    )
+
+
 def _load_progress() -> dict:
     if PROGRESS.exists():
         return json.loads(PROGRESS.read_text(encoding="utf-8"))
@@ -62,6 +71,11 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--only", default="", help="comma-separated task filter, e.g. mcq,mt")
     ap.add_argument("--matrix", type=Path, default=MATRIX)
     ap.add_argument("--limit", type=int, default=0, help="cap items per cell (for a dry run)")
+    ap.add_argument("--token-budget", type=int, default=0,
+                    help="hard cap on total tokens across the WHOLE matrix run (per model). "
+                         "Each cell gets the remaining budget; when it reaches 0 the matrix "
+                         "stops. 0 = no cap.")
+    ap.add_argument("--cache", type=Path, default=None, help="response-cache path")
     ap.add_argument("--stop-on-error", action="store_true")
     args = ap.parse_args(argv)
 
@@ -85,11 +99,21 @@ def main(argv: list[str] | None = None) -> None:
     print(f"models: {', '.join(models)}\n")
 
     for model in models:
+        spent = 0  # cumulative tokens for THIS model across cells (paid calls only)
         for cell in cells:
             done += 1
             cell_argv = _cell_argv(cell, model)
             if args.limit:
                 cell_argv += ["--limit", str(args.limit)]
+            if args.cache:
+                cell_argv += ["--cache", str(args.cache)]
+            if args.token_budget:
+                remaining = args.token_budget - spent
+                if remaining <= 0:
+                    print(f"[{done}/{total}] {model} :: token budget "
+                          f"({args.token_budget:,}) reached after {spent:,} — stopping this model")
+                    break
+                cell_argv += ["--token-budget", str(remaining)]
             key = " ".join(cell_argv)
             tag = f"[{done}/{total}] {model} :: {cell['task']}/{cell['regime']}" + (
                 f"/{cell.get('direction') or cell.get('mcq_subset') or cell.get('ner_split') or ''}"
@@ -97,8 +121,15 @@ def main(argv: list[str] | None = None) -> None:
                 " +docsplit" if cell.get("docsplit") else "")
             print(f"{tag}")
             try:
-                run_task.main(cell_argv)
-                progress[key] = {"status": "ok", "at": dt.datetime.now(dt.timezone.utc).isoformat()}
+                manifest = run_task.main(cell_argv)
+                spent += _manifest_spent(manifest or {})
+                stopped = bool((manifest or {}).get("budget_stopped"))
+                progress[key] = {"status": "ok", "budget_stopped": stopped,
+                                 "at": dt.datetime.now(dt.timezone.utc).isoformat()}
+                if stopped:
+                    print(f"    token budget hit inside this cell "
+                          f"({spent:,} / {args.token_budget:,}) — stopping this model")
+                    break
             except Exception as exc:  # noqa: BLE001 - keep the matrix going past one bad cell
                 progress[key] = {"status": "error", "error": f"{type(exc).__name__}: {exc}",
                                  "at": dt.datetime.now(dt.timezone.utc).isoformat()}

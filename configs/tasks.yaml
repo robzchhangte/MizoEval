@@ -1,28 +1,30 @@
 # Evaluation matrix: which (task, regime, variant) cells make up a full run.
 # run_matrix.py iterates this x the enabled models in models.yaml.
 # Every cell is resumable via the response cache, so re-running is free.
+#
+# Cells are ordered cheapest-first (short outputs before chain-of-thought and
+# MT), so a token-budget-capped run buys the widest coverage before it stops,
+# and an uncapped run's expensive cells land last.
 
 cells:
-  # -- MCQ (headline: mcq4 subset) -----------------------------------------
+  # -- cheap: constrained-output MCQ + sentiment -------------------------
   - {task: mcq, regime: zero_shot, mcq_subset: mcq4}
+  - {task: mcq, regime: zero_shot, mcq_subset: mcq4, permuted: true}   # position-bias control
   - {task: mcq, regime: five_shot, mcq_subset: mcq4}
-  - {task: mcq, regime: cot,       mcq_subset: mcq4}
-  # choice-permuted variant: run zero_shot + cot to measure position bias
-  - {task: mcq, regime: zero_shot, mcq_subset: mcq4, permuted: true}
-  - {task: mcq, regime: cot,       mcq_subset: mcq4, permuted: true}
-  # secondary MCQ formats, zero-shot only (reported separately)
-  - {task: mcq, regime: zero_shot, mcq_subset: all}
-
-  # -- MT (both directions, both regimes) --------------------------------
-  - {task: mt, regime: zero_shot, direction: en2mz}
-  - {task: mt, regime: zero_shot, direction: mz2en}
-  - {task: mt, regime: five_shot, direction: en2mz}
-  - {task: mt, regime: five_shot, direction: mz2en}
-
-  # -- sentiment --------------------------------------------------------
+  - {task: mcq, regime: zero_shot, mcq_subset: all}                    # secondary formats
   - {task: sentiment, regime: zero_shot}
   - {task: sentiment, regime: five_shot}
 
-  # -- NER (official split + document-disjoint re-split) --------------
+  # -- mid: NER (structured output, ~450 sents each) --------------------
   - {task: ner, regime: few_shot, ner_split: test}
-  - {task: ner, regime: few_shot, ner_split: test, docsplit: true}
+  - {task: ner, regime: few_shot, ner_split: test, docsplit: true}    # leak-free re-split
+
+  # -- expensive: chain-of-thought MCQ -------------------------------
+  - {task: mcq, regime: cot, mcq_subset: mcq4}
+  - {task: mcq, regime: cot, mcq_subset: mcq4, permuted: true}
+
+  # -- expensive: MT, both directions and regimes (3,000 pairs each) --
+  - {task: mt, regime: zero_shot, direction: mz2en}
+  - {task: mt, regime: zero_shot, direction: en2mz}
+  - {task: mt, regime: five_shot, direction: mz2en}
+  - {task: mt, regime: five_shot, direction: en2mz}
