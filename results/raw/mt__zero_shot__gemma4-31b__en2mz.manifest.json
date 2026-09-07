@@ -1,0 +1,63 @@
+{
+  "run_key": "mt__zero_shot__gemma4-31b__en2mz",
+  "task": "mt",
+  "regime": "zero_shot",
+  "model_name": "gemma4-31b",
+  "model_id": "gemma4:31b-cloud",
+  "provider": "ollama_cloud",
+  "params": {
+    "temperature": 0,
+    "max_tokens": 1024
+  },
+  "template_id": "mt/zero_shot/v1",
+  "template_hash": "1a44eaa5634889c5",
+  "template_system": "You are a professional translator working between English and Mizo (Lushai, ISO 639-3 lus), the language of Mizoram, northeast India.",
+  "seed": 20260907,
+  "n_items": 3000,
+  "n_api_errors": 0,
+  "cache_hits": 0,
+  "live_calls": 3000,
+  "cost_usd": 0.0,
+  "prompt_tokens": 348130,
+  "completion_tokens": 244452,
+  "started_utc": "2026-09-07T07:22:17.804044+00:00",
+  "finished_utc": "2026-09-07T09:11:21.533310+00:00",
+  "summary": {
+    "scripture": {
+      "chrf": 29.638134612921075,
+      "bleu": 6.84929070678292,
+      "n": 1373
+    },
+    "religious": {
+      "chrf": 31.480480888205737,
+      "bleu": 9.207809854762841,
+      "n": 818
+    },
+    "secular": {
+      "chrf": 27.060804457096193,
+      "bleu": 9.731013622603168,
+      "n": 809
+    }
+  },
+  "keypool": {
+    "n_keys": 15,
+    "active_index": 1,
+    "cooling": [],
+    "total_rotations": 1
+  },
+  "cli": {
+    "task": "mt",
+    "regime": "zero_shot",
+    "model": "gemma4-31b",
+    "direction": "en2mz",
+    "mcq_subset": "mcq4",
+    "permuted": false,
+    "ner_split": "test",
+    "docsplit": false,
+    "limit": 0,
+    "temperature": null,
+    "no_cache": false,
+    "cache": null,
+    "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
+  }
+}

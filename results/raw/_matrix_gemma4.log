@@ -1,0 +1,61 @@
+matrix: 1 model(s) x 14 cell(s) = 14 runs
+models: gemma4-31b
+
+[1/14] gemma4-31b :: mcq/zero_shot/mcq4
+[mcq__zero_shot__gemma4-31b]
+  items=1747  live_calls=1747  cache_hits=0  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.616485403548941, "accuracy_ci": [0.5934519884598204, 0.6390076469520867], "parse_failure_rate": 0.0022896393817973667, "n": 1747}
+[2/14] gemma4-31b :: mcq/five_shot/mcq4
+[mcq__five_shot__gemma4-31b]
+  items=1747  live_calls=1747  cache_hits=0  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.6244991413852318, "accuracy_ci": [0.6015411425397049, 0.6469108019423085], "parse_failure_rate": 0.0022896393817973667, "n": 1747}
+[3/14] gemma4-31b :: mcq/cot/mcq4
+[mcq__cot__gemma4-31b]
+  items=1747  live_calls=1747  cache_hits=0  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.6176302232398397, "accuracy_ci": [0.594607180506547, 0.6401370704868038], "parse_failure_rate": 0.0034344590726960505, "n": 1747}
+[4/14] gemma4-31b :: mcq/zero_shot/mcq4 +permuted
+[mcq__zero_shot__gemma4-31b__permuted]
+  items=1708  live_calls=1643  cache_hits=65  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.5626463700234192, "accuracy_ci": [0.5390058740877568, 0.5860056924029746], "parse_failure_rate": 0.000585480093676815, "n": 1708}
+[5/14] gemma4-31b :: mcq/cot/mcq4 +permuted
+[mcq__cot__gemma4-31b__permuted]
+  items=1708  live_calls=1643  cache_hits=65  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.5673302107728337, "accuracy_ci": [0.5437082246614954, 0.5906500010061132], "parse_failure_rate": 0.00117096018735363, "n": 1708}
+[6/14] gemma4-31b :: mcq/zero_shot/all
+[mcq__zero_shot__gemma4-31b]
+  items=1870  live_calls=123  cache_hits=1747  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.6026737967914438, "accuracy_ci": [0.5803056383363081, 0.6246209680534742], "parse_failure_rate": 0.021925133689839574, "n": 1870}
+[7/14] gemma4-31b :: mt/zero_shot/en2mz
+[mt__zero_shot__gemma4-31b__en2mz]
+  items=3000  live_calls=3000  cache_hits=0  api_errors=0  cost=$0.0000
+  summary: {"scripture": {"chrf": 29.638134612921075, "bleu": 6.84929070678292, "n": 1373}, "religious": {"chrf": 31.480480888205737, "bleu": 9.207809854762841, "n": 818}, "secular": {"chrf": 27.060804457096193, "bleu": 9.731013622603168, "n": 809}}
+[8/14] gemma4-31b :: mt/zero_shot/mz2en
+[mt__zero_shot__gemma4-31b__mz2en]
+  items=3000  live_calls=2996  cache_hits=4  api_errors=0  cost=$0.0000
+  summary: {"scripture": {"chrf": 38.39446751621331, "bleu": 17.77028429061283, "n": 1373}, "religious": {"chrf": 42.77110574719631, "bleu": 23.86084419301607, "n": 818}, "secular": {"chrf": 33.56948184666692, "bleu": 15.353811002036942, "n": 809}}
+[9/14] gemma4-31b :: mt/five_shot/en2mz
+[mt__five_shot__gemma4-31b__en2mz]
+  items=3000  live_calls=3000  cache_hits=0  api_errors=0  cost=$0.0000
+  summary: {"scripture": {"chrf": 31.187422997741603, "bleu": 7.991990694459974, "n": 1373}, "religious": {"chrf": 34.95588739221069, "bleu": 12.083551576912358, "n": 818}, "secular": {"chrf": 33.464451657671624, "bleu": 12.964208183684876, "n": 809}}
+[10/14] gemma4-31b :: mt/five_shot/mz2en
+[mt__five_shot__gemma4-31b__mz2en]
+  items=3000  live_calls=2996  cache_hits=4  api_errors=0  cost=$0.0000
+  summary: {"scripture": {"chrf": 38.90134462158324, "bleu": 18.364914145505022, "n": 1373}, "religious": {"chrf": 46.68806560932599, "bleu": 24.969885571765143, "n": 818}, "secular": {"chrf": 44.579990059784464, "bleu": 19.826373083304098, "n": 809}}
+[11/14] gemma4-31b :: sentiment/zero_shot/
+[sentiment__zero_shot__gemma4-31b]
+  items=1150  live_calls=1150  cache_hits=0  api_errors=0  cost=$0.0000
+  summary: {"macro_f1": 0.5834562803214998, "accuracy": 0.7043478260869566, "parse_failure_rate": 0.0, "n": 1150}
+[12/14] gemma4-31b :: sentiment/five_shot/
+[sentiment__five_shot__gemma4-31b]
+  items=920  live_calls=920  cache_hits=0  api_errors=0  cost=$0.0000
+  summary: {"macro_f1": 0.6402871576978261, "accuracy": 0.7402173913043478, "parse_failure_rate": 0.0, "n": 920}
+[13/14] gemma4-31b :: ner/few_shot/test
+[ner__few_shot__gemma4-31b__test]
+  items=447  live_calls=446  cache_hits=1  api_errors=0  cost=$0.0000
+  summary: {"micro_f1": 0.23329129886506936, "macro_f1": 0.21694813103295946, "parse_failure_rate": 0.0022371364653243847, "n": 447}
+[14/14] gemma4-31b :: ner/few_shot/test +docsplit
+[ner__few_shot__gemma4-31b__docsplit-test]
+  items=436  live_calls=436  cache_hits=0  api_errors=0  cost=$0.0000
+  summary: {"micro_f1": 0.19060225016545335, "macro_f1": 0.18393127119573696, "parse_failure_rate": 0.0, "n": 436}
+
+done in 11:35:39.570230. cells ok=14 error=0. progress: C:\Users\Robz\ws\MizoEval\results\raw\_matrix_progress.json

@@ -1,7 +1,7 @@
 {
-  "run_key": "mcq__zero_shot__gemma4-31b__limit5",
+  "run_key": "mcq__cot__gemma4-31b",
   "task": "mcq",
-  "regime": "zero_shot",
+  "regime": "cot",
   "model_name": "gemma4-31b",
   "model_id": "gemma4:31b-cloud",
   "provider": "ollama_cloud",
@@ -9,27 +9,27 @@
     "temperature": 0,
     "max_tokens": 1024
   },
-  "template_id": "mcq/zero_shot/v1",
-  "template_hash": "5893d4a61c7082f8",
+  "template_id": "mcq/cot/v1",
+  "template_hash": "0690e7a4ad09ade3",
   "template_system": "You are answering multiple-choice questions about Mizoram, a state in northeast India, drawn from its civil-service examinations. Use only your own knowledge.",
   "seed": 20260907,
-  "n_items": 5,
+  "n_items": 1747,
   "n_api_errors": 0,
   "cache_hits": 0,
-  "live_calls": 5,
+  "live_calls": 1747,
   "cost_usd": 0.0,
-  "prompt_tokens": 579,
-  "completion_tokens": 10,
-  "started_utc": "2026-09-07T02:24:44.468046+00:00",
-  "finished_utc": "2026-09-07T02:24:52.560550+00:00",
+  "prompt_tokens": 258724,
+  "completion_tokens": 401817,
+  "started_utc": "2026-09-07T05:13:59.833324+00:00",
+  "finished_utc": "2026-09-07T06:03:39.151070+00:00",
   "summary": {
-    "accuracy": 1.0,
+    "accuracy": 0.6176302232398397,
     "accuracy_ci": [
-      0.5655085052479191,
-      1.0
+      0.594607180506547,
+      0.6401370704868038
     ],
-    "parse_failure_rate": 0.0,
-    "n": 5
+    "parse_failure_rate": 0.0034344590726960505,
+    "n": 1747
   },
   "keypool": {
     "n_keys": 15,
@@ -39,14 +39,14 @@
   },
   "cli": {
     "task": "mcq",
-    "regime": "zero_shot",
+    "regime": "cot",
     "model": "gemma4-31b",
     "direction": null,
     "mcq_subset": "mcq4",
     "permuted": false,
     "ner_split": "test",
     "docsplit": false,
-    "limit": 5,
+    "limit": 0,
     "temperature": null,
     "no_cache": false,
     "cache": null,

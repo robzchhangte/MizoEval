@@ -1,7 +1,7 @@
 {
-  "run_key": "mt__zero_shot__gemma4-31b__mz2en__limit5",
+  "run_key": "mt__five_shot__gemma4-31b__mz2en",
   "task": "mt",
-  "regime": "zero_shot",
+  "regime": "five_shot",
   "model_name": "gemma4-31b",
   "model_id": "gemma4:31b-cloud",
   "provider": "ollama_cloud",
@@ -9,29 +9,34 @@
     "temperature": 0,
     "max_tokens": 1024
   },
-  "template_id": "mt/zero_shot/v1",
-  "template_hash": "1a44eaa5634889c5",
+  "template_id": "mt/five_shot/v1",
+  "template_hash": "06bcf2e08bec9aea",
   "template_system": "You are a professional translator working between English and Mizo (Lushai, ISO 639-3 lus), the language of Mizoram, northeast India.",
   "seed": 20260907,
-  "n_items": 5,
+  "n_items": 3000,
   "n_api_errors": 0,
-  "cache_hits": 0,
-  "live_calls": 5,
+  "cache_hits": 4,
+  "live_calls": 2996,
   "cost_usd": 0.0,
-  "prompt_tokens": 581,
-  "completion_tokens": 104,
-  "started_utc": "2026-09-07T02:32:41.761932+00:00",
-  "finished_utc": "2026-09-07T02:32:49.905961+00:00",
+  "prompt_tokens": 1421935,
+  "completion_tokens": 109809,
+  "started_utc": "2026-09-07T13:08:33.181073+00:00",
+  "finished_utc": "2026-09-07T14:17:37.916110+00:00",
   "summary": {
     "scripture": {
-      "chrf": 33.60918255597492,
-      "bleu": 14.851136882929245,
-      "n": 4
+      "chrf": 38.90134462158324,
+      "bleu": 18.364914145505022,
+      "n": 1373
+    },
+    "religious": {
+      "chrf": 46.68806560932599,
+      "bleu": 24.969885571765143,
+      "n": 818
     },
     "secular": {
-      "chrf": 30.4515837763443,
-      "bleu": 5.618923497225256,
-      "n": 1
+      "chrf": 44.579990059784464,
+      "bleu": 19.826373083304098,
+      "n": 809
     }
   },
   "keypool": {
@@ -42,14 +47,14 @@
   },
   "cli": {
     "task": "mt",
-    "regime": "zero_shot",
+    "regime": "five_shot",
     "model": "gemma4-31b",
     "direction": "mz2en",
     "mcq_subset": "mcq4",
     "permuted": false,
     "ner_split": "test",
     "docsplit": false,
-    "limit": 5,
+    "limit": 0,
     "temperature": null,
     "no_cache": false,
     "cache": null,

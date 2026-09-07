@@ -1,0 +1,58 @@
+{
+  "--task mcq --regime zero_shot --model gemma4-31b --mcq-subset mcq4": {
+    "status": "ok",
+    "at": "2026-09-07T04:51:03.148313+00:00"
+  },
+  "--task mcq --regime five_shot --model gemma4-31b --mcq-subset mcq4": {
+    "status": "ok",
+    "at": "2026-09-07T05:13:59.812363+00:00"
+  },
+  "--task mcq --regime cot --model gemma4-31b --mcq-subset mcq4": {
+    "status": "ok",
+    "at": "2026-09-07T06:03:39.226935+00:00"
+  },
+  "--task mcq --regime zero_shot --model gemma4-31b --mcq-subset mcq4 --permuted": {
+    "status": "ok",
+    "at": "2026-09-07T06:25:29.674467+00:00"
+  },
+  "--task mcq --regime cot --model gemma4-31b --mcq-subset mcq4 --permuted": {
+    "status": "ok",
+    "at": "2026-09-07T07:20:37.739976+00:00"
+  },
+  "--task mcq --regime zero_shot --model gemma4-31b --mcq-subset all": {
+    "status": "ok",
+    "at": "2026-09-07T07:22:17.798460+00:00"
+  },
+  "--task mt --regime zero_shot --model gemma4-31b --direction en2mz": {
+    "status": "ok",
+    "at": "2026-09-07T09:43:44.125391+00:00"
+  },
+  "--task mt --regime zero_shot --model gemma4-31b --direction mz2en": {
+    "status": "ok",
+    "at": "2026-09-07T11:23:56.801033+00:00"
+  },
+  "--task mt --regime five_shot --model gemma4-31b --direction en2mz": {
+    "status": "ok",
+    "at": "2026-09-07T13:08:33.162995+00:00"
+  },
+  "--task mt --regime five_shot --model gemma4-31b --direction mz2en": {
+    "status": "ok",
+    "at": "2026-09-07T15:09:50.304818+00:00"
+  },
+  "--task sentiment --regime zero_shot --model gemma4-31b": {
+    "status": "ok",
+    "at": "2026-09-07T15:29:54.821961+00:00"
+  },
+  "--task sentiment --regime five_shot --model gemma4-31b": {
+    "status": "ok",
+    "at": "2026-09-07T15:44:46.103575+00:00"
+  },
+  "--task ner --regime few_shot --model gemma4-31b --ner-split test": {
+    "status": "ok",
+    "at": "2026-09-07T15:55:07.090916+00:00"
+  },
+  "--task ner --regime few_shot --model gemma4-31b --ner-split test --docsplit": {
+    "status": "ok",
+    "at": "2026-09-07T16:04:03.671829+00:00"
+  }
+}

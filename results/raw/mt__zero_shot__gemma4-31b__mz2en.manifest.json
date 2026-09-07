@@ -1,5 +1,5 @@
 {
-  "run_key": "mt__zero_shot__gemma4-31b__en2mz__limit5",
+  "run_key": "mt__zero_shot__gemma4-31b__mz2en",
   "task": "mt",
   "regime": "zero_shot",
   "model_name": "gemma4-31b",
@@ -13,25 +13,30 @@
   "template_hash": "1a44eaa5634889c5",
   "template_system": "You are a professional translator working between English and Mizo (Lushai, ISO 639-3 lus), the language of Mizoram, northeast India.",
   "seed": 20260907,
-  "n_items": 5,
+  "n_items": 3000,
   "n_api_errors": 0,
-  "cache_hits": 0,
-  "live_calls": 5,
+  "cache_hits": 4,
+  "live_calls": 2996,
   "cost_usd": 0.0,
-  "prompt_tokens": 502,
-  "completion_tokens": 190,
-  "started_utc": "2026-09-07T02:32:30.485021+00:00",
-  "finished_utc": "2026-09-07T02:32:39.187619+00:00",
+  "prompt_tokens": 419935,
+  "completion_tokens": 111889,
+  "started_utc": "2026-09-07T09:43:44.139290+00:00",
+  "finished_utc": "2026-09-07T10:49:32.699971+00:00",
   "summary": {
     "scripture": {
-      "chrf": 37.37521594138474,
-      "bleu": 12.825802538794338,
-      "n": 4
+      "chrf": 38.39446751621331,
+      "bleu": 17.77028429061283,
+      "n": 1373
+    },
+    "religious": {
+      "chrf": 42.77110574719631,
+      "bleu": 23.86084419301607,
+      "n": 818
     },
     "secular": {
-      "chrf": 32.58357385383962,
-      "bleu": 9.41504755319803,
-      "n": 1
+      "chrf": 33.56948184666692,
+      "bleu": 15.353811002036942,
+      "n": 809
     }
   },
   "keypool": {
@@ -44,12 +49,12 @@
     "task": "mt",
     "regime": "zero_shot",
     "model": "gemma4-31b",
-    "direction": "en2mz",
+    "direction": "mz2en",
     "mcq_subset": "mcq4",
     "permuted": false,
     "ner_split": "test",
     "docsplit": false,
-    "limit": 5,
+    "limit": 0,
     "temperature": null,
     "no_cache": false,
     "cache": null,

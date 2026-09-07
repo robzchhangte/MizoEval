@@ -1,5 +1,5 @@
 {
-  "run_key": "mcq__cot__gemma4-31b__limit5",
+  "run_key": "mcq__cot__gemma4-31b__permuted",
   "task": "mcq",
   "regime": "cot",
   "model_name": "gemma4-31b",
@@ -13,29 +13,35 @@
   "template_hash": "0690e7a4ad09ade3",
   "template_system": "You are answering multiple-choice questions about Mizoram, a state in northeast India, drawn from its civil-service examinations. Use only your own knowledge.",
   "seed": 20260907,
-  "n_items": 5,
+  "n_items": 1708,
   "n_api_errors": 0,
-  "cache_hits": 0,
-  "live_calls": 5,
+  "cache_hits": 65,
+  "live_calls": 1643,
   "cost_usd": 0.0,
-  "prompt_tokens": 679,
-  "completion_tokens": 1282,
-  "started_utc": "2026-09-07T02:32:01.610015+00:00",
-  "finished_utc": "2026-09-07T02:32:15.495256+00:00",
+  "prompt_tokens": 252892,
+  "completion_tokens": 395481,
+  "started_utc": "2026-09-07T06:25:29.695445+00:00",
+  "finished_utc": "2026-09-07T07:20:37.706452+00:00",
   "summary": {
-    "accuracy": 1.0,
+    "accuracy": 0.5673302107728337,
     "accuracy_ci": [
-      0.5655085052479191,
-      1.0
+      0.5437082246614954,
+      0.5906500010061132
     ],
-    "parse_failure_rate": 0.0,
-    "n": 5
+    "parse_failure_rate": 0.00117096018735363,
+    "n": 1708
   },
   "keypool": {
     "n_keys": 15,
-    "active_index": 0,
-    "cooling": [],
-    "total_rotations": 0
+    "active_index": 1,
+    "cooling": [
+      {
+        "index": 0,
+        "frees_in_s": 35,
+        "reason": "ResponseError: you (robzchhangte) have reached your session usage limit, upgrade for higher lim"
+      }
+    ],
+    "total_rotations": 1
   },
   "cli": {
     "task": "mcq",
@@ -43,10 +49,10 @@
     "model": "gemma4-31b",
     "direction": null,
     "mcq_subset": "mcq4",
-    "permuted": false,
+    "permuted": true,
     "ner_split": "test",
     "docsplit": false,
-    "limit": 5,
+    "limit": 0,
     "temperature": null,
     "no_cache": false,
     "cache": null,
