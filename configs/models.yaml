@@ -42,7 +42,19 @@ models:
     price_out: 2.00                 # CONFIRM current pricing
     enabled: true
 
-  # -- cheap paid via Vertex ---------------------------------------------------
+  # -- cheap paid Gemini -----------------------------------------------------
+  # Runs via the API-key path (GEMINI_API_KEY in .env). The `vertex` provider is
+  # the same model over ADC auth (needs `gcloud auth application-default login`
+  # + GOOGLE_CLOUD_PROJECT); switch `provider: google` -> `vertex` once ADC is set.
+  # gemini-3.x Flash thinks by default; the provider disables thinking
+  # (thinking_budget=0) so tokens stay counted and cheap.
+  - name: gemini-3.5-flash
+    provider: google
+    model_id: "gemini-3.5-flash"        # verified available to this key 2026-09-08
+    price_in: 0.30                      # CONFIRM current pricing
+    price_out: 2.50                     # CONFIRM current pricing
+    enabled: true
+
   - name: gemini-flash
     provider: vertex
     model_id: "gemini-2.0-flash-001"   # CONFIRM available id in your Vertex project

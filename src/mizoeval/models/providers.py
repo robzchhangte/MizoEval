@@ -140,21 +140,38 @@ class GoogleProvider(Provider):
             for m in messages
             if m.role != "system"
         ]
+        # Gemini 2.5+/3.x Flash "think" by default; those thinking tokens are
+        # billed but land in `thoughts_token_count`, not `candidates_token_count`,
+        # so they escape the token budget. Disable thinking by default (matches
+        # how the open-weight models were run); override with thinking_budget=-1
+        # for dynamic thinking or a positive cap.
+        tb = params.get("thinking_budget", 0)
+        thinking_cfg = None
+        if tb is not None:
+            try:
+                thinking_cfg = types.ThinkingConfig(thinking_budget=tb)
+            except Exception:  # noqa: BLE001 - older SDK / model without thinking
+                thinking_cfg = None
         cfg = types.GenerateContentConfig(
             system_instruction=system or None,
             temperature=params.get("temperature"),
             max_output_tokens=params.get("max_tokens"),
+            thinking_config=thinking_cfg,
         )
         t0 = time.time()
         r = self.client.models.generate_content(model=model, contents=contents, config=cfg)
         usage = getattr(r, "usage_metadata", None)
+        thoughts = getattr(usage, "thoughts_token_count", 0) or 0
+        completion = getattr(usage, "candidates_token_count", 0) or 0
         return Response(
             text=r.text or "",
             model=model,
             provider=self.name,
             prompt_tokens=getattr(usage, "prompt_token_count", 0) or 0,
-            completion_tokens=getattr(usage, "candidates_token_count", 0) or 0,
+            completion_tokens=completion + thoughts,  # count thinking against budget/cost
+            finish_reason=getattr(r.candidates[0], "finish_reason", None) if getattr(r, "candidates", None) else None,
             latency_s=time.time() - t0,
+            raw={"thoughts_token_count": thoughts} if thoughts else None,
         )
 
 
