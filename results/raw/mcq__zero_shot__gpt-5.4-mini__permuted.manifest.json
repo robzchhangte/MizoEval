@@ -1,0 +1,61 @@
+{
+  "run_key": "mcq__zero_shot__gpt-5.4-mini__permuted",
+  "task": "mcq",
+  "regime": "zero_shot",
+  "model_name": "gpt-5.4-mini",
+  "model_id": "gpt-5.4-mini-2026-03-17",
+  "provider": "openai",
+  "params": {
+    "temperature": 0,
+    "max_tokens": 1024
+  },
+  "template_id": "mcq/zero_shot/v1",
+  "template_hash": "5893d4a61c7082f8",
+  "template_system": "You are answering multiple-choice questions about Mizoram, a state in northeast India, drawn from its civil-service examinations. Use only your own knowledge.",
+  "seed": 20260907,
+  "n_items": 1708,
+  "n_api_errors": 0,
+  "cache_hits": 90,
+  "live_calls": 1618,
+  "cost_usd": 0.060244,
+  "prompt_tokens": 195633,
+  "completion_tokens": 7306,
+  "started_utc": "2026-09-08T00:18:46.002127+00:00",
+  "finished_utc": "2026-09-08T00:39:58.596682+00:00",
+  "summary": {
+    "accuracy": 0.5327868852459017,
+    "accuracy_ci": [
+      0.5090780319306624,
+      0.5563485823074775
+    ],
+    "parse_failure_rate": 0.0,
+    "n": 1708
+  },
+  "keypool": null,
+  "token_budget": {
+    "cap": 797917,
+    "spent": 192437,
+    "spent_prompt": 185503,
+    "spent_completion": 6934,
+    "remaining": 605480,
+    "live_calls": 1618,
+    "fraction_used": 0.2412
+  },
+  "budget_stopped": false,
+  "cli": {
+    "task": "mcq",
+    "regime": "zero_shot",
+    "model": "gpt-5.4-mini",
+    "direction": null,
+    "mcq_subset": "mcq4",
+    "permuted": true,
+    "ner_split": "test",
+    "docsplit": false,
+    "limit": 0,
+    "temperature": null,
+    "no_cache": false,
+    "cache": null,
+    "token_budget": 797917,
+    "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
+  }
+}

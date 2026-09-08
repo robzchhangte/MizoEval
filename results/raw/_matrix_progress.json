@@ -1,0 +1,32 @@
+{
+  "--task mcq --regime zero_shot --model gpt-5.4-mini --mcq-subset mcq4 --token-budget 1000000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-08T00:18:45.944053+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-5.4-mini --mcq-subset mcq4 --permuted --token-budget 797917": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-08T00:39:58.612580+00:00"
+  },
+  "--task mcq --regime five_shot --model gpt-5.4-mini --mcq-subset mcq4 --token-budget 605480": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-08T01:02:36.672650+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-5.4-mini --mcq-subset all --token-budget 399032": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-08T01:04:13.358011+00:00"
+  },
+  "--task sentiment --regime zero_shot --model gpt-5.4-mini --token-budget 385804": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-08T01:18:49.310806+00:00"
+  },
+  "--task sentiment --regime five_shot --model gpt-5.4-mini --token-budget 284046": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-08T01:31:08.622507+00:00"
+  }
+}
