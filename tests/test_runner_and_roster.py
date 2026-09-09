@@ -105,6 +105,27 @@ def test_mcq_subset_does_not_collide_in_the_output_key(tmp_path):
     assert len(list(tmp_path.glob("mcq__zero_shot__mock*.jsonl"))) == 2
 
 
+def test_matrix_pacing_ignores_cache_replayed_tokens():
+    """A fully-cached cell spent nothing live, so it must not draw down the
+    matrix-wide token budget -- even though its manifest totals include the
+    cache-replayed prompt/completion tokens."""
+    from mizoeval.runners.run_matrix import _manifest_spent
+
+    cached_cell = {
+        "token_budget": {"spent": 0, "cap": 1_000_000},
+        "prompt_tokens": 900_000, "completion_tokens": 280_000,  # replayed, not paid
+    }
+    live_cell = {
+        "token_budget": {"spent": 314_479, "cap": 1_000_000},
+        "prompt_tokens": 295_155, "completion_tokens": 19_324,
+    }
+    no_budget_cell = {"prompt_tokens": 1000, "completion_tokens": 200}
+
+    assert _manifest_spent(cached_cell) == 0
+    assert _manifest_spent(live_cell) == 314_479
+    assert _manifest_spent(no_budget_cell) == 1200
+
+
 def test_roster_every_enabled_entry_has_a_known_provider():
     from mizoeval.models.providers import PROVIDERS
 

@@ -44,12 +44,17 @@ def _cell_argv(cell: dict, model: str) -> list[str]:
 
 
 def _manifest_spent(manifest: dict) -> int:
-    """Tokens a finished cell actually spent on live calls (cache hits are free)."""
-    tb = manifest.get("token_budget") or {}
-    return int(
-        tb.get("spent")
-        or manifest.get("prompt_tokens", 0) + manifest.get("completion_tokens", 0)
-    )
+    """Tokens a finished cell actually spent on *live* calls this run.
+
+    When the cell ran under a TokenBudget its ``spent`` is authoritative -- and
+    it is 0 for a fully-cached cell, because cache hits never touch the budget.
+    Only fall back to the manifest's prompt+completion totals (which include
+    cache-replayed tokens) when there was no budget at all.
+    """
+    tb = manifest.get("token_budget")
+    if tb is not None:
+        return int(tb.get("spent", 0) or 0)
+    return int(manifest.get("prompt_tokens", 0) + manifest.get("completion_tokens", 0))
 
 
 def _load_progress() -> dict:
