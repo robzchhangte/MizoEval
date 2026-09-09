@@ -1,0 +1,58 @@
+{
+  "run_key": "ner__few_shot__gpt-5.4-mini__docsplit-test",
+  "task": "ner",
+  "regime": "few_shot",
+  "model_name": "gpt-5.4-mini",
+  "model_id": "gpt-5.4-mini-2026-03-17",
+  "provider": "openai",
+  "params": {
+    "temperature": 0,
+    "max_tokens": 1024
+  },
+  "template_id": "ner/few_shot/v1",
+  "template_hash": "47886b287bc4c475",
+  "template_system": "You extract named entities from Mizo (Lushai) news sentences. Return only entities that are explicitly present in the text.",
+  "seed": 20260907,
+  "n_items": 436,
+  "n_api_errors": 0,
+  "cache_hits": 46,
+  "live_calls": 390,
+  "cost_usd": 0.094375,
+  "prompt_tokens": 249195,
+  "completion_tokens": 21805,
+  "started_utc": "2026-09-09T08:54:34.851663+00:00",
+  "finished_utc": "2026-09-09T09:01:45.717449+00:00",
+  "summary": {
+    "micro_f1": 0.1824401368301026,
+    "macro_f1": 0.19117840297798555,
+    "parse_failure_rate": 0.0,
+    "n": 436
+  },
+  "keypool": null,
+  "token_budget": {
+    "cap": 1000000,
+    "spent": 241981,
+    "spent_prompt": 222621,
+    "spent_completion": 19360,
+    "remaining": 758019,
+    "live_calls": 390,
+    "fraction_used": 0.242
+  },
+  "budget_stopped": false,
+  "cli": {
+    "task": "ner",
+    "regime": "few_shot",
+    "model": "gpt-5.4-mini",
+    "direction": null,
+    "mcq_subset": "mcq4",
+    "permuted": false,
+    "ner_split": "test",
+    "docsplit": true,
+    "limit": 0,
+    "temperature": null,
+    "no_cache": false,
+    "cache": "results\\cache.sqlite",
+    "token_budget": 1000000,
+    "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
+  }
+}

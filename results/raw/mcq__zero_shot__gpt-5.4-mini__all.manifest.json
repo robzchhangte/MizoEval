@@ -20,8 +20,8 @@
   "cost_usd": 0.0,
   "prompt_tokens": 212753,
   "completion_tokens": 8098,
-  "started_utc": "2026-09-09T08:50:48.266870+00:00",
-  "finished_utc": "2026-09-09T08:50:49.197082+00:00",
+  "started_utc": "2026-09-09T08:54:29.452222+00:00",
+  "finished_utc": "2026-09-09T08:54:30.147720+00:00",
   "summary": {
     "accuracy": 0.5518716577540107,
     "accuracy_ci": [
@@ -33,11 +33,11 @@
   },
   "keypool": null,
   "token_budget": {
-    "cap": 380194,
+    "cap": 1000000,
     "spent": 0,
     "spent_prompt": 0,
     "spent_completion": 0,
-    "remaining": 380194,
+    "remaining": 1000000,
     "live_calls": 0,
     "fraction_used": 0.0
   },
@@ -55,7 +55,7 @@
     "temperature": null,
     "no_cache": false,
     "cache": "results\\cache.sqlite",
-    "token_budget": 380194,
+    "token_budget": 1000000,
     "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
   }
 }
