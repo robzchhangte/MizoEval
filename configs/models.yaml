@@ -42,6 +42,16 @@ models:
     price_out: 2.00                 # CONFIRM current pricing
     enabled: true
 
+  # gpt-5.4 flagship (non-mini). Same reasoning-model handling as the mini
+  # (adapter sends max_completion_tokens, reasoning tokens count to the budget).
+  # Run capped -- flagship in/out pricing is ~5x the mini.
+  - name: gpt-5.4
+    provider: openai
+    model_id: "gpt-5.4-2026-03-05"
+    price_in: 1.25                  # CONFIRM current pricing
+    price_out: 10.00               # CONFIRM current pricing
+    enabled: true
+
   # -- cheap paid Gemini -----------------------------------------------------
   # Runs via the API-key path (GEMINI_API_KEY in .env). The `vertex` provider is
   # the same model over ADC auth (needs `gcloud auth application-default login`
