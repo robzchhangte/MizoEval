@@ -1,0 +1,28 @@
+{
+  "pre_max_year": 2022,
+  "recent_years": [
+    2025,
+    2026
+  ],
+  "pre_2023": {
+    "n_items": 470,
+    "n_graded": 439,
+    "accuracy": 0.5444,
+    "accuracy_ci": [
+      0.4976,
+      0.5904
+    ]
+  },
+  "recent": {
+    "n_items": 657,
+    "n_graded": 650,
+    "accuracy": 0.6754,
+    "accuracy_ci": [
+      0.6384,
+      0.7103
+    ]
+  },
+  "pre_minus_recent": -0.131,
+  "n_year_unknown": 529,
+  "note": "Only items carrying a source_year are used; 2025-2026 dominates the dated pool and the pre-2023 bucket is small. Read the deltas with the per-bucket N in view."
+}

@@ -1,0 +1,12 @@
+{
+  "model": "gpt-5.4-mini",
+  "kjv_anchor": {
+    "chrf": 100.0,
+    "prefix_frac": 1.0
+  },
+  "fresh_mizo_mean": {
+    "chrf": 17.54,
+    "prefix_frac": 0.0278
+  },
+  "separates": true
+}

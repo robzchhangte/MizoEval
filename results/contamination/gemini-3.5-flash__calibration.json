@@ -1,0 +1,12 @@
+{
+  "model": "gemini-3.5-flash",
+  "kjv_anchor": {
+    "chrf": 100.0,
+    "prefix_frac": 1.0
+  },
+  "fresh_mizo_mean": {
+    "chrf": 16.1,
+    "prefix_frac": 0.0903
+  },
+  "separates": true
+}

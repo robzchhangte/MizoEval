@@ -1,0 +1,5124 @@
+{
+  "probe": "mcq_canary",
+  "model": "gemini-3.5-flash",
+  "params": {
+    "n": 300,
+    "seed": 20260907
+  },
+  "items": [
+    {
+      "id": "33bfcb99-ce33-4b63-bcca-ee52bbb85c4d",
+      "category": "History",
+      "answer_text": "UMFO",
+      "blind": {
+        "response": "Mizo Union (Right Wing) / United Mizo Freedom Organisation (UMFO)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Mizo Union Right Wing",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "2c84a29b-93f0-4809-9c77-39fdd71f1456",
+      "category": "Culture & Literature",
+      "answer_text": "Mizo Tawng Kalphung",
+      "blind": {
+        "response": "Thla Hlei Nghak",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "22740e2d-a622-4e9c-a479-20c7bd61e308",
+      "category": "General Knowledge",
+      "answer_text": "2001",
+      "blind": {
+        "response": "2001",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "2001",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "d22b0546-9643-4046-b7d9-87859eef04bc",
+      "category": "Geography",
+      "answer_text": "till",
+      "blind": {
+        "response": "till",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "till",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "8eee05f9-8219-4733-816b-1555fe7713c4",
+      "category": "Law & Acts",
+      "answer_text": "Officer in-charge of the Police Station",
+      "blind": {
+        "response": "Officer-in-charge",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Officer-in-charge",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "245c9aee-58fa-46d4-b549-4b826f4f86e6",
+      "category": "Law & Acts",
+      "answer_text": "No, under any circumstances",
+      "blind": {
+        "response": "No",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "No",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "2735cb64-2f4d-4526-93f3-40bb9b0a08cb",
+      "category": "General Knowledge",
+      "answer_text": "Pleiades",
+      "blind": {
+        "response": "Milky Way",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Orion's Belt",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "c44c4af7-61ff-4a31-97cc-ea69674a65cc",
+      "category": "Geography",
+      "answer_text": "Chhimtuipui",
+      "blind": {
+        "response": "Chhimtuipui (also known as Kaladan)",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Tlawng",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a701ce02-e27c-44a3-90d1-43fb72bbb222",
+      "category": "Geography",
+      "answer_text": "1, 2 and 3",
+      "blind": {
+        "response": "I, II and III",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "I, II and III",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "8d1d3e76-f4d9-4a33-b6a0-810c1b414b64",
+      "category": "General Knowledge",
+      "answer_text": "Sathingzar",
+      "blind": {
+        "response": "Sahlam",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Sazaia lung",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "1a886bdb-2eff-4951-a2a1-001cc6d6540b",
+      "category": "Law & Acts",
+      "answer_text": "14%",
+      "blind": {
+        "response": "14% of the basic pay and dearness allowance",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "14% of basic pay and DA",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e6c18993-a6fa-4d64-b8f7-3e90cdcc0e59",
+      "category": "Culture & Literature",
+      "answer_text": "2022",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "1e656586-e08d-45a2-ad89-6f89becd84d4",
+      "category": "General Knowledge",
+      "answer_text": "Khuazingnu",
+      "blind": {
+        "response": "Pathian",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Pathian",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "ee9e8419-85f7-429c-a430-103eb45721b7",
+      "category": "Environment & Wildlife",
+      "answer_text": "2, 3, 1, 4",
+      "blind": {
+        "response": "Institute of Forest Biodiversity, Hyderabad, Centre for Forest Based Livelihoods and Extension, Agartala, Advanced Research Centre for Bamboo and Ratan, Aizawl, Arid Forest Research Institute, Jodhpur",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Institute of Forest Biodiversity, Hyderabad - Centre for Forest Based Livelihoods and Extension, Agartala - Advanced Research Centre for Bamboo and Ratan, Aizawl - Arid Forest Research Institute, Jodhpur",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "baea96a5-7816-47ec-8941-a86105760e0a",
+      "category": "Economy & Agriculture",
+      "answer_text": "CSB",
+      "blind": {
+        "response": "Central Silk Board",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Central Sericultural Research and Training Institute, Berhampore",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "51c97526-2c19-4932-b046-25f3ecf9d666",
+      "category": "History",
+      "answer_text": "Puithiam",
+      "blind": {
+        "response": "Sadut",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Sadol",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "7f25ed06-4f9b-46ed-bc06-bb7474a99397",
+      "category": "History",
+      "answer_text": "Hiteswar Saikia",
+      "blind": {
+        "response": "Hiteswar Saikia",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Hiteswar Saikia",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "02e40402-ab77-4435-be3d-fc4d7dfe640f",
+      "category": "Law & Acts",
+      "answer_text": "The Superintendent of Police and above",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Director General of Police",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "51f7768e-b634-4d8a-92d1-9d3b2bf99862",
+      "category": "Law & Acts",
+      "answer_text": "Information about warrants and summons issued and served",
+      "blind": {
+        "response": "Process Control Block (PCB) entries",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Particulars of all processes received for service",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f384ce84-0f7f-4926-95db-295a7c57a839",
+      "category": "Economy & Agriculture",
+      "answer_text": "Favah zai",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "d58523d6-e0db-4dc2-bbf2-ddbb17c393c5",
+      "category": "Geography",
+      "answer_text": "Accelerated aerobic composting under controlled condition",
+      "blind": {
+        "response": "3R (Reduce, Reuse, Recycle) and Composting",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Semi-mechanized compost plant with sanitary landfill",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "9f42bb8e-aeb2-468f-ae44-0126ecd6a410",
+      "category": "History",
+      "answer_text": "Dr. Peter Fraser",
+      "blind": {
+        "response": "Dr. Peter Fraser",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Dr. Peter Fraser",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "9bb9003e-331b-47ce-b830-e53f8830d42d",
+      "category": "Culture & Literature",
+      "answer_text": "Zo Nun Ze Mawi: Tlawmngaihna",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "1819d38e-61b6-4f9e-aa4f-8e0e3611bef7",
+      "category": "General Knowledge",
+      "answer_text": "July",
+      "blind": {
+        "response": "December",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "December",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "b8f2d04b-05c0-4637-8027-be6952c6a745",
+      "category": "Law & Acts",
+      "answer_text": "2001",
+      "blind": {
+        "response": "2001",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "July 2, 2001",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "258d6334-ec11-43c7-909d-446245f8a946",
+      "category": "Law & Acts",
+      "answer_text": "Information about warrants and summons issued and served.",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "All processes received for service or execution",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "37c11a71-65b4-483e-8273-1668da7b5745",
+      "category": "History",
+      "answer_text": "the discharge of its function relating to provisions as to services",
+      "blind": {
+        "response": "the integration of the services and the securing of fair and equitable treatment to all persons affected by the provisions of this Act and the proper consideration of any representations that may be made by such persons",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "the integration of the services and the other matters related thereto",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "81d8718a-101b-44f7-b65d-6e5aaf376669",
+      "category": "Law & Acts",
+      "answer_text": "Any quantity",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "c85f7b6a-69cc-4989-a66e-960c5fcf6944",
+      "category": "Economy & Agriculture",
+      "answer_text": "Silai zawn",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a494fa2a-418d-48fb-a093-b3ab25c1a27e",
+      "category": "History",
+      "answer_text": "Seipui & Khawkawk",
+      "blind": {
+        "response": "Seipui",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Seipui",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "d1e7cd55-c5f1-4d3a-9e4a-23eb370c031f",
+      "category": "General Knowledge",
+      "answer_text": "Hrai, Paiper khat, Dan",
+      "blind": {
+        "response": "Since the specific units of measurement were not provided in your question, I cannot determine the correct order. Please provide the list of units or options.",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Since the specific options (the list of units to be ordered) are not provided in the prompt, it is not possible to determine the exact answer. \n\nUNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "d8bb795e-fdcd-4fa4-9fcf-2cb9aa9bd7b6",
+      "category": "Culture & Literature",
+      "answer_text": "Nikir Thla",
+      "blind": {
+        "response": "Nikhat thla",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Nikho/Vangpui (Nikho is the traditional name, but the modern Mizo calendar month for June is **Nikho** or **June**). \n\n*Correction for standard Mizo calendar:* **Nikho**",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "2ec7e8ff-6b01-44fe-987c-d3dc49d3dbf7",
+      "category": "General Knowledge",
+      "answer_text": "Khuangleng run",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lallula landslide",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "4aa7c222-0552-47eb-b6b0-29d745626226",
+      "category": "History",
+      "answer_text": "J. Shakespear",
+      "blind": {
+        "response": "Lalman Sap",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Major J. Shakespear",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "863632b2-59b5-4c55-9bb8-f73ad4d4e47c",
+      "category": "General Knowledge",
+      "answer_text": "Industry",
+      "blind": {
+        "response": "Minister of Industries",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Minister of Industries",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "fee5ebe2-faa5-4947-9435-f5b94bcb1c2e",
+      "category": "History",
+      "answer_text": "Zahmuaka",
+      "blind": {
+        "response": "Zahmuaka",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Zahmuaka",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "f73aba03-2e12-49c6-96e7-beee3e053320",
+      "category": "History",
+      "answer_text": "T.H Lewin",
+      "blind": {
+        "response": "Major Shakespear",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Major Shakespear",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "1ef5eef8-3776-4fed-89a5-d1b1f4527bd5",
+      "category": "Geography",
+      "answer_text": "Serow",
+      "blind": {
+        "response": "Serow",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Serow",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "ff7c52cd-9f5b-407b-9591-32f9cdfffa8f",
+      "category": "Economy & Agriculture",
+      "answer_text": "20.22",
+      "blind": {
+        "response": "11.97%",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "11.97%",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "983f99a0-c6c6-4298-9ccb-ab29d50d9e6d",
+      "category": "History",
+      "answer_text": "Chemsen Bawi",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Chemsên lûlâk",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "77cf2f9f-5c67-4b04-96a6-7e0b5bcea8b4",
+      "category": "History",
+      "answer_text": "Kit Pa",
+      "blind": {
+        "response": "Lal Saruan",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Kut Paa",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e2814c25-b656-4b4a-8f91-f94d495cd7fb",
+      "category": "Culture & Literature",
+      "answer_text": "After the successful clearing of the jhum forest",
+      "blind": {
+        "response": "Clearing of forests for Jhum cultivation",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "clearing of forests (or jhum clearing)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "26f3c6bb-5139-4527-9bbc-0f33a23fff16",
+      "category": "Law & Acts",
+      "answer_text": "Section 24",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Section 30",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "5751d7bb-a8c2-4b18-95f6-bd291bad2865",
+      "category": "Polity & Governance",
+      "answer_text": "Lyuva Khutla",
+      "blind": {
+        "response": "Lu Hla festival",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Hlychho festival",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "b6de6c7f-4ffd-4bee-bc6e-05b93617f2fd",
+      "category": "History",
+      "answer_text": "1850 - 1860 AD",
+      "blind": {
+        "response": "1350 to 1400 AD",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "1700 AD",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "9bd9b3f1-7c75-48f2-a947-b252fecf7593",
+      "category": "General Knowledge",
+      "answer_text": "Capt. L.Z.Sailo",
+      "blind": {
+        "response": "Anshu Jamsenpa",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Anselm Sawihlira",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "409fa44b-4cab-4545-9130-a1790b97a935",
+      "category": "Law & Acts",
+      "answer_text": "41",
+      "blind": {
+        "response": "Section 39",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Section 38",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "40adeba4-7d93-4af0-9edf-fb25237adb0f",
+      "category": "History",
+      "answer_text": "3 only",
+      "blind": {
+        "response": "1, 2, 3 and 4",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "All of the above",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "9d32dae4-27da-4ee3-962d-eef467b29418",
+      "category": "General Knowledge",
+      "answer_text": "Nghawngkawl",
+      "blind": {
+        "response": "head strap",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Head strap (Tawn tawn)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "80d72649-6179-45c3-963d-7814ad1d2556",
+      "category": "Law & Acts",
+      "answer_text": "Confiscated as per law",
+      "blind": {
+        "response": "confiscated",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "confiscated",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "005107df-26c4-4257-b9f7-17a0416c95a9",
+      "category": "General Knowledge",
+      "answer_text": "Gunner Lallawmzuala",
+      "blind": {
+        "response": "C. Zama",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "C. Zoramthanga",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f50d1b85-e841-4fd8-8c8b-29f1103b6aac",
+      "category": "History",
+      "answer_text": "1946",
+      "blind": {
+        "response": "April 1946",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "April 9, 1946",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "26e1e222-8f8d-405c-8bd0-bcb885bbec6a",
+      "category": "General Knowledge",
+      "answer_text": "Kelkang",
+      "blind": {
+        "response": "Hlimen",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Kelkang",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "b89ecf4f-9c8c-4907-a2fd-61628925c141",
+      "category": "General Knowledge",
+      "answer_text": "Muh puah silai",
+      "blind": {
+        "response": "Flintlock gun",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Silaimu-tlawn",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "5bebfb78-9ace-49ed-98e1-9faaaf0bb70a",
+      "category": "General Knowledge",
+      "answer_text": "lemlawi",
+      "blind": {
+        "response": "Burakkatha",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Sitar",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "7e93f6b3-1356-4e97-9aa9-4e8948b5045d",
+      "category": "General Knowledge",
+      "answer_text": "Paradise for the brave",
+      "blind": {
+        "response": "Abode of the dead (or heaven)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Abode of the dead (or Paradise)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "519fb2a2-a45c-4a95-b3f4-68b95377c568",
+      "category": "General Knowledge",
+      "answer_text": "Pawl Kut",
+      "blind": {
+        "response": "Pawl Kut",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Pawl Kut",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "b89f62b0-e7e5-4c8b-ab6e-c6d5a7a9fb92",
+      "category": "Polity & Governance",
+      "answer_text": "Both (a) & (c)",
+      "blind": {
+        "response": "Any Magistrate or Police Officer not below the rank of Sub-Inspector",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Any Magistrate or Police Officer not below the rank of Sub-Inspector",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a469d081-f573-4332-b1e5-86d86acc4bc9",
+      "category": "Geography",
+      "answer_text": "Disruption of ethnic, cultural and social ties",
+      "blind": {
+        "response": "kinship ties across the border",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "the Free Movement Regime and ethnic ties",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e125884f-025f-45e0-a8e7-e717562155ea",
+      "category": "Law & Acts",
+      "answer_text": "She is entitled to a share not exceeding 50% of the property",
+      "blind": {
+        "response": "one-third of the property",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "One-fourth of the property",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "9938181c-7592-4c46-bf81-2a2ca4d4e39c",
+      "category": "Polity & Governance",
+      "answer_text": "6 years",
+      "blind": {
+        "response": "Six years",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Five years",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "1fbe566a-8f6f-4916-b17c-878d64834706",
+      "category": "History",
+      "answer_text": "2100",
+      "blind": {
+        "response": "2100",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "2100",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "47ca3d07-20d6-4ad6-9a3c-e5db83dfa2f4",
+      "category": "History",
+      "answer_text": "Article 243",
+      "blind": {
+        "response": "Article 243B",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Article 243B",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "39d71b15-5d4a-41a0-b7f8-4e2ca76b8b1f",
+      "category": "History",
+      "answer_text": "1 and 3",
+      "blind": {
+        "response": "All 1, 2 and 3 are correct",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "1 and 3 only",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "9bce3223-b65d-42ef-b15b-84207e17babd",
+      "category": "General Knowledge",
+      "answer_text": "Bawrhkeu",
+      "blind": {
+        "response": "Aqiqah",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Nau-puim-tan",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "dc849e63-d336-456f-ad36-92664d7e02f5",
+      "category": "Culture & Literature",
+      "answer_text": "H. Lalsiama",
+      "blind": {
+        "response": "Lalthangfala Sailo",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lalthangfala Sailo",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "9c166644-530e-4299-9489-633af83cadff",
+      "category": "Geography",
+      "answer_text": "Demonstrative Pronoun",
+      "blind": {
+        "response": "Pronoun",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Pronoun",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "4bcdb460-83be-4706-9b1e-9b1d3a23d600",
+      "category": "Culture & Literature",
+      "answer_text": "Hachhek",
+      "blind": {
+        "response": "Thul (a traditional bamboo basket)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Thulrual",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "039bc0d9-2282-4b02-8835-dc5ef4ee9b25",
+      "category": "Culture & Literature",
+      "answer_text": "Bengkhuaia",
+      "blind": {
+        "response": "Taichhunga",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Taitea",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "72eb9ea7-7aa6-4855-91eb-37464bce2c26",
+      "category": "History",
+      "answer_text": "Dawn",
+      "blind": {
+        "response": "Zawlbuk",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Zawlbuk",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "d559febf-d86d-49ae-a5bd-055f18777140",
+      "category": "Geography",
+      "answer_text": "121st Constitutional Amendment Act",
+      "blind": {
+        "response": "125th Constitutional Amendment Bill",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Sixth Amendment Act",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "c195de6b-938d-43b2-9aaf-710dac50ea29",
+      "category": "Geography",
+      "answer_text": "The northern part of the state",
+      "blind": {
+        "response": "the Chin Hills of Myanmar",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "North-South direction",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e402a423-b819-4b9f-bab4-a7da1d3c54fd",
+      "category": "Geography",
+      "answer_text": "Rihdil, Hringlang tlang, Hawilopar, Lunglohtui",
+      "blind": {
+        "response": "Egyptian Book of the Dead",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "5762065e-86b8-4c44-bf8b-6eee3dcc40cd",
+      "category": "Culture & Literature",
+      "answer_text": "Lalruanga leh Keichala",
+      "blind": {
+        "response": "Chhura leh Nahaia",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Chhura leh Nahaia",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "57b1e466-72ce-487b-9489-7ad51997d489",
+      "category": "History",
+      "answer_text": "18 hymns",
+      "blind": {
+        "response": "18 hymns",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "18 hymns",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "e653cc5e-a79d-408c-8c1e-799cb7366075",
+      "category": "History",
+      "answer_text": "Hrawva",
+      "blind": {
+        "response": "Thangula",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lalichhunga",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f0a222a3-f8b4-431a-b5a0-4eda4387dae6",
+      "category": "Polity & Governance",
+      "answer_text": "Tribal areas in North-East India",
+      "blind": {
+        "response": "Administration of tribal areas in Assam, Meghalaya, Tripura and Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Administration of Scheduled Areas and Scheduled Tribes in the states of Assam, Meghalaya, Tripura and Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "07a4bf64-7f8e-4549-bbc3-1d6e40bb57dd",
+      "category": "Culture & Literature",
+      "answer_text": "Zoremi Hmar Zote",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lalzuithanga",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "5ab4964f-ab92-4dfc-97fd-bb9f15b352cc",
+      "category": "General Knowledge",
+      "answer_text": "Phur 200",
+      "blind": {
+        "response": "One load of a carrying basket",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "One load of a basket (buhbân) filled up to the level of the forehead",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e601d69b-70c5-4408-bd1d-bbb6a93669e9",
+      "category": "History",
+      "answer_text": "Thupuan",
+      "blind": {
+        "response": "The Book of Revelation",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "The Book of Psalms",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "ec3328eb-8e93-4007-9a07-71323d468771",
+      "category": "History",
+      "answer_text": "Vangchhia",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "b85fb117-ba05-48d1-bcff-2e26c70d446a",
+      "category": "General Knowledge",
+      "answer_text": "Chingal",
+      "blind": {
+        "response": "alkaline liquid (chingal)",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Chhangban (or Changal)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e6a19a4e-95f7-4762-b0e8-527599264634",
+      "category": "Law & Acts",
+      "answer_text": "43",
+      "blind": {
+        "response": "40",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e77dd272-0f40-4b42-8830-721e1ec0e327",
+      "category": "History",
+      "answer_text": "Lallula",
+      "blind": {
+        "response": "Suaka",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Suaka",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "d9d04616-4ae0-4b00-946e-56e6c10ccc91",
+      "category": "History",
+      "answer_text": "Capt. T.H.Lewin",
+      "blind": {
+        "response": "John Edgar",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "John Edgar",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "2cd542ce-2648-4aa2-acc6-dd1d81a4ccda",
+      "category": "General Knowledge",
+      "answer_text": "Zawlpuan",
+      "blind": {
+        "response": "Thangchhuah puan",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Thangchhuah puan",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "deaf2802-0f0e-497f-9e2d-dce0cd0b518f",
+      "category": "History",
+      "answer_text": "Thangliana",
+      "blind": {
+        "response": "Thangliana",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Thangliana",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "302fee59-d4cf-4b70-859f-79243cc8033c",
+      "category": "General Knowledge",
+      "answer_text": "Food Processing industries",
+      "blind": {
+        "response": "Bamboo and forest based industries",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Bamboo and Forest based industries",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "500fafa5-d45c-4550-a441-39b349abab6a",
+      "category": "Law & Acts",
+      "answer_text": "One year",
+      "blind": {
+        "response": "one year",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "six months",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "198dadaa-6d50-4140-9fd7-5882e0659526",
+      "category": "History",
+      "answer_text": "1871–1872",
+      "blind": {
+        "response": "1871-1872",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "1871-1872",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "0ef4deef-ffd1-4c1b-af46-8febc4ab6bdd",
+      "category": "Environment & Wildlife",
+      "answer_text": "Very Dense Forest < Moderately Dense Forest < Open Forest",
+      "blind": {
+        "response": "85.41%",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "7bb6ec93-c5d1-4894-9371-af206e63c546",
+      "category": "History",
+      "answer_text": "T.H.Lewin",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Major Shakespear",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "0c76a436-5d64-448e-a80d-a5cf458235aa",
+      "category": "General Knowledge",
+      "answer_text": "Sahmulphah thla",
+      "blind": {
+        "response": "Pawltlak",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Pawltlak",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "5c89840c-e500-410d-96a4-dc72d82e79e1",
+      "category": "Geography",
+      "answer_text": "Serchhip",
+      "blind": {
+        "response": "Serchhip",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Serchhip",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "316d72fb-2c94-4852-8924-84ea6a72b3a1",
+      "category": "Culture & Literature",
+      "answer_text": "Dr. Laltluangliana Khiangte- Pasaltha Khuangchera",
+      "blind": {
+        "response": "Lalpa Kohhran Chanchin",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lalnunmawia Chhangte, 'Ka Zinna Ram'",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "3d9b278b-65fe-489b-a449-ad2b7c69d133",
+      "category": "History",
+      "answer_text": "Lamsuaka",
+      "blind": {
+        "response": "Lalchawimawia",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lalhleia",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a8900d4a-cdb3-489a-8dc3-9013d1cc288a",
+      "category": "General Knowledge",
+      "answer_text": "Kungawrhi",
+      "blind": {
+        "response": "Rihli_i",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Rungnu",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "18047ae3-d236-4888-950f-17e0768313c8",
+      "category": "History",
+      "answer_text": "Henry Walter George Cole",
+      "blind": {
+        "response": "John Shakespear",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "John Shakespear",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "36cd3973-5fbf-4032-a8c1-c311a00baf1b",
+      "category": "General Knowledge",
+      "answer_text": "K.Thangzualla",
+      "blind": {
+        "response": "Robula",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Pu Lalhmingthanga",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "615406cd-35c8-466b-bda6-dd57194a6e87",
+      "category": "General Knowledge",
+      "answer_text": "Qualified teachers",
+      "blind": {
+        "response": "laboratory facilities",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "laboratory facilities",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "7688b56f-bfd8-4277-98c1-bf6e4d397362",
+      "category": "General Knowledge",
+      "answer_text": "Thingsulthliah",
+      "blind": {
+        "response": "Saitual",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "02de4a49-4eba-4d8b-96d4-b68403984c0b",
+      "category": "General Knowledge",
+      "answer_text": "Prof. A.N. Rai",
+      "blind": {
+        "response": "Dibakar Chandra Deka",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Prof. K.R.S. Sambasiva Rao",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a13c5e49-4fe1-42a0-abaf-e0ad7f53681c",
+      "category": "History",
+      "answer_text": "Chief Secretary",
+      "blind": {
+        "response": "Chief Secretary",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Chief Secretary",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "52d607ea-b290-4a20-b754-cde134174655",
+      "category": "Law & Acts",
+      "answer_text": "Section 28",
+      "blind": {
+        "response": "Section 16",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Section 31 of the Act",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a9874685-2f57-4140-bbfa-96c8e5e09ffe",
+      "category": "Culture & Literature",
+      "answer_text": "Kaphleia",
+      "blind": {
+        "response": "Lalsangzuala Sailo",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "L. Biakliana",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "18944b5a-9b1c-4d5e-b2fb-f0e72c1946e2",
+      "category": "Law & Acts",
+      "answer_text": "First day of April",
+      "blind": {
+        "response": "first day of April",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "first day of April",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "2020e789-f2d7-43ad-ac57-bf01fadd34e8",
+      "category": "Geography",
+      "answer_text": "4.8 km/hr",
+      "blind": {
+        "response": "4.8 km/hr",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "4.8 km/hr",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "ad26538d-ccaa-4fec-a58c-273c552eee62",
+      "category": "General Knowledge",
+      "answer_text": "Solakia/Sarlamkai",
+      "blind": {
+        "response": "Headhunter's Dance (or Oloolo)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Headhunter's dance",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "77762b6b-7a80-4e7c-b38a-bc4dee4a2ebc",
+      "category": "Environment & Wildlife",
+      "answer_text": "Blue Mountain",
+      "blind": {
+        "response": "Blue Mountain",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Blue Mountain",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "6bac807e-ec30-412b-954f-d20f1545fcf8",
+      "category": "Culture & Literature",
+      "answer_text": "B.Lalhriattira",
+      "blind": {
+        "response": "Lalzuithanga",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lalrinawma Chhangte",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "06c270af-9bd6-4d63-b66d-e632e6433e57",
+      "category": "General Knowledge",
+      "answer_text": "Tlawng River Catchment Areas",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "6b32c54b-8b98-43ae-aaef-6ef3d639c65c",
+      "category": "History",
+      "answer_text": "1906",
+      "blind": {
+        "response": "1906",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "1906",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "a8f9eba7-b2d5-4bc5-97c4-13ad2ba273db",
+      "category": "Culture & Literature",
+      "answer_text": "November-Sahmulphah thla",
+      "blind": {
+        "response": "Since the question does not provide the options or the context of the \"correct combination\" (e.g., matching lists, chemical formulas, biological terms, etc.), it is impossible to determine the correct answer. \n\nUNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Since the specific options (the combinations to choose from) are not provided in the prompt, it is impossible to determine the correct combination. \n\nUNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "7d39d9c0-34d0-4aad-b242-127769fa3941",
+      "category": "Geography",
+      "answer_text": "1 National Park",
+      "blind": {
+        "response": "Dampa Tiger Reserve, Murlen National Park, and Phawngpui Blue Mountain National Park",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Dampa Tiger Reserve, Murlen National Park, Phawngpui National Park, and Ngengpui Wildlife Sanctuary",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "9e8e1718-2ea7-49b7-9524-f0bd27a17e80",
+      "category": "Environment & Wildlife",
+      "answer_text": "2 and 3 only",
+      "blind": {
+        "response": "1 and 3 only",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "1 and 3 only",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "320a23fe-9469-4bc4-9b8f-767ee3944f3c",
+      "category": "History",
+      "answer_text": "1954",
+      "blind": {
+        "response": "1954",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "1954",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "0fbde102-d3c9-4af1-921b-09bc3801e15b",
+      "category": "History",
+      "answer_text": "1917",
+      "blind": {
+        "response": "1917",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "1917",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "84eaec1c-778a-4986-b6a4-491c7af17512",
+      "category": "General Knowledge",
+      "answer_text": "Zadeng tlawm tur ang mai",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e8f88f3c-d5a3-4a4a-895a-ac82a1050c75",
+      "category": "Culture & Literature",
+      "answer_text": "Mores",
+      "blind": {
+        "response": "Mores",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Mores",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "24848484-bcf5-4f03-a7d1-68cd2bfe7bf3",
+      "category": "Geography",
+      "answer_text": "Purvanchal Hills",
+      "blind": {
+        "response": "Purvachal Range",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Patkai Range",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "66b5b341-3d69-44d0-aad2-e8b031aea700",
+      "category": "Law & Acts",
+      "answer_text": "Warning prescribed by Manual",
+      "blind": {
+        "response": "Censure",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Censure",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "ae3ad479-2c61-459a-a2b0-1bb1c7d5b518",
+      "category": "Culture & Literature",
+      "answer_text": "Chawngtinleri",
+      "blind": {
+        "response": "Diana",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "3dabfb8c-3d2f-4802-95d4-e7af0b6e90e9",
+      "category": "History",
+      "answer_text": "J.H. Lorrain & F.W. Savidge",
+      "blind": {
+        "response": "Christian missionaries J.H. Lorrain and F.W. Savidge",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "J.H. Lorrain and F.W. Savidge",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "5249f64f-4e66-4892-8785-1836f579ab88",
+      "category": "Environment & Wildlife",
+      "answer_text": "2 and 6",
+      "blind": {
+        "response": "2 and 8",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "2 and 8",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "19b6557b-ac22-401c-9cd4-baa7cc2e3787",
+      "category": "Culture & Literature",
+      "answer_text": "Ahmangaihi Khiangte",
+      "blind": {
+        "response": "Kawlkil Piah (Lalrinzuala)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Siamtupa Zinkawng (Lalrammawia Ngente)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a3c4b33b-f319-4219-9128-2b78d54be57c",
+      "category": "General Knowledge",
+      "answer_text": "Circle Education Officer",
+      "blind": {
+        "response": "the Sub-Divisional Education Officer",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "the Sub-Divisional Education Officer",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "dda05b7d-5f50-481c-a86f-448fabdd9429",
+      "category": "History",
+      "answer_text": "Japan",
+      "blind": {
+        "response": "Japan",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Japan",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "b2f44c9d-8a72-4bce-99d5-2c2be31aa8c9",
+      "category": "Culture & Literature",
+      "answer_text": "April Fool - Zaiva Nununa Renthlei",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f563f8f3-dad0-43c5-9231-7fa090de5193",
+      "category": "Polity & Governance",
+      "answer_text": "Lyuva Khutla",
+      "blind": {
+        "response": "Lu Hla festival",
+        "cached": true,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Hlychho",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "c38420bf-04f6-4dcd-9d26-d81ef13ee743",
+      "category": "Economy & Agriculture",
+      "answer_text": "Post Devolution Revenue Deficit Grant",
+      "blind": {
+        "response": "Grants-in-aid from the Central Government",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "41a15d0a-ef7e-4052-9649-44d130498595",
+      "category": "Polity & Governance",
+      "answer_text": "27 elected seats and 3 nominated seats",
+      "blind": {
+        "response": "30 elected and 3 nominated seats",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "30 elected and 3 nominated seats",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f3894cda-aa81-41e5-906e-8e40860f45ca",
+      "category": "History",
+      "answer_text": "1896",
+      "blind": {
+        "response": "1899",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "1907",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "05ff22a3-6fc0-436e-9314-8427fdf38c0a",
+      "category": "Environment & Wildlife",
+      "answer_text": "Tialpapuk",
+      "blind": {
+        "response": "Tiahauia lung",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Kungawrhi Puk",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "37475140-545b-4a1d-85c5-602676678ce4",
+      "category": "History",
+      "answer_text": "The Union Territory of Mizoram",
+      "blind": {
+        "response": "the Union territory of Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "the Union territory of Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "7b80fd26-623f-40f5-aaa8-9fa1234d9f4c",
+      "category": "History",
+      "answer_text": "S.N. Barkataki",
+      "blind": {
+        "response": "L.L. Peters",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "G.N. Dutt",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "42139b96-77e9-4d70-ac0f-6028617fbe4f",
+      "category": "General Knowledge",
+      "answer_text": "Bawlpai",
+      "blind": {
+        "response": "Puithiam",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Puithiam",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "66812bc3-f19f-451a-b006-8c0063aaf174",
+      "category": "History",
+      "answer_text": "Ailawng",
+      "blind": {
+        "response": "Ailawng",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Ailawng",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "10289856-fca9-47d1-beaf-f3f88f201e32",
+      "category": "Polity & Governance",
+      "answer_text": "Nirbhay Sharma",
+      "blind": {
+        "response": "Kambhampati Hari Babu",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lt. Gen. (Retd.) Nirbhay Sharma",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "cfbeddc0-aa98-43aa-a32c-9e868ffad632",
+      "category": "Culture & Literature",
+      "answer_text": "Honoring and remembering deceased ancestors",
+      "blind": {
+        "response": "the memory of deceased ancestors",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "the memory of deceased ancestors",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "fbc0ee8a-62a7-4457-bb24-6d550c96ea90",
+      "category": "General Knowledge",
+      "answer_text": "ngawidawh",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "ba721c01-f2d2-4c47-93cd-6eb70e92a097",
+      "category": "Geography",
+      "answer_text": "Zawlaidi",
+      "blind": {
+        "response": "Zawlaidi",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Champwine",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f933d5fc-fd2f-4c51-9d75-97157bca671b",
+      "category": "History",
+      "answer_text": "Captain Roberts",
+      "blind": {
+        "response": "Brigadier-General G. Bourchier and Brigadier-General C. H. Brownlow",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Brigadier-General G. Bourchier and Brigadier-General C.H. Brownlow",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "9d36515c-d28d-44d3-b117-93d0927617f5",
+      "category": "Geography",
+      "answer_text": "Lawngtlai district",
+      "blind": {
+        "response": "Lawngtlai",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Lawngtlai",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "5af4ee25-af95-43eb-8bb0-c56143f0ae4f",
+      "category": "History",
+      "answer_text": "Vansanga",
+      "blind": {
+        "response": "Zahuata",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Dokulha Decem",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "7c613f65-37a7-428b-92cb-a9614a364985",
+      "category": "General Knowledge",
+      "answer_text": "Bawlpu",
+      "blind": {
+        "response": "Puithiam",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Puithiam",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f7bfd0ba-0d1f-4ef9-b595-9362247b69de",
+      "category": "General Knowledge",
+      "answer_text": "Tumphit",
+      "blind": {
+        "response": "a leather pouch called ‘Fungki’",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Fun-bawm",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "2c430fce-a57c-4680-a3aa-5e70153da739",
+      "category": "General Knowledge",
+      "answer_text": "Thingvanchen",
+      "blind": {
+        "response": "Lunglei Chawngtlai (or Lunglei) / Chhingmit / Chhingmit-kung / Lunglei-kung. \n\nLet me double-check the Mizo mythological tree at the center of the Earth.\nIn Mizo mythology, the mythical tree is called **Ch",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lunglei Thingpui Sen",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "2840fb59-09c0-476d-9ca4-a87e058a2279",
+      "category": "Geography",
+      "answer_text": "North Chawilung hills",
+      "blind": {
+        "response": "Mizoram (Chin Hills)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Chinlung Hills",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "abea965d-d377-4163-8078-ccff374c5512",
+      "category": "History",
+      "answer_text": "1917",
+      "blind": {
+        "response": "1917",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "1917",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "579a08de-38ff-44fe-9aef-90a106080dba",
+      "category": "History",
+      "answer_text": "Yearly",
+      "blind": {
+        "response": "a share of the paddy harvest",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "from his subjects as land rent or paddy tax",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f2e5a233-5eaf-4c4a-ad8e-d0c1ef07fe31",
+      "category": "History",
+      "answer_text": "The Indian Parliament",
+      "blind": {
+        "response": "Parliament of India",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Parliament",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "e2a1dfe0-d5eb-4ee1-b5db-e315266ce45c",
+      "category": "History",
+      "answer_text": "Salam",
+      "blind": {
+        "response": "Bawi-man",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Salam",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "6ad4f9a2-3cd9-451f-8555-d6be9793932d",
+      "category": "General Knowledge",
+      "answer_text": "Tachhip village",
+      "blind": {
+        "response": "Tachhip",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Tachhip village",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "9305390c-397c-4d71-8188-801e08512b2c",
+      "category": "Culture & Literature",
+      "answer_text": "1, 2 and 3",
+      "blind": {
+        "response": "All of the statements are correct",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "All of the statements are correct",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e23bd6a9-ec97-481b-a584-9ceff9c754bc",
+      "category": "Geography",
+      "answer_text": "Accountant",
+      "blind": {
+        "response": "Senior Assistant",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "U.D.C.",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "65e309c3-46b4-4eef-97d0-1f009204700c",
+      "category": "Law & Acts",
+      "answer_text": "The sentence is not correct",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a7f9a78c-37e8-4d90-a0c4-e1aa08c33bd1",
+      "category": "Law & Acts",
+      "answer_text": "Two years",
+      "blind": {
+        "response": "two years",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "two years",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "ff931d7f-a654-432c-ae8c-815c2431fe18",
+      "category": "General Knowledge",
+      "answer_text": "Paddy",
+      "blind": {
+        "response": "rice or paddy (known as Puithiam hlawh)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Fathang",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "5d2ea082-4506-4222-a670-24a180c8a0d1",
+      "category": "History",
+      "answer_text": "Daibawl",
+      "blind": {
+        "response": "Bawlpu Chhawn",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Fano Lu Kah",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "d1118fba-e19f-4efd-88de-d96648e9209a",
+      "category": "History",
+      "answer_text": "1871-1872",
+      "blind": {
+        "response": "1871–1872",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "1871-1872",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "ece41a51-71f6-4fac-a1d5-1aa35669427e",
+      "category": "Law & Acts",
+      "answer_text": "51",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "508ab5de-d879-43c5-85a0-d0e6c3b724a2",
+      "category": "Economy & Agriculture",
+      "answer_text": "2006",
+      "blind": {
+        "response": "2006",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "2006",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "1492e9f8-bc40-4823-becb-fd596d26c640",
+      "category": "Law & Acts",
+      "answer_text": "Three years",
+      "blind": {
+        "response": "three years",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "fc41aa61-54ae-4105-ada9-2046430b168e",
+      "category": "Culture & Literature",
+      "answer_text": "Rintei Zunleng",
+      "blind": {
+        "response": "Zofate Chanchin",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Zofate Zinkawng (Chanchin Tha Thlen Hma)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "4a2abe0c-b497-464e-bb80-003111d29fb4",
+      "category": "Culture & Literature",
+      "answer_text": "Kaphleia",
+      "blind": {
+        "response": "Kaphleia",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Kaphleia",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "7577e113-cabd-43ef-a815-d87c1bc960e9",
+      "category": "History",
+      "answer_text": "Ralliana",
+      "blind": {
+        "response": "King Ovonramwen",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Khamliana",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "6281d564-b60e-48a6-b620-9eca3275f30a",
+      "category": "History",
+      "answer_text": "Human Rights Committee",
+      "blind": {
+        "response": "Human Rights Committee",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Human Rights Committee",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "f0835f98-18d1-493c-81b6-c4e0fc068503",
+      "category": "Law & Acts",
+      "answer_text": "Commissioner of Excise & Narcotics",
+      "blind": {
+        "response": "Commissioner of Excise and Narcotics",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Commissioner of Excise and Narcotics",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "257df378-6c95-4b55-a001-deec65791997",
+      "category": "Geography",
+      "answer_text": "4 years",
+      "blind": {
+        "response": "five years",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "five years",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "035a27cd-b17e-4232-b8db-2b80890c312a",
+      "category": "History",
+      "answer_text": "20th February 1987",
+      "blind": {
+        "response": "20 February 1987",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "20th February, 1987",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "eb1ae9d2-b8ba-4261-bd48-336cd76abc15",
+      "category": "General Knowledge",
+      "answer_text": "Rokunga",
+      "blind": {
+        "response": "Rokunga",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Rokunga",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "7b605595-f497-4112-bdc8-2cb80a7cd1d2",
+      "category": "General Knowledge",
+      "answer_text": "Lalchhandama Ralte",
+      "blind": {
+        "response": "Lalnghinglova Hmar",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lalnghinglova Hmar",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "b0e2e945-8d2d-45c4-ae2f-c6f6c6f238c6",
+      "category": "General Knowledge",
+      "answer_text": "Vakiria",
+      "blind": {
+        "response": "Puanei",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "59399917-82ca-47e3-bee2-49efa748188a",
+      "category": "Geography",
+      "answer_text": "P",
+      "blind": {
+        "response": "pH of the soil",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "soil pH",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "6154ebab-9ae7-43d2-b4e1-0850efefb23a",
+      "category": "Polity & Governance",
+      "answer_text": "209 candidates",
+      "blind": {
+        "response": "209",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "209",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "405e286a-9833-4afc-a5eb-aa179b358780",
+      "category": "General Knowledge",
+      "answer_text": "2,48,732",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "8e13ceef-4b10-4aa5-befc-c1c0e0ee16ff",
+      "category": "General Knowledge",
+      "answer_text": "Gekko mizoramensis",
+      "blind": {
+        "response": "Gekko mizoramensis",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Gekko mizoramensis",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "a0d3df49-367b-4385-8839-a319cfb1202d",
+      "category": "Law & Acts",
+      "answer_text": "30th June, 2019",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "28th May, 2019",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "22122cbc-90b0-4305-ba8f-7d99987dfde7",
+      "category": "Geography",
+      "answer_text": "Meghalaya, Tripura, Mizoram, and Assam.",
+      "blind": {
+        "response": "Assam, Meghalaya, Tripura and Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Assam, Meghalaya, Tripura and Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "fece2fc1-2cfc-4015-a37d-6a3e19b9fcde",
+      "category": "History",
+      "answer_text": "John Shakespear",
+      "blind": {
+        "response": "Lalnu Ropuiliani",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lalnu Ropuiliani",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "0fff8680-5855-4f85-9372-36b209340aa6",
+      "category": "Law & Acts",
+      "answer_text": "Sub-Divisional Officer (S.D.O.)",
+      "blind": {
+        "response": "The Deputy Commissioner of a district",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Deputy Commissioner",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "80082625-de9b-4407-acc9-51c1cbd3476d",
+      "category": "General Knowledge",
+      "answer_text": "Mizoram",
+      "blind": {
+        "response": "Arunachal Pradesh",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Arunachal Pradesh",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "76718201-6d18-4f1d-a8ad-e5e45ab82e77",
+      "category": "Geography",
+      "answer_text": "NH53",
+      "blind": {
+        "response": "National Highway 2",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "National Highway 2",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e21294c7-0b0a-444b-bb48-6c660d3c63bc",
+      "category": "Geography",
+      "answer_text": "Palak",
+      "blind": {
+        "response": "Palak Dil",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Palak Dil",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "5fb7a9ea-7eb1-48f3-ab40-e65bfeee9d6f",
+      "category": "Law & Acts",
+      "answer_text": "thirty percent",
+      "blind": {
+        "response": "one-third",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "one-third",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "cd3a2d79-c2c8-4a96-8ee5-f28b9ecd0319",
+      "category": "History",
+      "answer_text": "25th June, 1986",
+      "blind": {
+        "response": "June 30, 1986",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "30th June, 1986",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "617d93b7-adce-4b23-a717-9740a84b5bf6",
+      "category": "Geography",
+      "answer_text": "Chhimtuipui",
+      "blind": {
+        "response": "Chhimtuipui (Kolodyne)",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Chhimtuipui",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "6b99527b-e1aa-4bdd-a0d7-311f568c4c33",
+      "category": "Law & Acts",
+      "answer_text": "State Government",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "State Government",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "6ace655e-b88a-41e6-bdef-4a396fed041b",
+      "category": "General Knowledge",
+      "answer_text": "To promote ecotourism to the mass.",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "To act as a regulatory body for issuing tourism licenses",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "884ed848-c47e-47d4-b9ec-8e72e6b6b11c",
+      "category": "Polity & Governance",
+      "answer_text": "Social Security",
+      "blind": {
+        "response": "Financial assistance to entrepreneurs",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Financial assistance to entrepreneurs",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a00ca31c-b978-43ae-aa80-9a86cd20a877",
+      "category": "Law & Acts",
+      "answer_text": "24 hours",
+      "blind": {
+        "response": "Twenty-four hours",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Twenty-four hours",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "cb9b874f-fbe7-4de2-9c4b-1fa7d2af8f37",
+      "category": "Geography",
+      "answer_text": "had been living",
+      "blind": {
+        "response": "has been living",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "has been living",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "175e6421-eebe-47cd-9fba-1ca9dd08c51e",
+      "category": "Polity & Governance",
+      "answer_text": "Commerce and Industries Department",
+      "blind": {
+        "response": "Planning and Programme Implementation Department",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Planning and Programme Implementation Department",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "40ee556d-4b3c-4b34-bbf3-ff5c753094db",
+      "category": "General Knowledge",
+      "answer_text": "23rd",
+      "blind": {
+        "response": "23rd",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "23rd",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "83fcb250-93d9-4c2f-bbc4-1d47ba391d03",
+      "category": "Law & Acts",
+      "answer_text": "Imprisonment up to 3 years and fine up to 10,000",
+      "blind": {
+        "response": "Imprisonment for a term which may extend to two years or with fine which may extend to ten thousand rupees or with both",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Imprisonment for a term which may extend to 6 months or with fine which may extend to Rs. 5,000/- or with both",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f92597e8-ae42-44a4-9cef-8d706291eb62",
+      "category": "History",
+      "answer_text": "1961 census",
+      "blind": {
+        "response": "1946",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "1946",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "cf8688a8-5cfc-42ce-afa3-c4c3aa11ac9e",
+      "category": "Law & Acts",
+      "answer_text": "01.9.2013",
+      "blind": {
+        "response": "1st March, 2012",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "1st March, 2012",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "6ea9ba3b-00ce-448b-a6fc-9cf85d2d9aa8",
+      "category": "History",
+      "answer_text": "1966",
+      "blind": {
+        "response": "1966",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "1966",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "e277be69-7661-4043-8a54-0c3354d781f9",
+      "category": "Law & Acts",
+      "answer_text": "Twenty five thousand rupees",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f972fb80-a556-4209-ab96-bb6429b84efd",
+      "category": "Culture & Literature",
+      "answer_text": "Mahni inbih chianna a zara lo awm.",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "0f85014f-7b4d-475a-9d26-a5319050b0bb",
+      "category": "History",
+      "answer_text": "Operation Jericho",
+      "blind": {
+        "response": "Operation Jericho",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Operation Jericho",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "fead433f-d2bb-4870-b753-7ccb8a76730e",
+      "category": "Law & Acts",
+      "answer_text": "The Collector",
+      "blind": {
+        "response": "The State Government",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "The State Government",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "bf2b80a8-1a73-4393-b3f6-b688d2fbd2dd",
+      "category": "General Knowledge",
+      "answer_text": "Kingkawt",
+      "blind": {
+        "response": "Chupih",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Zenghgong",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f320f387-6dd3-4a99-9d54-4c7a0e0e9e7d",
+      "category": "History",
+      "answer_text": "L.O.Clarke",
+      "blind": {
+        "response": "John Shakespear",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Major John Shakespear",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "69bf537a-8a88-4ad7-b2de-c25057e309cd",
+      "category": "Law & Acts",
+      "answer_text": "Government officers, Village Council, Local Council, Village Defence Party",
+      "blind": {
+        "response": "Financial Intelligence Unit (FIU-IND)",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Every Officer of the Government and every Village Council Court",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a00a790e-f8de-41b5-afd4-f06907fd3408",
+      "category": "General Knowledge",
+      "answer_text": "Zawlbuk",
+      "blind": {
+        "response": "Gunpowder manufacture",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "A traditional hairstyle for men",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "f7d9cd03-b412-4c82-8380-6258782b4bf6",
+      "category": "General Knowledge",
+      "answer_text": "Lemlawi",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Since the multiple-choice options are not provided in your question, the correct answer is typically **Lemlawi** (which is a Mizo musical instrument, but depending on the specific options of the 2019 exam, a non-Mizo instrument like **Sitar**, **Fl",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a93c1208-48e1-4a8c-9f95-fdc1d857dfd9",
+      "category": "General Knowledge",
+      "answer_text": "Divorce women",
+      "blind": {
+        "response": "a traditional Kashmiri kitchen stove",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "A state of extreme fear or terror",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "72512444-c9e9-42c5-8dbe-cf1d145402af",
+      "category": "Geography",
+      "answer_text": "Falkland Park",
+      "blind": {
+        "response": "Mizoram State Sports Academy, Kawnpui",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Chaltlang Lily Veng Recreation Park",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "cf65086c-ccb9-4e09-b4cf-36010291d4f3",
+      "category": "Geography",
+      "answer_text": "Tlawng",
+      "blind": {
+        "response": "Tlawng River",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Tlawng River",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "26b5f557-e4b8-4b7d-b7aa-dd00e7f4d9bf",
+      "category": "General Knowledge",
+      "answer_text": "Mizoram",
+      "blind": {
+        "response": "Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "83c9ef87-e075-49e4-bb92-afcb02883c53",
+      "category": "Culture & Literature",
+      "answer_text": "Ralte Ni",
+      "blind": {
+        "response": "Bah-vai-puan-phet",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lusei Ni",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "395dbe48-0e42-4735-ad90-1731596db452",
+      "category": "Law & Acts",
+      "answer_text": "No, appeals are not permitted",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "0b8a9da4-24f3-48b5-95ce-93ada31c7445",
+      "category": "General Knowledge",
+      "answer_text": "Bawbel, Awkpaka, Thing nawi",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "b432e201-8efd-435a-9f85-ac1dd100eb48",
+      "category": "History",
+      "answer_text": "The existing Union territory of Mizoram",
+      "blind": {
+        "response": "the Union territory of Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "the Union territory of Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "5733448f-0e35-4f54-8d3a-03b9eae4eb87",
+      "category": "Geography",
+      "answer_text": "52 persqkm",
+      "blind": {
+        "response": "52 per square kilometer",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "52 persons per sq km",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "8f7b1beb-12cb-4cc8-8787-bee18d872395",
+      "category": "Law & Acts",
+      "answer_text": "1 year",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "8e1f87d8-aad3-4bc5-811c-319b2a493ba4",
+      "category": "Culture & Literature",
+      "answer_text": "Hmuichukchuriduni",
+      "blind": {
+        "response": "a crab",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Crab",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "06f270a8-2d62-4ec4-8981-ab49a38a4fc7",
+      "category": "History",
+      "answer_text": "1-d, 2-c, 3-b, 4-a",
+      "blind": {
+        "response": "1. - d., 2. - c., 3. - a., 4. - b.",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "1. d, 2. b, 3. a, 4. c",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "aa862300-d819-4be4-a1ba-4d5f0a6ec03f",
+      "category": "Law & Acts",
+      "answer_text": "Mantang",
+      "blind": {
+        "response": "Bride price",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Bride price",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "75af5f0f-8086-4926-8469-da4a5ff7c23e",
+      "category": "History",
+      "answer_text": "Kamliana",
+      "blind": {
+        "response": "King Agyeman Prempeh I",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "King Ovonramwen",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "207ad54b-e4d1-41cf-a2f3-caf6144ee665",
+      "category": "General Knowledge",
+      "answer_text": "All the four",
+      "blind": {
+        "response": "(i) Hlam - Sei zawng",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "(i) Hlam - Sei zawng",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "d3efad19-3f33-4776-8f60-e66f88851682",
+      "category": "Geography",
+      "answer_text": "185",
+      "blind": {
+        "response": "185",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "185",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "e97762a2-4daa-4705-9913-9f90e9949950",
+      "category": "Law & Acts",
+      "answer_text": "The member’s term also ceases",
+      "blind": {
+        "response": "He shall also cease to hold office",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "He shall cease to hold office",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "ea07fd7b-ee31-4c43-a9b1-ef3348194b2c",
+      "category": "General Knowledge",
+      "answer_text": "Khuangchawi thla",
+      "blind": {
+        "response": "Pawltlak",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Pawltlak thla",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "33a12f1e-5a41-4ea1-b426-2a2f73becced",
+      "category": "Culture & Literature",
+      "answer_text": "Tibeto- Burman",
+      "blind": {
+        "response": "Tibeto-Burman family of languages",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Tibeto-Burman family of languages",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "8f7e3767-c80a-443a-8cae-e38395cf895d",
+      "category": "History",
+      "answer_text": "Biate Sipai",
+      "blind": {
+        "response": "V Force",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "V Force",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "0eb3b882-1aa3-4f07-bdb9-d1f64e2711cd",
+      "category": "Polity & Governance",
+      "answer_text": "371G",
+      "blind": {
+        "response": "Article 371G",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Article 371G",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "7994dd52-f429-479e-b799-8a11e084ec13",
+      "category": "Geography",
+      "answer_text": "One Head Assistant and one Accountant",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "One Head Assistant and one Accountant",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "b43c3d27-16bf-4e26-91e2-2cb7b231ebcc",
+      "category": "Geography",
+      "answer_text": "60MW",
+      "blind": {
+        "response": "60 MW",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "60 MW",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "835fe8b4-a6fb-4d7a-99bd-0f639dfd3ebb",
+      "category": "General Knowledge",
+      "answer_text": "Through income generation and employment opportunities derived directly from ecotourism activities",
+      "blind": {
+        "response": "Through employment and income generation opportunities",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Through employment and income generation opportunities",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "8825f5f2-4f21-4c52-a93a-b173c2cc1171",
+      "category": "General Knowledge",
+      "answer_text": "Fano Dawi",
+      "blind": {
+        "response": "Kawngpui siam",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Kawngpui siam",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "dea8d87d-3bc8-4d9f-b161-5cf2370d326d",
+      "category": "Culture & Literature",
+      "answer_text": "Mauruangi",
+      "blind": {
+        "response": "the creation of stars",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Wild cucumber",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "b1f794ae-fb29-48a2-8e96-6ef393379619",
+      "category": "Economy & Agriculture",
+      "answer_text": "Rs 750 crore",
+      "blind": {
+        "response": "Rs 1,000 crore",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Rs 1,000 crore",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "8bb06181-b252-49a9-aa02-eb5c6cee7320",
+      "category": "Law & Acts",
+      "answer_text": "Six",
+      "blind": {
+        "response": "appointed by the Governor on the recommendation of a Search Committee",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "appointed by the State Government",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "8cdd1d4b-bd3f-48f9-b9e5-825d351d28dc",
+      "category": "Geography",
+      "answer_text": "NH-154",
+      "blind": {
+        "response": "NH 54",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "NH 54",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "dc3a5709-da51-430a-93d5-85d2c5658ab4",
+      "category": "Culture & Literature",
+      "answer_text": "Tibeto-Burman",
+      "blind": {
+        "response": "Tibeto-Burman family of languages",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Tibeto-Burman family of languages",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "4c0a4e1e-946f-40e9-9778-66ba25cf03a2",
+      "category": "Law & Acts",
+      "answer_text": "Control of village grazing grounds",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "5df2f646-4199-4941-bb6e-3aa570c2c5a7",
+      "category": "History",
+      "answer_text": "Major J. Shakespeare",
+      "blind": {
+        "response": "J. Shakespear",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Major J. Shakespear",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "931b56ef-580d-4944-8fdc-71a1aa6ddd93",
+      "category": "General Knowledge",
+      "answer_text": "Eight",
+      "blind": {
+        "response": "11",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "8",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "0da8f31d-c636-4079-9de5-718a07f96d96",
+      "category": "General Knowledge",
+      "answer_text": "Lalhmingthanga",
+      "blind": {
+        "response": "C. Lalsawta",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "C. Lalsawta",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a84d9ed1-a248-4d0f-a1e2-71d8add87341",
+      "category": "General Knowledge",
+      "answer_text": "Hrangchhawni zai",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "813e0c0e-bdef-4509-a6db-7f52ce85d8e7",
+      "category": "General Knowledge",
+      "answer_text": "Tortoise",
+      "blind": {
+        "response": "pillar",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "pillar",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "371ebe6a-3047-4622-9d68-be40135e4aa8",
+      "category": "General Knowledge",
+      "answer_text": "Zoram Medical College",
+      "blind": {
+        "response": "Dr. B.R. Ambedkar State Institute of Medical Sciences",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Zoram Medical College",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "ca9d5b8b-4b3b-4032-8888-fa987239eaa2",
+      "category": "General Knowledge",
+      "answer_text": "Kuhva hring",
+      "blind": {
+        "response": "Kuva luh",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Kuva",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "9d4d552f-f545-4366-9428-99ff023b861e",
+      "category": "History",
+      "answer_text": "1861-1862",
+      "blind": {
+        "response": "1862",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "1862",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e119ab71-1b8d-43eb-ae62-b478acfc3948",
+      "category": "Geography",
+      "answer_text": "Assam, Manipur and Tripura",
+      "blind": {
+        "response": "Tripura, Assam and Manipur",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Assam, Manipur and Tripura",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "bd5687f1-ea25-4080-9920-ad00807dceff",
+      "category": "History",
+      "answer_text": "Chemsen bawih",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "da5a85b4-19fb-47e2-a5a9-5a8802ca2169",
+      "category": "Law & Acts",
+      "answer_text": "Constables to Head Constables/Havildars",
+      "blind": {
+        "response": "Constables and Head Constables",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Constables and Head Constables",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "faa38f14-38b7-4096-8857-65e829bda39c",
+      "category": "Economy & Agriculture",
+      "answer_text": "Environment, Forests and Climate Change Department",
+      "blind": {
+        "response": "Environment, Forests and Climate Change Department",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Environment, Forests & Climate Change Department",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "860911a0-dd34-4782-8df1-36c95c5f74ea",
+      "category": "Law & Acts",
+      "answer_text": "Excise Commissioner",
+      "blind": {
+        "response": "Excise Commissioner",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Excise Commissioner",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "41667786-1c4a-46b2-8715-eee3f348f95c",
+      "category": "Law & Acts",
+      "answer_text": "Section 16",
+      "blind": {
+        "response": "Rule 18 of Schedule II of the Income Tax Act, 1961",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Rule 22 of the Bengal Public Demands Recovery Act, 1913",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "5ccdee63-471c-4fd0-9234-c21714abc056",
+      "category": "General Knowledge",
+      "answer_text": "Vakiria",
+      "blind": {
+        "response": "Sinthi",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Thihna",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "ade76c6c-b32b-40b2-9a2a-85727321772a",
+      "category": "Law & Acts",
+      "answer_text": "A warrant after execution may not be returned to the issuing court.",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "7eb62982-95bc-4522-af2a-3c80104b9456",
+      "category": "General Knowledge",
+      "answer_text": "Hnawhtawt",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "1cf5f026-7abe-45f7-830e-d8d12f662b0d",
+      "category": "Geography",
+      "answer_text": "26ºC",
+      "blind": {
+        "response": "26 ºC",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "26.0 ºC",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "301dadae-0eec-4454-93c0-ad0298c3dd24",
+      "category": "Geography",
+      "answer_text": "Past Perfect Tense",
+      "blind": {
+        "response": "Past Perfect Tense",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Past Perfect Tense",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "75bdc7b9-355d-4677-8a2b-8b6a2975869f",
+      "category": "History",
+      "answer_text": "Lalveng",
+      "blind": {
+        "response": "Lal In",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Lal In",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "b47ab81a-b72f-4b0b-b8c9-c333c9532cfc",
+      "category": "History",
+      "answer_text": "Prof. Joy Lalkrawspari Pachuau",
+      "blind": {
+        "response": "Joy L. K. Pachuau and Willem van Schendel",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Joy L. K. Pachuau and Willem van Schendel",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "278bd7dc-ea0d-436d-bfc7-337685ca1e86",
+      "category": "History",
+      "answer_text": "2100",
+      "blind": {
+        "response": "2100",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "2100",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "c4192125-0b11-4ade-b4cb-108bbf5b080b",
+      "category": "Economy & Agriculture",
+      "answer_text": "2.8%",
+      "blind": {
+        "response": "Around 2.8 per cent",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Around 2.8 per cent",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "215c23ce-c34a-4607-b2bd-750ad2e9e9b1",
+      "category": "General Knowledge",
+      "answer_text": "Tin zu",
+      "blind": {
+        "response": "A type of tooth",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Zupui",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "75efaa39-43e5-4e5f-b882-d78c1546f6cc",
+      "category": "General Knowledge",
+      "answer_text": "11111 kg",
+      "blind": {
+        "response": "11111.11 kg",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "11,111.11 kg",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "9cb2f640-f1f9-4795-8d96-b276adcaa771",
+      "category": "Polity & Governance",
+      "answer_text": "Any Scheduled bank",
+      "blind": {
+        "response": "In a scheduled bank",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "In a nationalized bank or a cooperative bank approved by the Government",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "13839705-8e38-43f1-b11b-29a064317eb2",
+      "category": "Law & Acts",
+      "answer_text": "Dhyan Chand Award",
+      "blind": {
+        "response": "Dhyan Chand Award",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "b336a3bd-1148-42ba-8a1e-735b37ecba5b",
+      "category": "History",
+      "answer_text": "RA Lorrain",
+      "blind": {
+        "response": "Reginald Arthur Lorrain",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Reginald Arthur Lorrain",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "780b6e0b-b809-40b7-86a0-ea28b8f8514f",
+      "category": "Polity & Governance",
+      "answer_text": "Mizoram",
+      "blind": {
+        "response": "State of Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "ddbe1c22-4950-4f31-a883-cb574d542ab5",
+      "category": "Culture & Literature",
+      "answer_text": "Ritual dance",
+      "blind": {
+        "response": "Bamboo dance",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Bamboo dance",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "855eaa50-6663-4b9e-91d9-ad473c88a933",
+      "category": "General Knowledge",
+      "answer_text": "Mizoram Apex Sericulture Co-operative Society Ltd.",
+      "blind": {
+        "response": "Marine Accident Safety Coalition of States",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Manpower and Social Cohort Study",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "8e172445-9444-4034-bba8-36efdeaac862",
+      "category": "Culture & Literature",
+      "answer_text": "The great rely on the support of the humble",
+      "blind": {
+        "response": "Even the great need the help of the small",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Even the great need the help of the small",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "06ae8890-cd55-4420-8b04-03210d3b843a",
+      "category": "Geography",
+      "answer_text": "Dungtlang Village",
+      "blind": {
+        "response": "Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Vanzau, Champhai district",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "4b788939-4cac-4932-9076-aaa4a3cf3a37",
+      "category": "Law & Acts",
+      "answer_text": "State Government",
+      "blind": {
+        "response": "Chief Commissioner",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "State Government",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "3483d8e6-9f11-4887-a9fd-d0537b9e2554",
+      "category": "Polity & Governance",
+      "answer_text": "Assam, Meghalaya, Tripura and Mizoram",
+      "blind": {
+        "response": "Assam, Meghalaya, Tripura and Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Assam, Meghalaya, Tripura and Mizoram",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "9385ae2a-a581-46ec-b2d2-7d0e53f5437a",
+      "category": "General Knowledge",
+      "answer_text": "Ramhbual",
+      "blind": {
+        "response": "Ram-hual",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Ram-hual",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e0f1e6b7-212e-4174-8b3a-01d3d56936c5",
+      "category": "General Knowledge",
+      "answer_text": "Tourist Lodges",
+      "blind": {
+        "response": "Tourist Lodges",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Tourist Lodges",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "b8d81430-54c5-4d75-b6e9-144f62930838",
+      "category": "History",
+      "answer_text": "Vangchhia",
+      "blind": {
+        "response": "Vangchhia",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Vangchhia",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "689c919b-d0f6-46b7-a3a0-f51bde52a315",
+      "category": "Law & Acts",
+      "answer_text": "Not later than forty days",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "within 30 days",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "b0a0ae2a-ac2e-41cd-944d-fd6668483c80",
+      "category": "History",
+      "answer_text": "Lasi",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "dbe9733a-60c8-46ae-823d-b667fc78d91b",
+      "category": "General Knowledge",
+      "answer_text": "The youngest son",
+      "blind": {
+        "response": "the youngest son",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "The youngest son",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "df6cf07a-850b-4993-87bb-644fcfbf585a",
+      "category": "History",
+      "answer_text": "MHIP (Mizo Hmeichhe Insuihkhawm Pawl)",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Young Mizo Association",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "42f0bf22-5bda-4586-a1dd-7ade885b379a",
+      "category": "Law & Acts",
+      "answer_text": "Notified Forest Reserves.",
+      "blind": {
+        "response": "Minerals and mineral oils",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "benefits of land revenue",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "243b7e4d-98bc-48ba-8490-b02119acb42d",
+      "category": "History",
+      "answer_text": "Oversees elections and can dissolve Village Councils if necessary",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "3900203f-036e-4614-b329-5a46d27f9692",
+      "category": "Polity & Governance",
+      "answer_text": "371 G",
+      "blind": {
+        "response": "Article 371G",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Article 371G",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "ff373bee-3681-4d1a-9812-47924dd202ef",
+      "category": "Polity & Governance",
+      "answer_text": "Kummanam Rajasekharan",
+      "blind": {
+        "response": "Kambhampati Hari Babu",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Hari Babu Kambhampati",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "e1efd643-f08c-4f84-b042-d9b6ce9cfd00",
+      "category": "Culture & Literature",
+      "answer_text": "Phungpui nu hi sial anga kaih hawn a tum",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "356a1df6-9235-412b-acc5-3f4e4d5eb841",
+      "category": "General Knowledge",
+      "answer_text": "Rakzu",
+      "blind": {
+        "response": "Zawlaidi",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Tuffah",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "428bb297-cd25-4f4a-b17a-d3c9717666d9",
+      "category": "General Knowledge",
+      "answer_text": "upas",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Since the specific options from the exam question are not provided, I cannot determine which of the choices was \"not a village official.\" \n\nUNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "acdbc3ce-0f05-4175-90a8-21541b7c25ca",
+      "category": "Geography",
+      "answer_text": "The tribal desire for political autonomy and their quest for economic development.",
+      "blind": {
+        "response": "The need to protect the distinct identity, culture, and land rights of the tribal populations in the North-Eastern region, while ensuring their political autonomy and self-governance within the Indian Union.",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "97738c50-c026-4179-a2f8-a62ba56ce036",
+      "category": "General Knowledge",
+      "answer_text": "October 19",
+      "blind": {
+        "response": "June 11",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "June 11",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "5f1734d9-cc7d-4b36-b5ae-ef9bbfb64615",
+      "category": "Law & Acts",
+      "answer_text": "Imprisonment up to 6 months or fine up to 5,000 or both",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Imprisonment for a term which may extend to one year or with fine which may extend to ten thousand rupees, or with both.",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "9bd6eca1-6055-42c7-967c-6001e9a89539",
+      "category": "General Knowledge",
+      "answer_text": "Chumchi",
+      "blind": {
+        "response": "Tingote",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Tingtang",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "55cb7849-60eb-4147-9584-882568083e62",
+      "category": "General Knowledge",
+      "answer_text": "Lengpui",
+      "blind": {
+        "response": "Vanzau",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Hlimen",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "a1c455e6-f530-47c4-8243-dce150ccc795",
+      "category": "General Knowledge",
+      "answer_text": "arte hring ban",
+      "blind": {
+        "response": "Anileptee",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Hmeichhiat-chep",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "2e45ec96-12e0-43a5-9526-193badf50b19",
+      "category": "History",
+      "answer_text": "Ngunlianchunga",
+      "blind": {
+        "response": "V. Zirsanga",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "V. Lalthlangzuala",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "17f07006-6d56-408c-8ab4-5d6a1de2f6c0",
+      "category": "History",
+      "answer_text": "2nd April 1894",
+      "blind": {
+        "response": "2nd April, 1894",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "April 2, 1894",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "7dc5e0d1-e344-4243-a08f-f30801c864e1",
+      "category": "Law & Acts",
+      "answer_text": "Liquor",
+      "blind": {
+        "response": "\"Value\"",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "d4ba73e8-afbb-4394-871a-06b7603045af",
+      "category": "General Knowledge",
+      "answer_text": "Thimkual",
+      "blind": {
+        "response": "Karna",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "da8f4ec7-ca93-4ee9-90ce-77a70775bb29",
+      "category": "Law & Acts",
+      "answer_text": "Her children and legal heirs irrespective of gender",
+      "blind": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "UNKNOWN",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    },
+    {
+      "id": "8e694fd1-06de-437e-81b3-db03fcc712fd",
+      "category": "Culture & Literature",
+      "answer_text": "valupa",
+      "blind": {
+        "response": "Valupa",
+        "cached": false,
+        "error": null,
+        "hit": true
+      },
+      "guided": {
+        "response": "Valupa",
+        "cached": false,
+        "error": null,
+        "hit": true
+      }
+    },
+    {
+      "id": "1092d9cd-daa4-42db-a673-4cb55cd3b739",
+      "category": "General Knowledge",
+      "answer_text": "at the blacksmith’s (pum)",
+      "blind": {
+        "response": "Zawlbuk",
+        "cached": false,
+        "error": null,
+        "hit": false
+      },
+      "guided": {
+        "response": "Zawlbuk",
+        "cached": false,
+        "error": null,
+        "hit": false
+      }
+    }
+  ],
+  "summary": {
+    "n": 300,
+    "blind_recall": 0.26,
+    "blind_recall_ci": [
+      0.2136,
+      0.3124
+    ],
+    "guided_recall": 0.27,
+    "guided_recall_ci": [
+      0.2229,
+      0.3229
+    ],
+    "guided_minus_blind": 0.01
+  }
+}
