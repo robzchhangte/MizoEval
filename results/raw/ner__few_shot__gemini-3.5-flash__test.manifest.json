@@ -1,0 +1,58 @@
+{
+  "run_key": "ner__few_shot__gemini-3.5-flash__test",
+  "task": "ner",
+  "regime": "few_shot",
+  "model_name": "gemini-3.5-flash",
+  "model_id": "gemini-3.5-flash",
+  "provider": "google",
+  "params": {
+    "temperature": 0,
+    "max_tokens": 1024
+  },
+  "template_id": "ner/few_shot/v1",
+  "template_hash": "47886b287bc4c475",
+  "template_system": "You extract named entities from Mizo (Lushai) news sentences. Return only entities that are explicitly present in the text.",
+  "seed": 20260907,
+  "n_items": 447,
+  "n_api_errors": 0,
+  "cache_hits": 1,
+  "live_calls": 446,
+  "cost_usd": 0.156023,
+  "prompt_tokens": 293160,
+  "completion_tokens": 27331,
+  "started_utc": "2026-09-09T12:12:45.735244+00:00",
+  "finished_utc": "2026-09-09T12:22:53.081036+00:00",
+  "summary": {
+    "micro_f1": 0.26028921023359286,
+    "macro_f1": 0.2549690931974288,
+    "parse_failure_rate": 0.0022371364653243847,
+    "n": 447
+  },
+  "keypool": null,
+  "token_budget": {
+    "cap": 691174,
+    "spent": 319839,
+    "spent_prompt": 292534,
+    "spent_completion": 27305,
+    "remaining": 371335,
+    "live_calls": 446,
+    "fraction_used": 0.4627
+  },
+  "budget_stopped": false,
+  "cli": {
+    "task": "ner",
+    "regime": "few_shot",
+    "model": "gemini-3.5-flash",
+    "direction": null,
+    "mcq_subset": "mcq4",
+    "permuted": false,
+    "ner_split": "test",
+    "docsplit": false,
+    "limit": 0,
+    "temperature": null,
+    "no_cache": false,
+    "cache": "results\\cache.sqlite",
+    "token_budget": 691174,
+    "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
+  }
+}

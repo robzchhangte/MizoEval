@@ -153,5 +153,55 @@
     "status": "ok",
     "budget_stopped": false,
     "at": "2026-09-09T10:04:05.716815+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-oss-120b --mcq-subset mcq4 --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T11:52:50.348082+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-oss-120b --mcq-subset mcq4 --permuted --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T12:44:41.107029+00:00"
+  },
+  "--task mcq --regime five_shot --model gpt-oss-120b --mcq-subset mcq4 --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T13:38:33.275822+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-oss-120b --mcq-subset all --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T13:51:34.564755+00:00"
+  },
+  "--task sentiment --regime zero_shot --model gpt-oss-120b --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T14:18:23.209730+00:00"
+  },
+  "--task sentiment --regime five_shot --model gpt-oss-120b --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T14:42:33.707881+00:00"
+  },
+  "--task ner --regime few_shot --model gpt-oss-120b --ner-split test --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T15:00:10.617729+00:00"
+  },
+  "--task ner --regime few_shot --model gpt-oss-120b --ner-split test --docsplit --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T15:17:29.928136+00:00"
+  },
+  "--task mcq --regime cot --model gpt-oss-120b --mcq-subset mcq4 --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T16:16:42.550629+00:00"
+  },
+  "--task mcq --regime cot --model gpt-oss-120b --mcq-subset mcq4 --permuted --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T17:13:32.655963+00:00"
   }
 }
