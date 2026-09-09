@@ -75,10 +75,11 @@ models:
 
   - name: gpt-oss-120b
     provider: ollama_cloud
-    model_id: "gpt-oss:120b"          # CONFIRM exact cloud tag
+    model_id: "gpt-oss:120b"          # verified on Ollama Cloud 2026-09-09 (free tier)
     price_in: 0.0
     price_out: 0.0
-    enabled: false
+    enabled: true                    # reasoning model; the ollama_cloud provider
+                                     # floors num_predict so short answers parse
 
   - name: qwen3
     provider: ollama_cloud

@@ -225,6 +225,10 @@ class OllamaCloudProvider(Provider):
 
     name = "ollama_cloud"
 
+    # num_predict floor -- reasoning models need room for a hidden reasoning
+    # pass plus the answer; a ceiling costs nothing for models that stop at EOS.
+    _MIN_NUM_PREDICT = 512
+
     # Substrings that mean "this key is out of quota", not "the request was bad".
     _EXHAUSTED_MARKERS = (
         "rate limit", "ratelimit", "too many requests", "quota", "exhaust",
@@ -280,7 +284,12 @@ class OllamaCloudProvider(Provider):
         if params.get("temperature") is not None:
             options["temperature"] = params["temperature"]
         if params.get("max_tokens") is not None:
-            options["num_predict"] = params["max_tokens"]
+            # Reasoning models on Ollama Cloud (gpt-oss, deepseek-r1) burn part of
+            # num_predict on an internal reasoning pass before emitting any
+            # visible content, and this client build has no `think: false`
+            # switch. A tight cap (MCQ passes 16) then yields empty content, so
+            # floor num_predict at a level that leaves room for a short answer.
+            options["num_predict"] = max(int(params["max_tokens"]), self._MIN_NUM_PREDICT)
         payload = [{"role": m.role, "content": m.content} for m in messages]
 
         attempts = 0
