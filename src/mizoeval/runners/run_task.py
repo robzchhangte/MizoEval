@@ -202,6 +202,8 @@ def _run_key(args: argparse.Namespace) -> str:
         parts.append(args.direction or "nodir")
     if args.task == "ner":
         parts.append(("docsplit-" if args.docsplit else "") + args.ner_split)
+    if args.task == "mcq" and getattr(args, "mcq_subset", "mcq4") not in ("mcq4", None):
+        parts.append(args.mcq_subset)  # keep the headline mcq4 set as the bare name
     if args.task == "mcq" and args.permuted:
         parts.append("permuted")
     if args.limit:

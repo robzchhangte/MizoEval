@@ -28,5 +28,20 @@
     "status": "ok",
     "budget_stopped": false,
     "at": "2026-09-08T01:31:08.622507+00:00"
+  },
+  "--task mcq --regime zero_shot --model gemini-3.5-flash --mcq-subset mcq4 --token-budget 500000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T02:44:20.051665+00:00"
+  },
+  "--task mcq --regime zero_shot --model gemini-3.5-flash --mcq-subset mcq4 --permuted --token-budget 398152": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T03:15:33.975143+00:00"
+  },
+  "--task mcq --regime five_shot --model gemini-3.5-flash --mcq-subset mcq4 --token-budget 210174": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T03:48:57.674532+00:00"
   }
 }

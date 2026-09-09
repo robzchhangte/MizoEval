@@ -93,6 +93,18 @@ def test_failed_calls_are_not_cached(tmp_path):
     assert Flaky.calls == 2  # second call was retried, not served from cache
 
 
+def test_mcq_subset_does_not_collide_in_the_output_key(tmp_path):
+    """mcq4 and `all` are different runs -- one must not overwrite the other."""
+    common = ["--task", "mcq", "--regime", "zero_shot", "--model", "mock",
+              "--limit", "6", "--out-dir", str(tmp_path), "--cache", str(tmp_path / "c.sqlite")]
+    m4 = run_task.main(common + ["--mcq-subset", "mcq4"])
+    m_all = run_task.main(common + ["--mcq-subset", "all"])
+    assert m4["run_key"] != m_all["run_key"]
+    assert "__all" not in m4["run_key"]      # headline set keeps the bare name
+    assert m_all["run_key"] == m4["run_key"].replace("__limit", "__all__limit")
+    assert len(list(tmp_path.glob("mcq__zero_shot__mock*.jsonl"))) == 2
+
+
 def test_roster_every_enabled_entry_has_a_known_provider():
     from mizoeval.models.providers import PROVIDERS
 
