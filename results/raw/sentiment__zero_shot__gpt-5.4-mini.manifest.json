@@ -15,13 +15,13 @@
   "seed": 20260907,
   "n_items": 1150,
   "n_api_errors": 0,
-  "cache_hits": 32,
-  "live_calls": 1118,
-  "cost_usd": 0.034305,
+  "cache_hits": 1150,
+  "live_calls": 0,
+  "cost_usd": 0.0,
   "prompt_tokens": 99382,
   "completion_tokens": 5212,
-  "started_utc": "2026-09-08T01:04:13.364274+00:00",
-  "finished_utc": "2026-09-08T01:18:45.463728+00:00",
+  "started_utc": "2026-09-09T08:50:49.219233+00:00",
+  "finished_utc": "2026-09-09T08:50:49.895897+00:00",
   "summary": {
     "macro_f1": 0.5683409436834094,
     "accuracy": 0.6904347826086956,
@@ -30,13 +30,13 @@
   },
   "keypool": null,
   "token_budget": {
-    "cap": 385804,
-    "spent": 101758,
-    "spent_prompt": 96692,
-    "spent_completion": 5066,
-    "remaining": 284046,
-    "live_calls": 1118,
-    "fraction_used": 0.2638
+    "cap": 159343,
+    "spent": 0,
+    "spent_prompt": 0,
+    "spent_completion": 0,
+    "remaining": 159343,
+    "live_calls": 0,
+    "fraction_used": 0.0
   },
   "budget_stopped": false,
   "cli": {
@@ -51,8 +51,8 @@
     "limit": 0,
     "temperature": null,
     "no_cache": false,
-    "cache": null,
-    "token_budget": 385804,
+    "cache": "results\\cache.sqlite",
+    "token_budget": 159343,
     "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
   }
 }
