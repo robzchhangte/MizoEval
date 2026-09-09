@@ -125,9 +125,16 @@ class GoogleProvider(Provider):
         self.genai = genai
         self.client = self._make_client(api_key)
 
+    # Without this the SDK's HTTP call can block forever on a dropped
+    # connection -- a single hung request stalls a whole matrix run.
+    _TIMEOUT_MS = 120_000
+
     def _make_client(self, api_key: str | None):
+        from google.genai import types as _types
+
         return self.genai.Client(
-            api_key=api_key or os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY")
+            api_key=api_key or os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY"),
+            http_options=_types.HttpOptions(timeout=self._TIMEOUT_MS),
         )
 
     def complete(self, model: str, messages: list[Message], **params: Any) -> Response:
@@ -194,10 +201,13 @@ class VertexProvider(GoogleProvider):
                 "VertexProvider needs GOOGLE_CLOUD_PROJECT set, plus "
                 "`gcloud auth application-default login` completed."
             )
+        from google.genai import types as _types
+
         return self.genai.Client(
             vertexai=True,
             project=project,
             location=os.environ.get("GOOGLE_CLOUD_LOCATION", "us-central1"),
+            http_options=_types.HttpOptions(timeout=self._TIMEOUT_MS),
         )
 
 
