@@ -13,43 +13,43 @@
   "template_hash": "1a44eaa5634889c5",
   "template_system": "You are a professional translator working between English and Mizo (Lushai, ISO 639-3 lus), the language of Mizoram, northeast India.",
   "seed": 20260907,
-  "n_items": 1014,
+  "n_items": 3000,
   "n_api_errors": 0,
-  "cache_hits": 20,
-  "live_calls": 994,
-  "cost_usd": 0.109576,
-  "prompt_tokens": 131387,
-  "completion_tokens": 39306,
-  "started_utc": "2026-09-09T10:04:05.750709+00:00",
-  "finished_utc": "2026-09-09T10:22:35.808924+00:00",
+  "cache_hits": 1018,
+  "live_calls": 1982,
+  "cost_usd": 0.215335,
+  "prompt_tokens": 387144,
+  "completion_tokens": 115206,
+  "started_utc": "2026-09-09T17:52:50.644145+00:00",
+  "finished_utc": "2026-09-09T18:31:23.514789+00:00",
   "summary": {
     "scripture": {
-      "chrf": 45.52396614661057,
-      "bleu": 24.25250267435478,
-      "n": 454
+      "chrf": 44.99154915121192,
+      "bleu": 23.78291907631485,
+      "n": 1373
     },
     "religious": {
-      "chrf": 47.62319405623392,
-      "bleu": 27.93542820335461,
-      "n": 284
+      "chrf": 46.71736359235839,
+      "bleu": 26.569966969359392,
+      "n": 818
     },
     "secular": {
-      "chrf": 37.51998178068127,
-      "bleu": 17.25462306341447,
-      "n": 276
+      "chrf": 35.00024337786502,
+      "bleu": 16.093430771459413,
+      "n": 809
     }
   },
   "keypool": null,
   "token_budget": {
-    "cap": 167598,
-    "spent": 167696,
-    "spent_prompt": 129038,
-    "spent_completion": 38658,
-    "remaining": 0,
-    "live_calls": 994,
-    "fraction_used": 1.0006
+    "cap": 500000,
+    "spent": 331033,
+    "spent_prompt": 255275,
+    "spent_completion": 75758,
+    "remaining": 168967,
+    "live_calls": 1982,
+    "fraction_used": 0.6621
   },
-  "budget_stopped": true,
+  "budget_stopped": false,
   "cli": {
     "task": "mt",
     "regime": "zero_shot",
@@ -63,7 +63,7 @@
     "temperature": null,
     "no_cache": false,
     "cache": "results\\cache.sqlite",
-    "token_budget": 167598,
+    "token_budget": 500000,
     "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
   }
 }

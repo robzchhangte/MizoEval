@@ -203,5 +203,20 @@
     "status": "ok",
     "budget_stopped": false,
     "at": "2026-09-09T17:13:32.655963+00:00"
+  },
+  "--task mt --regime zero_shot --model gpt-oss-120b --direction mz2en --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T19:37:05.176713+00:00"
+  },
+  "--task mt --regime zero_shot --model gpt-oss-120b --direction en2mz --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-09T22:07:40.306429+00:00"
+  },
+  "--task mt --regime five_shot --model gpt-oss-120b --direction mz2en --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-10T01:02:04.397959+00:00"
   }
 }
