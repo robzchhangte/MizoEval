@@ -1,0 +1,69 @@
+{
+  "run_key": "mt__zero_shot__gemini-3.5-flash__en2mz",
+  "task": "mt",
+  "regime": "zero_shot",
+  "model_name": "gemini-3.5-flash",
+  "model_id": "gemini-3.5-flash",
+  "provider": "google",
+  "params": {
+    "temperature": 0,
+    "max_tokens": 1024
+  },
+  "template_id": "mt/zero_shot/v1",
+  "template_hash": "1a44eaa5634889c5",
+  "template_system": "You are a professional translator working between English and Mizo (Lushai, ISO 639-3 lus), the language of Mizoram, northeast India.",
+  "seed": 20260907,
+  "n_items": 3000,
+  "n_api_errors": 0,
+  "cache_hits": 2720,
+  "live_calls": 280,
+  "cost_usd": 0.047284,
+  "prompt_tokens": 300130,
+  "completion_tokens": 179076,
+  "started_utc": "2026-09-10T17:25:42.047214+00:00",
+  "finished_utc": "2026-09-10T17:33:34.170494+00:00",
+  "summary": {
+    "scripture": {
+      "chrf": 48.12773980338467,
+      "bleu": 21.1203993653748,
+      "n": 1373
+    },
+    "religious": {
+      "chrf": 47.602393407884044,
+      "bleu": 23.333709973301318,
+      "n": 818
+    },
+    "secular": {
+      "chrf": 38.5103528144517,
+      "bleu": 16.56271094990123,
+      "n": 809
+    }
+  },
+  "keypool": null,
+  "token_budget": {
+    "cap": 487726,
+    "spent": 43000,
+    "spent_prompt": 27371,
+    "spent_completion": 15629,
+    "remaining": 444726,
+    "live_calls": 278,
+    "fraction_used": 0.0882
+  },
+  "budget_stopped": false,
+  "cli": {
+    "task": "mt",
+    "regime": "zero_shot",
+    "model": "gemini-3.5-flash",
+    "direction": "en2mz",
+    "mcq_subset": "mcq4",
+    "permuted": false,
+    "ner_split": "test",
+    "docsplit": false,
+    "limit": 0,
+    "temperature": null,
+    "no_cache": false,
+    "cache": "results\\cache.sqlite",
+    "token_budget": 487726,
+    "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
+  }
+}
