@@ -333,5 +333,15 @@
     "status": "ok",
     "budget_stopped": false,
     "at": "2026-09-10T18:17:04.294647+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset mcq4 --cache results\\cache.sqlite --token-budget 180000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-11T03:07:04.887336+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset mcq4 --permuted --cache results\\cache.sqlite --token-budget 180000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-11T03:23:51.101984+00:00"
   }
 }
