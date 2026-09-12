@@ -1,0 +1,66 @@
+{
+  "run_key": "mt__zero_shot__gpt-oss-120b__en2mz",
+  "task": "mt",
+  "regime": "zero_shot",
+  "model_name": "gpt-oss-120b",
+  "model_id": "gpt-oss:120b",
+  "provider": "ollama_cloud",
+  "params": {
+    "temperature": 0,
+    "max_tokens": 1024
+  },
+  "template_id": "mt/zero_shot/v1",
+  "template_hash": "1a44eaa5634889c5",
+  "template_system": "You are a professional translator working between English and Mizo (Lushai, ISO 639-3 lus), the language of Mizoram, northeast India.",
+  "seed": 20260907,
+  "n_items": 3000,
+  "n_api_errors": 0,
+  "cache_hits": 223,
+  "live_calls": 2777,
+  "cost_usd": 0.0,
+  "prompt_tokens": 509926,
+  "completion_tokens": 1511238,
+  "started_utc": "2026-09-11T16:00:06.180634+00:00",
+  "finished_utc": "2026-09-11T18:17:46.429452+00:00",
+  "summary": {
+    "scripture": {
+      "chrf": 1.2009176547940643,
+      "bleu": 1.97058712892691e-11,
+      "n": 1373
+    },
+    "religious": {
+      "chrf": 2.3377724717085084,
+      "bleu": 6.746093231890289e-06,
+      "n": 818
+    },
+    "secular": {
+      "chrf": 2.538481425763392,
+      "bleu": 4.140081401816697e-06,
+      "n": 809
+    }
+  },
+  "keypool": {
+    "n_keys": 15,
+    "active_index": 0,
+    "cooling": [],
+    "total_rotations": 0
+  },
+  "token_budget": null,
+  "budget_stopped": false,
+  "cli": {
+    "task": "mt",
+    "regime": "zero_shot",
+    "model": "gpt-oss-120b",
+    "direction": "en2mz",
+    "mcq_subset": "mcq4",
+    "permuted": false,
+    "ner_split": "test",
+    "docsplit": false,
+    "limit": 0,
+    "temperature": null,
+    "no_cache": false,
+    "cache": "results\\cache.sqlite",
+    "token_budget": 0,
+    "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
+  }
+}

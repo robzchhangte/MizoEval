@@ -157,67 +157,67 @@
   "--task mcq --regime zero_shot --model gpt-oss-120b --mcq-subset mcq4 --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T06:08:57.209563+00:00"
+    "at": "2026-09-11T13:44:53.386505+00:00"
   },
   "--task mcq --regime zero_shot --model gpt-oss-120b --mcq-subset mcq4 --permuted --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T06:19:15.971691+00:00"
+    "at": "2026-09-11T13:48:31.524616+00:00"
   },
   "--task mcq --regime five_shot --model gpt-oss-120b --mcq-subset mcq4 --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T06:30:31.270573+00:00"
+    "at": "2026-09-11T13:53:06.256585+00:00"
   },
   "--task mcq --regime zero_shot --model gpt-oss-120b --mcq-subset all --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T06:35:55.299658+00:00"
+    "at": "2026-09-11T13:55:01.294820+00:00"
   },
   "--task sentiment --regime zero_shot --model gpt-oss-120b --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T06:36:11.103716+00:00"
+    "at": "2026-09-11T13:55:08.814990+00:00"
   },
   "--task sentiment --regime five_shot --model gpt-oss-120b --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T06:37:23.094006+00:00"
+    "at": "2026-09-11T13:55:15.965299+00:00"
   },
   "--task ner --regime few_shot --model gpt-oss-120b --ner-split test --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T06:49:43.387266+00:00"
+    "at": "2026-09-11T14:05:28.884726+00:00"
   },
   "--task ner --regime few_shot --model gpt-oss-120b --ner-split test --docsplit --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T07:01:02.766877+00:00"
+    "at": "2026-09-11T14:13:35.427079+00:00"
   },
   "--task mcq --regime cot --model gpt-oss-120b --mcq-subset mcq4 --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T07:07:22.163579+00:00"
+    "at": "2026-09-11T14:15:11.812231+00:00"
   },
   "--task mcq --regime cot --model gpt-oss-120b --mcq-subset mcq4 --permuted --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T07:13:13.541951+00:00"
+    "at": "2026-09-11T14:17:03.909942+00:00"
   },
   "--task mt --regime zero_shot --model gpt-oss-120b --direction mz2en --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T09:07:22.923059+00:00"
+    "at": "2026-09-11T16:00:06.121610+00:00"
   },
   "--task mt --regime zero_shot --model gpt-oss-120b --direction en2mz --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-09T22:07:40.306429+00:00"
+    "at": "2026-09-11T18:29:34.556168+00:00"
   },
   "--task mt --regime five_shot --model gpt-oss-120b --direction mz2en --cache results\\cache.sqlite": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-10T01:02:04.397959+00:00"
+    "at": "2026-09-11T21:22:13.101599+00:00"
   },
   "--task mcq --regime zero_shot --model gpt-5.4-mini --mcq-subset mcq4 --cache results\\cache.sqlite --token-budget 500000": {
     "status": "ok",
@@ -343,5 +343,10 @@
     "status": "ok",
     "budget_stopped": false,
     "at": "2026-09-11T03:23:51.101984+00:00"
+  },
+  "--task mt --regime five_shot --model gpt-oss-120b --direction en2mz --cache results\\cache.sqlite": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-11T23:31:05.672566+00:00"
   }
 }
