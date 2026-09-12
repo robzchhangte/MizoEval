@@ -112,7 +112,8 @@ def _run_mt(client: ModelClient, regime: str, args: argparse.Namespace) -> list[
         items = items[: args.limit]
 
     out: list[dict[str, Any]] = []
-    for it in items:
+    total_items = len(items)
+    for idx, it in enumerate(items, 1):
         source = it["en"] if src == "en" else it["mz"]
         reference = it["en"] if tgt == "en" else it["mz"]
         user = tmpl.render(source=source, direction=args.direction, exemplars=exemplars)
@@ -127,6 +128,8 @@ def _run_mt(client: ModelClient, regime: str, args: argparse.Namespace) -> list[
             "raw_text": resp.text, "cached": resp.cached, "error": resp.error,
             "prompt_tokens": resp.prompt_tokens, "completion_tokens": resp.completion_tokens,
         })
+        if idx % 100 == 0 or idx == total_items:
+            print(f"  [{args.direction}/{regime}] {idx}/{total_items} items processed (cache hits: {client.n_cache_hits})", flush=True)
     return out
 
 

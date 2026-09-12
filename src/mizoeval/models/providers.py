@@ -19,7 +19,7 @@ from mizoeval.models.cache import ResponseCache
 __all__ = [
     "ModelSpec", "ModelClient", "PROVIDERS", "OpenAIProvider", "OpenRouterProvider",
     "AnthropicProvider", "GoogleProvider", "VertexProvider", "OllamaCloudProvider",
-    "MockProvider",
+    "MockProvider", "NLLBProvider", "HFLocalProvider",
 ]
 
 # --------------------------------------------------------------------------- adapters
@@ -353,6 +353,188 @@ class MockProvider(Provider):
                         prompt_tokens=len(prompt.split()), completion_tokens=len(text.split()))
 
 
+class NLLBProvider(Provider):
+    """Local NLLB-200 seq2seq translation provider (e.g. facebook/nllb-200-3.3B)."""
+
+    name = "nllb"
+    _models: dict[str, tuple[Any, Any]] = {}
+
+    def __init__(self, device: str = "cuda") -> None:
+        import torch
+
+        self.device = device if torch.cuda.is_available() else "cpu"
+
+    def _get_model(self, model_id: str):
+        if model_id not in self._models:
+            import os
+            import torch
+            from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
+
+            os.environ["USE_TF"] = "0"
+            os.environ["USE_FLAX"] = "0"
+            token = os.environ.get("hf_token") or os.environ.get("HF_TOKEN")
+            tokenizer = AutoTokenizer.from_pretrained(model_id, token=token)
+            model = AutoModelForSeq2SeqLM.from_pretrained(
+                model_id,
+                torch_dtype=torch.float16 if self.device != "cpu" else torch.float32,
+                token=token,
+            ).to(self.device)
+            model.eval()
+            self._models[model_id] = (tokenizer, model)
+        return self._models[model_id]
+
+    @staticmethod
+    def _parse_mt_prompt(text: str) -> tuple[str, str, str]:
+        """Extract source text and language codes from an MT chat prompt."""
+        lines = text.strip().splitlines()
+        if not lines:
+            return "", "eng_Latn", "lus_Latn"
+        last_line = lines[-1].strip()
+        if last_line in ("Mizo:", "English:"):
+            tgt_label = last_line[:-1]
+            src_idx = None
+            for i in range(len(lines) - 2, -1, -1):
+                l = lines[i].strip()
+                if l.startswith("English:") or l.startswith("Mizo:"):
+                    src_idx = i
+                    break
+            if src_idx is not None:
+                parts = lines[src_idx].split(":", 1)
+                src_label = parts[0].strip()
+                src_text_lines = [parts[1].strip()] + [l.strip() for l in lines[src_idx + 1:-1] if l.strip()]
+                src_text = " ".join(src_text_lines).strip()
+                src_lang = "eng_Latn" if src_label == "English" else "lus_Latn"
+                tgt_lang = "lus_Latn" if tgt_label == "Mizo" else "eng_Latn"
+                return src_text, src_lang, tgt_lang
+        return text.strip(), "eng_Latn", "lus_Latn"
+
+    def complete(self, model: str, messages: list[Message], **params: Any) -> Response:
+        import time
+        import torch
+
+        tokenizer, seq2seq = self._get_model(model)
+        user_content = next((m.content for m in reversed(messages) if m.role == "user"), "")
+        src_text, src_lang, tgt_lang = self._parse_mt_prompt(user_content)
+
+        t0 = time.time()
+        tokenizer.src_lang = src_lang
+        inputs = tokenizer(src_text, return_tensors="pt", max_length=512, truncation=True).to(self.device)
+        forced_bos_token_id = tokenizer.convert_tokens_to_ids(tgt_lang)
+
+        num_beams = params.get("num_beams", 4)
+        max_length = params.get("max_tokens", 512)
+
+        with torch.no_grad():
+            generated_tokens = seq2seq.generate(
+                **inputs,
+                forced_bos_token_id=forced_bos_token_id,
+                max_length=max_length,
+                num_beams=num_beams,
+            )
+
+        decoded = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
+        text = decoded[0].strip() if decoded else ""
+        prompt_tokens = int(inputs["input_ids"].shape[1])
+        completion_tokens = int(generated_tokens.shape[1])
+
+        return Response(
+            text=text,
+            model=model,
+            provider=self.name,
+            prompt_tokens=prompt_tokens,
+            completion_tokens=completion_tokens,
+            latency_s=time.time() - t0,
+        )
+
+
+class HFLocalProvider(Provider):
+    """Local HuggingFace causal LM provider (e.g. meta-llama/Llama-3.1-8B-Instruct)."""
+
+    name = "hf_local"
+    _models: dict[str, tuple[Any, Any]] = {}
+
+    def __init__(self, device: str = "cuda") -> None:
+        import torch
+
+        self.device = device if torch.cuda.is_available() else "cpu"
+
+    def _get_model(self, model_id: str):
+        if model_id not in self._models:
+            import os
+            import torch
+            from transformers import AutoModelForCausalLM, AutoTokenizer
+
+            os.environ["USE_TF"] = "0"
+            os.environ["USE_FLAX"] = "0"
+            token = os.environ.get("hf_token") or os.environ.get("HF_TOKEN")
+            tokenizer = AutoTokenizer.from_pretrained(model_id, token=token)
+            if tokenizer.pad_token_id is None:
+                tokenizer.pad_token_id = tokenizer.eos_token_id
+
+            kwargs: dict[str, Any] = {"token": token}
+            if self.device != "cpu":
+                kwargs["device_map"] = "auto"
+                if "bnb" not in model_id.lower() and "4bit" not in model_id.lower():
+                    kwargs["torch_dtype"] = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
+            else:
+                kwargs["torch_dtype"] = torch.float32
+
+            model = AutoModelForCausalLM.from_pretrained(model_id, **kwargs)
+            model.eval()
+            self._models[model_id] = (tokenizer, model)
+        return self._models[model_id]
+
+    def complete(self, model: str, messages: list[Message], **params: Any) -> Response:
+        import time
+        import torch
+
+        tokenizer, causal_model = self._get_model(model)
+        t0 = time.time()
+
+        chat_messages = [{"role": m.role, "content": m.content} for m in messages]
+        prompt = tokenizer.apply_chat_template(
+            chat_messages,
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+
+        inputs = tokenizer(prompt, return_tensors="pt").to(self.device)
+        input_len = int(inputs["input_ids"].shape[1])
+
+        max_new_tokens = params.get("max_tokens", 512)
+        temperature = params.get("temperature", 0.0)
+        do_sample = temperature > 0.0
+
+        gen_kwargs: dict[str, Any] = {
+            "max_new_tokens": max_new_tokens,
+            "pad_token_id": tokenizer.pad_token_id,
+            "eos_token_id": tokenizer.eos_token_id,
+        }
+        if do_sample:
+            gen_kwargs["temperature"] = temperature
+            gen_kwargs["do_sample"] = True
+        else:
+            gen_kwargs["do_sample"] = False
+
+        with torch.no_grad():
+            outputs = causal_model.generate(
+                **inputs,
+                **gen_kwargs,
+            )
+
+        gen_tokens = outputs[0][input_len:]
+        text = tokenizer.decode(gen_tokens, skip_special_tokens=True).strip()
+
+        return Response(
+            text=text,
+            model=model,
+            provider=self.name,
+            prompt_tokens=input_len,
+            completion_tokens=len(gen_tokens),
+            latency_s=time.time() - t0,
+        )
+
+
 PROVIDERS: dict[str, type[Provider]] = {
     "openai": OpenAIProvider,
     "openrouter": OpenRouterProvider,
@@ -361,6 +543,8 @@ PROVIDERS: dict[str, type[Provider]] = {
     "vertex": VertexProvider,
     "ollama_cloud": OllamaCloudProvider,
     "mock": MockProvider,
+    "nllb": NLLBProvider,
+    "hf_local": HFLocalProvider,
 }
 
 

@@ -105,6 +105,35 @@ models:
     price_out: 0.0
     enabled: false
 
+  # -- open-weight and engineered MT baselines (local GPU) --------------------
+  - name: nllb-200-3.3b
+    provider: nllb
+    model_id: "facebook/nllb-200-3.3B"
+    price_in: 0.0
+    price_out: 0.0
+    enabled: true
+
+  - name: nllb-200-600m
+    provider: nllb
+    model_id: "facebook/nllb-200-distilled-600M"
+    price_in: 0.0
+    price_out: 0.0
+    enabled: true
+
+  - name: llama-3.1-8b
+    provider: hf_local
+    model_id: "meta-llama/Llama-3.1-8B-Instruct"
+    price_in: 0.0
+    price_out: 0.0
+    enabled: true
+
+  - name: qwen-2.5-14b
+    provider: hf_local
+    model_id: "unsloth/Qwen2.5-14B-Instruct-bnb-4bit"
+    price_in: 0.0
+    price_out: 0.0
+    enabled: true
+
   # -- always available: no network, no spend --------------------------------
   - name: mock
     provider: mock

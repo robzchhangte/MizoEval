@@ -1,0 +1,61 @@
+{
+  "run_key": "mt__five_shot__nllb-200-3.3b__mz2en",
+  "task": "mt",
+  "regime": "five_shot",
+  "model_name": "nllb-200-3.3b",
+  "model_id": "facebook/nllb-200-3.3B",
+  "provider": "nllb",
+  "params": {
+    "temperature": 0,
+    "max_tokens": 1024
+  },
+  "template_id": "mt/five_shot/v1",
+  "template_hash": "06bcf2e08bec9aea",
+  "template_system": "You are a professional translator working between English and Mizo (Lushai, ISO 639-3 lus), the language of Mizoram, northeast India.",
+  "seed": 20260907,
+  "n_items": 3000,
+  "n_api_errors": 0,
+  "cache_hits": 4,
+  "live_calls": 2996,
+  "cost_usd": 0.0,
+  "prompt_tokens": 142505,
+  "completion_tokens": 108514,
+  "started_utc": "2026-09-11T07:51:53.925497+00:00",
+  "finished_utc": "2026-09-11T08:28:57.489805+00:00",
+  "summary": {
+    "scripture": {
+      "chrf": 54.12825293524107,
+      "bleu": 36.32678725944164,
+      "n": 1373
+    },
+    "religious": {
+      "chrf": 48.36796355620696,
+      "bleu": 30.89451936128182,
+      "n": 818
+    },
+    "secular": {
+      "chrf": 38.973058309212576,
+      "bleu": 20.29322485631859,
+      "n": 809
+    }
+  },
+  "keypool": null,
+  "token_budget": null,
+  "budget_stopped": false,
+  "cli": {
+    "task": "mt",
+    "regime": "five_shot",
+    "model": "nllb-200-3.3b",
+    "direction": "mz2en",
+    "mcq_subset": "mcq4",
+    "permuted": false,
+    "ner_split": "test",
+    "docsplit": false,
+    "limit": 0,
+    "temperature": null,
+    "no_cache": false,
+    "cache": null,
+    "token_budget": 0,
+    "out_dir": "/home/aikosh/MizoEval/results/raw"
+  }
+}
