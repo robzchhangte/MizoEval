@@ -368,5 +368,30 @@
     "status": "ok",
     "budget_stopped": false,
     "at": "2026-09-13T02:55:15.137355+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset mcq4 --cache results\\cache.sqlite --token-budget 50000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-13T04:34:48.573447+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset mcq4 --permuted --cache results\\cache.sqlite --token-budget 50000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-13T04:34:50.311872+00:00"
+  },
+  "--task mcq --regime five_shot --model gpt-5.4 --mcq-subset mcq4 --cache results\\cache.sqlite --token-budget 50000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-13T04:34:51.417623+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset all --cache results\\cache.sqlite --token-budget 50000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-13T04:34:52.051810+00:00"
+  },
+  "--task sentiment --regime zero_shot --model gpt-5.4 --cache results\\cache.sqlite --token-budget 50000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-13T04:34:55.766132+00:00"
   }
 }
