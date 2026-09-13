@@ -13,32 +13,32 @@
   "template_hash": "6c7244efa6069fbd",
   "template_system": "You classify the sentiment of short social-media comments written in Mizo (Lushai), often code-mixed with English.",
   "seed": 20260907,
-  "n_items": 760,
+  "n_items": 920,
   "n_api_errors": 0,
-  "cache_hits": 563,
-  "live_calls": 197,
-  "cost_usd": 0.069724,
-  "prompt_tokens": 189905,
-  "completion_tokens": 3040,
-  "started_utc": "2026-09-13T04:34:55.785226+00:00",
-  "finished_utc": "2026-09-13T04:38:04.817684+00:00",
+  "cache_hits": 760,
+  "live_calls": 160,
+  "cost_usd": 0.05634,
+  "prompt_tokens": 229857,
+  "completion_tokens": 3680,
+  "started_utc": "2026-09-13T14:55:00.768504+00:00",
+  "finished_utc": "2026-09-13T14:57:52.301053+00:00",
   "summary": {
-    "macro_f1": 0.7081743960139653,
-    "accuracy": 0.7894736842105263,
+    "macro_f1": 0.7063167969284878,
+    "accuracy": 0.7739130434782608,
     "parse_failure_rate": 0.0,
-    "n": 760
+    "n": 920
   },
   "keypool": null,
   "token_budget": {
-    "cap": 50000,
-    "spent": 50263,
-    "spent_prompt": 49475,
-    "spent_completion": 788,
-    "remaining": 0,
-    "live_calls": 197,
-    "fraction_used": 1.0053
+    "cap": 100000,
+    "spent": 40592,
+    "spent_prompt": 39952,
+    "spent_completion": 640,
+    "remaining": 59408,
+    "live_calls": 160,
+    "fraction_used": 0.4059
   },
-  "budget_stopped": true,
+  "budget_stopped": false,
   "cli": {
     "task": "sentiment",
     "regime": "five_shot",
@@ -52,7 +52,7 @@
     "temperature": null,
     "no_cache": false,
     "cache": "results\\cache.sqlite",
-    "token_budget": 50000,
+    "token_budget": 100000,
     "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
   }
 }

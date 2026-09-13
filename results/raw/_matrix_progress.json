@@ -393,5 +393,35 @@
     "status": "ok",
     "budget_stopped": false,
     "at": "2026-09-13T04:34:55.766132+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset mcq4 --cache results\\cache.sqlite --token-budget 100000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-13T14:54:37.864059+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset mcq4 --permuted --cache results\\cache.sqlite --token-budget 100000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-13T14:54:39.978240+00:00"
+  },
+  "--task mcq --regime five_shot --model gpt-5.4 --mcq-subset mcq4 --cache results\\cache.sqlite --token-budget 100000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-13T14:54:41.867965+00:00"
+  },
+  "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset all --cache results\\cache.sqlite --token-budget 100000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-13T14:54:43.006942+00:00"
+  },
+  "--task sentiment --regime zero_shot --model gpt-5.4 --cache results\\cache.sqlite --token-budget 100000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-13T14:55:00.755231+00:00"
+  },
+  "--task sentiment --regime five_shot --model gpt-5.4 --cache results\\cache.sqlite --token-budget 100000": {
+    "status": "ok",
+    "budget_stopped": false,
+    "at": "2026-09-13T14:57:54.273984+00:00"
   }
 }
