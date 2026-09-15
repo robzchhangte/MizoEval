@@ -13,32 +13,32 @@
   "template_hash": "47886b287bc4c475",
   "template_system": "You extract named entities from Mizo (Lushai) news sentences. Return only entities that are explicitly present in the text.",
   "seed": 20260907,
-  "n_items": 157,
+  "n_items": 436,
   "n_api_errors": 0,
-  "cache_hits": 0,
-  "live_calls": 157,
-  "cost_usd": 0.191491,
-  "prompt_tokens": 88857,
-  "completion_tokens": 8042,
-  "started_utc": "2026-09-14T14:49:30.493594+00:00",
-  "finished_utc": "2026-09-14T14:53:03.538857+00:00",
+  "cache_hits": 157,
+  "live_calls": 279,
+  "cost_usd": 0.361603,
+  "prompt_tokens": 249195,
+  "completion_tokens": 24160,
+  "started_utc": "2026-09-15T03:31:25.194389+00:00",
+  "finished_utc": "2026-09-15T03:37:04.215616+00:00",
   "summary": {
-    "micro_f1": 0.15384615384615385,
-    "macro_f1": 0.13492418185759225,
+    "micro_f1": 0.18238213399503722,
+    "macro_f1": 0.17554934302516328,
     "parse_failure_rate": 0.0,
-    "n": 157
+    "n": 436
   },
   "keypool": null,
   "token_budget": {
-    "cap": 96842,
-    "spent": 96899,
-    "spent_prompt": 88857,
-    "spent_completion": 8042,
-    "remaining": 0,
-    "live_calls": 157,
-    "fraction_used": 1.0006
+    "cap": 200000,
+    "spent": 176456,
+    "spent_prompt": 160338,
+    "spent_completion": 16118,
+    "remaining": 23544,
+    "live_calls": 279,
+    "fraction_used": 0.8823
   },
-  "budget_stopped": true,
+  "budget_stopped": false,
   "cli": {
     "task": "ner",
     "regime": "few_shot",
@@ -52,7 +52,7 @@
     "temperature": null,
     "no_cache": false,
     "cache": "results\\cache.sqlite",
-    "token_budget": 96842,
+    "token_budget": 200000,
     "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
   }
 }
