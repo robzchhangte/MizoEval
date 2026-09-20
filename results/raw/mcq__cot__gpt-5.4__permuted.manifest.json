@@ -13,35 +13,35 @@
   "template_hash": "0690e7a4ad09ade3",
   "template_system": "You are answering multiple-choice questions about Mizoram, a state in northeast India, drawn from its civil-service examinations. Use only your own knowledge.",
   "seed": 20260907,
-  "n_items": 1387,
+  "n_items": 1708,
   "n_api_errors": 0,
-  "cache_hits": 388,
-  "live_calls": 999,
-  "cost_usd": 0.659026,
-  "prompt_tokens": 183886,
-  "completion_tokens": 71907,
-  "started_utc": "2026-09-18T07:15:10.918942+00:00",
-  "finished_utc": "2026-09-18T07:42:16.924042+00:00",
+  "cache_hits": 1406,
+  "live_calls": 302,
+  "cost_usd": 0.223023,
+  "prompt_tokens": 229793,
+  "completion_tokens": 89732,
+  "started_utc": "2026-09-20T07:56:18.276348+00:00",
+  "finished_utc": "2026-09-20T08:03:51.943827+00:00",
   "summary": {
-    "accuracy": 0.5277577505407354,
+    "accuracy": 0.5626463700234192,
     "accuracy_ci": [
-      0.5014438011840201,
-      0.5539183622715451
+      0.5390058740877568,
+      0.5860056924029746
     ],
     "parse_failure_rate": 0.0,
-    "n": 1387
+    "n": 1708
   },
   "keypool": null,
   "token_budget": {
     "cap": 180000,
-    "spent": 180070,
-    "spent_prompt": 130477,
-    "spent_completion": 49593,
-    "remaining": 0,
-    "live_calls": 999,
-    "fraction_used": 1.0004
+    "spent": 60167,
+    "spent_prompt": 43274,
+    "spent_completion": 16893,
+    "remaining": 119833,
+    "live_calls": 302,
+    "fraction_used": 0.3343
   },
-  "budget_stopped": true,
+  "budget_stopped": false,
   "cli": {
     "task": "mcq",
     "regime": "cot",
