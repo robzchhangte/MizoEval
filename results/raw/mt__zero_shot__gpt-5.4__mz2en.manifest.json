@@ -13,41 +13,41 @@
   "template_hash": "1a44eaa5634889c5",
   "template_system": "You are a professional translator working between English and Mizo (Lushai, ISO 639-3 lus), the language of Mizoram, northeast India.",
   "seed": 20260907,
-  "n_items": 717,
+  "n_items": 1788,
   "n_api_errors": 0,
-  "cache_hits": 0,
-  "live_calls": 717,
-  "cost_usd": 0.394746,
-  "prompt_tokens": 91877,
-  "completion_tokens": 27990,
-  "started_utc": "2026-09-20T08:03:52.009891+00:00",
-  "finished_utc": "2026-09-20T08:19:26.335259+00:00",
+  "cache_hits": 718,
+  "live_calls": 1070,
+  "cost_usd": 0.590268,
+  "prompt_tokens": 230315,
+  "completion_tokens": 69749,
+  "started_utc": "2026-09-21T17:44:18.117693+00:00",
+  "finished_utc": "2026-09-21T18:13:44.172626+00:00",
   "summary": {
     "scripture": {
-      "chrf": 48.33036912009799,
-      "bleu": 27.087321237202868,
-      "n": 322
+      "chrf": 48.23128191527958,
+      "bleu": 27.012351823453372,
+      "n": 826
     },
     "religious": {
-      "chrf": 50.89038309888677,
-      "bleu": 29.736293378781514,
-      "n": 200
+      "chrf": 48.53495542142892,
+      "bleu": 28.767734984168438,
+      "n": 488
     },
     "secular": {
-      "chrf": 36.37919848983942,
-      "bleu": 16.90324825797204,
-      "n": 195
+      "chrf": 34.65149014375907,
+      "bleu": 16.206079940282432,
+      "n": 474
     }
   },
   "keypool": null,
   "token_budget": {
-    "cap": 119833,
-    "spent": 119867,
-    "spent_prompt": 91877,
-    "spent_completion": 27990,
+    "cap": 180000,
+    "spent": 180076,
+    "spent_prompt": 138342,
+    "spent_completion": 41734,
     "remaining": 0,
-    "live_calls": 717,
-    "fraction_used": 1.0003
+    "live_calls": 1070,
+    "fraction_used": 1.0004
   },
   "budget_stopped": true,
   "cli": {
@@ -63,7 +63,7 @@
     "temperature": null,
     "no_cache": false,
     "cache": "results\\cache.sqlite",
-    "token_budget": 119833,
+    "token_budget": 180000,
     "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
   }
 }
