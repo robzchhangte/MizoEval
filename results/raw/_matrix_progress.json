@@ -337,12 +337,12 @@
   "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset mcq4 --cache results\\cache.sqlite --token-budget 180000": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-21T17:43:53.489520+00:00"
+    "at": "2026-09-22T17:36:53.810584+00:00"
   },
   "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset mcq4 --permuted --cache results\\cache.sqlite --token-budget 180000": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-21T17:43:55.144565+00:00"
+    "at": "2026-09-22T17:36:54.591201+00:00"
   },
   "--task mt --regime five_shot --model gpt-oss-120b --direction en2mz --cache results\\cache.sqlite": {
     "status": "ok",
@@ -352,7 +352,7 @@
   "--task mcq --regime five_shot --model gpt-5.4 --mcq-subset mcq4 --cache results\\cache.sqlite --token-budget 180000": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-21T17:43:56.482106+00:00"
+    "at": "2026-09-22T17:36:55.308866+00:00"
   },
   "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset all --cache results\\cache.sqlite --token-budget 79692": {
     "status": "ok",
@@ -362,12 +362,12 @@
   "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset all --cache results\\cache.sqlite --token-budget 180000": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-21T17:43:58.154587+00:00"
+    "at": "2026-09-22T17:36:55.879848+00:00"
   },
   "--task sentiment --regime zero_shot --model gpt-5.4 --cache results\\cache.sqlite --token-budget 180000": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-21T17:44:13.142403+00:00"
+    "at": "2026-09-22T17:37:07.802266+00:00"
   },
   "--task mcq --regime zero_shot --model gpt-5.4 --mcq-subset mcq4 --cache results\\cache.sqlite --token-budget 50000": {
     "status": "ok",
@@ -542,26 +542,26 @@
   "--task sentiment --regime five_shot --model gpt-5.4 --cache results\\cache.sqlite --token-budget 180000": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-21T17:44:14.846270+00:00"
+    "at": "2026-09-22T17:37:09.133878+00:00"
   },
   "--task ner --regime few_shot --model gpt-5.4 --ner-split test --cache results\\cache.sqlite --token-budget 180000": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-21T17:44:15.674184+00:00"
+    "at": "2026-09-22T17:37:10.251340+00:00"
   },
   "--task ner --regime few_shot --model gpt-5.4 --ner-split test --docsplit --cache results\\cache.sqlite --token-budget 180000": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-21T17:44:16.469534+00:00"
+    "at": "2026-09-22T17:37:11.104576+00:00"
   },
   "--task mcq --regime cot --model gpt-5.4 --mcq-subset mcq4 --cache results\\cache.sqlite --token-budget 180000": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-21T17:44:17.324757+00:00"
+    "at": "2026-09-22T17:37:11.706677+00:00"
   },
   "--task mcq --regime cot --model gpt-5.4 --mcq-subset mcq4 --permuted --cache results\\cache.sqlite --token-budget 180000": {
     "status": "ok",
     "budget_stopped": false,
-    "at": "2026-09-21T17:44:18.105844+00:00"
+    "at": "2026-09-22T17:37:12.279150+00:00"
   }
 }

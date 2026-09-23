@@ -1,0 +1,89 @@
+matrix: 1 model(s) x 14 cell(s) = 14 runs
+models: gpt-5.4
+
+[1/14] gpt-5.4 :: mcq/zero_shot/mcq4
+[mcq__zero_shot__gpt-5.4]
+  items=1747  live_calls=0  cache_hits=1747  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.5706926159129937, "accuracy_ci": [0.5473514080847222, 0.5937236040694327], "parse_failure_rate": 0.0, "n": 1747}
+  tokens: 0 / 180,000 (0%)
+[2/14] gpt-5.4 :: mcq/zero_shot/mcq4 +permuted
+[mcq__zero_shot__gpt-5.4__permuted]
+  items=1708  live_calls=0  cache_hits=1708  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.550351288056206, "accuracy_ci": [0.5266722891262532, 0.5738042970251758], "parse_failure_rate": 0.0, "n": 1708}
+  tokens: 0 / 180,000 (0%)
+[3/14] gpt-5.4 :: mcq/five_shot/mcq4
+[mcq__five_shot__gpt-5.4]
+  items=1747  live_calls=0  cache_hits=1747  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.5724098454493417, "accuracy_ci": [0.5490764745751296, 0.595425460951191], "parse_failure_rate": 0.0, "n": 1747}
+  tokens: 0 / 180,000 (0%)
+[4/14] gpt-5.4 :: mcq/zero_shot/all
+[mcq__zero_shot__gpt-5.4__all]
+  items=1870  live_calls=0  cache_hits=1870  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.5561497326203209, "accuracy_ci": [0.5335384052603596, 0.5785308326090526], "parse_failure_rate": 0.0, "n": 1870}
+  tokens: 0 / 180,000 (0%)
+[5/14] gpt-5.4 :: sentiment/zero_shot/
+[sentiment__zero_shot__gpt-5.4]
+  items=1150  live_calls=0  cache_hits=1150  api_errors=0  cost=$0.0000
+  summary: {"macro_f1": 0.5891395014059754, "accuracy": 0.7026086956521739, "parse_failure_rate": 0.0, "n": 1150}
+  tokens: 0 / 180,000 (0%)
+[6/14] gpt-5.4 :: sentiment/five_shot/
+[sentiment__five_shot__gpt-5.4]
+  items=920  live_calls=0  cache_hits=920  api_errors=0  cost=$0.0000
+  summary: {"macro_f1": 0.7063167969284878, "accuracy": 0.7739130434782608, "parse_failure_rate": 0.0, "n": 920}
+  tokens: 0 / 180,000 (0%)
+[7/14] gpt-5.4 :: ner/few_shot/test
+[ner__few_shot__gpt-5.4__test]
+  items=447  live_calls=0  cache_hits=447  api_errors=0  cost=$0.0000
+  summary: {"micro_f1": 0.234590065828845, "macro_f1": 0.22663409061864806, "parse_failure_rate": 0.0, "n": 447}
+  tokens: 0 / 180,000 (0%)
+[8/14] gpt-5.4 :: ner/few_shot/test +docsplit
+[ner__few_shot__gpt-5.4__docsplit-test]
+  items=436  live_calls=0  cache_hits=436  api_errors=0  cost=$0.0000
+  summary: {"micro_f1": 0.18238213399503722, "macro_f1": 0.17554934302516328, "parse_failure_rate": 0.0, "n": 436}
+  tokens: 0 / 180,000 (0%)
+[9/14] gpt-5.4 :: mcq/cot/mcq4
+[mcq__cot__gpt-5.4]
+  items=1747  live_calls=0  cache_hits=1747  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.5695477962220951, "accuracy_ci": [0.5462015216244736, 0.5925888749482375], "parse_failure_rate": 0.0, "n": 1747}
+  tokens: 0 / 180,000 (0%)
+[10/14] gpt-5.4 :: mcq/cot/mcq4 +permuted
+[mcq__cot__gpt-5.4__permuted]
+  items=1708  live_calls=0  cache_hits=1708  api_errors=0  cost=$0.0000
+  summary: {"accuracy": 0.5626463700234192, "accuracy_ci": [0.5390058740877568, 0.5860056924029746], "parse_failure_rate": 0.0, "n": 1708}
+  tokens: 0 / 180,000 (0%)
+[11/14] gpt-5.4 :: mt/zero_shot/mz2en
+  [mz2en/zero_shot] 100/3000 items processed (cache hits: 100)
+  [mz2en/zero_shot] 200/3000 items processed (cache hits: 200)
+  [mz2en/zero_shot] 300/3000 items processed (cache hits: 300)
+  [mz2en/zero_shot] 400/3000 items processed (cache hits: 400)
+  [mz2en/zero_shot] 500/3000 items processed (cache hits: 500)
+  [mz2en/zero_shot] 600/3000 items processed (cache hits: 600)
+  [mz2en/zero_shot] 700/3000 items processed (cache hits: 700)
+  [mz2en/zero_shot] 800/3000 items processed (cache hits: 800)
+  [mz2en/zero_shot] 900/3000 items processed (cache hits: 900)
+  [mz2en/zero_shot] 1000/3000 items processed (cache hits: 1000)
+  [mz2en/zero_shot] 1100/3000 items processed (cache hits: 1100)
+  [mz2en/zero_shot] 1200/3000 items processed (cache hits: 1200)
+  [mz2en/zero_shot] 1300/3000 items processed (cache hits: 1300)
+  [mz2en/zero_shot] 1400/3000 items processed (cache hits: 1400)
+  [mz2en/zero_shot] 1500/3000 items processed (cache hits: 1500)
+  [mz2en/zero_shot] 1600/3000 items processed (cache hits: 1600)
+  [mz2en/zero_shot] 1700/3000 items processed (cache hits: 1700)
+  [mz2en/zero_shot] 1800/3000 items processed (cache hits: 1788)
+  [mz2en/zero_shot] 1900/3000 items processed (cache hits: 1788)
+  [mz2en/zero_shot] 2000/3000 items processed (cache hits: 1788)
+  [mz2en/zero_shot] 2100/3000 items processed (cache hits: 1789)
+  [mz2en/zero_shot] 2200/3000 items processed (cache hits: 1789)
+  [mz2en/zero_shot] 2300/3000 items processed (cache hits: 1789)
+  [mz2en/zero_shot] 2400/3000 items processed (cache hits: 1789)
+  [mz2en/zero_shot] 2500/3000 items processed (cache hits: 1789)
+  [mz2en/zero_shot] 2600/3000 items processed (cache hits: 1789)
+  [mz2en/zero_shot] 2700/3000 items processed (cache hits: 1789)
+  [mz2en/zero_shot] 2800/3000 items processed (cache hits: 1790)
+[mt__zero_shot__gpt-5.4__mz2en]
+  items=2867  live_calls=1077  cache_hits=1790  api_errors=0  cost=$0.5878
+  summary: {"scripture": {"chrf": 48.34861344138381, "bleu": 27.069815802181903, "n": 1313}, "religious": {"chrf": 48.024096208731564, "bleu": 28.320183279701077, "n": 778}, "secular": {"chrf": 33.87500001457, "bleu": 15.611236906252788, "n": 776}}
+  tokens: 180,140 / 180,000 (100%)  <-- BUDGET REACHED, run stopped early
+    token budget hit inside this cell (180,140 / 180,000) — stopping this model
+
+done in 1:08:00.087705. cells ok=114 error=0. progress: C:\Users\Robz\ws\MizoEval\results\raw\_matrix_progress.json
