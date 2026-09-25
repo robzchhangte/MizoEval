@@ -20,8 +20,8 @@
   "cost_usd": 0.0,
   "prompt_tokens": 387144,
   "completion_tokens": 116803,
-  "started_utc": "2026-09-24T12:23:06.194833+00:00",
-  "finished_utc": "2026-09-24T12:23:09.052356+00:00",
+  "started_utc": "2026-09-25T13:47:01.098232+00:00",
+  "finished_utc": "2026-09-25T13:47:02.296460+00:00",
   "summary": {
     "scripture": {
       "chrf": 48.36885602816464,
