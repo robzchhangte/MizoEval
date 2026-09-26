@@ -1,0 +1,55 @@
+{
+  "run_key": "sentiment__five_shot__gpt-oss-120b",
+  "task": "sentiment",
+  "regime": "five_shot",
+  "model_name": "gpt-oss-120b",
+  "model_id": "gpt-oss:120b",
+  "provider": "ollama_cloud",
+  "params": {
+    "temperature": 0,
+    "max_tokens": 1024
+  },
+  "template_id": "sentiment/five_shot/v1",
+  "template_hash": "6c7244efa6069fbd",
+  "template_system": "You classify the sentiment of short social-media comments written in Mizo (Lushai), often code-mixed with English.",
+  "seed": 20260907,
+  "n_items": 920,
+  "n_api_errors": 0,
+  "cache_hits": 919,
+  "live_calls": 1,
+  "cost_usd": 0.0,
+  "prompt_tokens": 289657,
+  "completion_tokens": 198741,
+  "started_utc": "2026-09-11T13:55:08.862942+00:00",
+  "finished_utc": "2026-09-11T13:55:13.807958+00:00",
+  "summary": {
+    "macro_f1": 0.46187735324149687,
+    "accuracy": 0.55,
+    "parse_failure_rate": 0.0010869565217391304,
+    "n": 920
+  },
+  "keypool": {
+    "n_keys": 15,
+    "active_index": 0,
+    "cooling": [],
+    "total_rotations": 0
+  },
+  "token_budget": null,
+  "budget_stopped": false,
+  "cli": {
+    "task": "sentiment",
+    "regime": "five_shot",
+    "model": "gpt-oss-120b",
+    "direction": null,
+    "mcq_subset": "mcq4",
+    "permuted": false,
+    "ner_split": "test",
+    "docsplit": false,
+    "limit": 0,
+    "temperature": null,
+    "no_cache": false,
+    "cache": "results\\cache.sqlite",
+    "token_budget": 0,
+    "out_dir": "C:\\Users\\Robz\\ws\\MizoEval\\results\\raw"
+  }
+}
