@@ -234,7 +234,7 @@ def score_sentiment(records: Sequence[dict[str, Any]], resamples: int = 1000) ->
 @dataclass
 class NERResult:
     n_sentences: int
-    micro_f1: float
+    micro_f1: Interval
     macro_f1: float
     precision: float
     recall: float
@@ -242,10 +242,28 @@ class NERResult:
     parse_failure_rate: float
 
 
+def _micro_f1_ner(pairs: Sequence[tuple[list[str], list[str]]]) -> float:
+    """Entity-level micro-F1 over a (possibly resampled) list of sentence pairs.
+
+    Bootstrap statistic for `score_ner`'s interval: resampling happens at the
+    sentence level, same unit as chrF++'s corpus-level resampling, since a
+    resample that split a sentence's tags across the gold/pred boundary would
+    not correspond to any evaluable sentence.
+    """
+    from seqeval.metrics import f1_score
+
+    if not pairs:
+        return 0.0
+    gold = [list(g) for g, _ in pairs]
+    pred = [list(p) for _, p in pairs]
+    return float(f1_score(gold, pred, average="micro", zero_division=0))
+
+
 def score_ner(
     gold_tags: Sequence[Sequence[str]],
     pred_tags: Sequence[Sequence[str]],
     parse_failures: int = 0,
+    resamples: int = 1000,
 ) -> NERResult:
     from seqeval.metrics import (
         classification_report,
@@ -257,7 +275,7 @@ def score_ner(
     gold = [list(g) for g in gold_tags]
     pred = [list(p) for p in pred_tags]
     if not gold:
-        return NERResult(0, 0.0, 0.0, 0.0, 0.0, {}, 0.0)
+        return NERResult(0, Interval(0.0, 0.0, 0.0, 0), 0.0, 0.0, 0.0, {}, 0.0)
 
     report = classification_report(gold, pred, output_dict=True, zero_division=0)
     per_type = {
@@ -266,9 +284,14 @@ def score_ner(
         for k, v in report.items()
         if k not in ("micro avg", "macro avg", "weighted avg")
     }
+    # Corpus-level metric (like chrF++ and macro-F1) with no closed-form
+    # interval; resample whole sentences with replacement, same convention as
+    # score_sentiment's macro-F1 bootstrap.
+    pairs = list(zip(gold, pred))
+    micro_f1_interval = bootstrap_interval(pairs, _micro_f1_ner, resamples=resamples)
     return NERResult(
         n_sentences=len(gold),
-        micro_f1=float(f1_score(gold, pred, average="micro", zero_division=0)),
+        micro_f1=micro_f1_interval,
         macro_f1=float(f1_score(gold, pred, average="macro", zero_division=0)),
         precision=float(precision_score(gold, pred, average="micro", zero_division=0)),
         recall=float(recall_score(gold, pred, average="micro", zero_division=0)),

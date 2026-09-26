@@ -93,9 +93,11 @@ def build_main_results(runs: list[Run]) -> pd.DataFrame:
                 ok = [rec for rec in records if rec["parse_ok"]]
                 r = score_ner([rec["gold_tags"] for rec in records],
                               [rec["pred_tags"] for rec in records],
-                              parse_failures=len(records) - len(ok))
+                              parse_failures=len(records) - len(ok),
+                              resamples=RESAMPLES)
                 rows.append({"model": model, "cell": label, "metric": "micro_f1",
-                             "point": r.micro_f1, "ci_low": None, "ci_high": None,
+                             "point": r.micro_f1.point, "ci_low": r.micro_f1.low,
+                             "ci_high": r.micro_f1.high,
                              "n": r.n_sentences, "parse_failure_rate": r.parse_failure_rate})
     return pd.DataFrame(rows)
 

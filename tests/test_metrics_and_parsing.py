@@ -210,10 +210,14 @@ def test_sentiment_perfect_and_chance_and_majority_baseline():
 
 def test_ner_perfect_and_zero():
     gold = [["B-NEP", "I-NEP", "O", "B-NEL"], ["O", "B-NEO", "O"]]
-    assert score_ner(gold, [list(s) for s in gold]).micro_f1 == pytest.approx(1.0)
+    perfect = score_ner(gold, [list(s) for s in gold], resamples=50)
+    assert perfect.micro_f1.point == pytest.approx(1.0)
+    assert perfect.micro_f1.low == pytest.approx(1.0)
+    assert perfect.micro_f1.high == pytest.approx(1.0)
 
     nothing = [["O"] * len(s) for s in gold]
-    assert score_ner(gold, nothing).micro_f1 == pytest.approx(0.0)
+    zero = score_ner(gold, nothing, resamples=50)
+    assert zero.micro_f1.point == pytest.approx(0.0)
 
 
 # --------------------------------------------------------------------------- statistics

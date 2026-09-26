@@ -188,8 +188,9 @@ def _summarise(task: str, records: list[dict[str, Any]]) -> dict[str, Any]:
             ok = [rec for rec in records if rec["parse_ok"]]
             fails = len(records) - len(ok)
             r = score_ner([rec["gold_tags"] for rec in records],
-                          [rec["pred_tags"] for rec in records], parse_failures=fails)
-            return {"micro_f1": r.micro_f1, "macro_f1": r.macro_f1,
+                          [rec["pred_tags"] for rec in records], parse_failures=fails,
+                          resamples=200)
+            return {"micro_f1": r.micro_f1.point, "macro_f1": r.macro_f1,
                     "parse_failure_rate": r.parse_failure_rate, "n": r.n_sentences}
     except Exception as exc:  # noqa: BLE001 - a summary failure must not lose the raw data
         return {"summary_error": f"{type(exc).__name__}: {exc}"}

@@ -124,7 +124,7 @@ The temporal split regroups the already collected multiple choice zero shot resu
 
 ### 4.4 Statistical reporting
 
-Translation quality is reported primarily as chrF++ (Popovic, 2015, 2017), which correlates better with human judgment than BLEU at this resource level and degrades more gracefully under the morphological variation Mizo shows freely; BLEU is reported alongside it for comparability with prior work on the language pair. Every accuracy figure in the paper carries a Wilson score interval. Every corpus level metric, including chrF++ and macro averaged F1, carries a percentile bootstrap interval computed over 1,000 resamples. Model versus model comparisons on the multiple choice task use an exact McNemar test restricted to items on which the two models disagree, with a Holm Bonferroni correction applied across the full family of pairwise comparisons reported in a given table, since a table reporting many pairwise comparisons at an uncorrected significance threshold would be expected to show several spuriously significant results by chance alone.
+Translation quality is reported primarily as chrF++ (Popovic, 2015, 2017), which correlates better with human judgment than BLEU at this resource level and degrades more gracefully under the morphological variation Mizo shows freely; BLEU is reported alongside it for comparability with prior work on the language pair. Every accuracy figure in the paper carries a Wilson score interval. Every corpus level metric, including chrF++, macro averaged F1, and entity level F1 for named entity recognition, carries a percentile bootstrap interval computed over 1,000 resamples. Model versus model comparisons on the multiple choice task use an exact McNemar test restricted to items on which the two models disagree, with a Holm Bonferroni correction applied across the full family of pairwise comparisons reported in a given table, since a table reporting many pairwise comparisons at an uncorrected significance threshold would be expected to show several spuriously significant results by chance alone.
 
 ---
 
@@ -134,15 +134,15 @@ Translation quality is reported primarily as chrF++ (Popovic, 2015, 2017), which
 
 Table 1 reports accuracy for the multiple choice task across its zero shot, choice order permuted, five shot, chain of thought, and chain of thought permuted regimes, macro averaged F1 for sentiment classification under zero shot and five shot regimes, and entity level F1 for named entity recognition on both the official and document disjoint splits, for all five evaluated large language models, each with a bootstrap or Wilson interval where applicable.
 
-**Table 1: Main results.** MCQ figures are accuracy with a 95 percent Wilson interval, n as given per column; sentiment figures are macro averaged F1 with a 95 percent bootstrap interval; NER figures are entity level F1 (n = 447 official, n = 436 document disjoint).
+**Table 1: Main results.** MCQ figures are accuracy with a 95 percent Wilson interval, n as given per column; sentiment figures are macro averaged F1 with a 95 percent bootstrap interval; NER figures are entity level F1 with a 95 percent bootstrap interval over 1,000 sentence level resamples (n = 447 official, n = 436 document disjoint).
 
 | Model | MCQ zero shot | MCQ permuted | MCQ five shot | MCQ all formats | MCQ CoT | MCQ CoT permuted | Sentiment zero shot | Sentiment five shot | NER official | NER document disjoint |
 |---|---|---|---|---|---|---|---|---|---|---|
-| GPT 5.4 mini | 0.567 [0.544, 0.590] | 0.533 [0.509, 0.556] | 0.564 [0.540, 0.587] | 0.552 [0.529, 0.574] | 0.569 [0.546, 0.592] | 0.560 [0.537, 0.584] | 0.568 [0.534, 0.599] | 0.667 [0.632, 0.699] | 0.236 | 0.182 |
-| GPT 5.4 | 0.571 [0.547, 0.594] | 0.550 [0.527, 0.574] | 0.572 [0.549, 0.595] | 0.556 [0.534, 0.579] | 0.570 [0.546, 0.593] | 0.563 [0.539, 0.586] | 0.589 [0.558, 0.619] | 0.706 [0.670, 0.739] | 0.235 | 0.182 |
-| Gemini 3.5 Flash | 0.600 [0.577, 0.623] | 0.593 [0.569, 0.616] | 0.603 [0.580, 0.625] | 0.583 [0.560, 0.605] | 0.604 [0.581, 0.627] | 0.599 [0.576, 0.622] | 0.669 [0.636, 0.700] | 0.741 [0.706, 0.773] | 0.260 | 0.186 |
-| Gemma 4 31B | 0.616 [0.593, 0.639] | 0.563 [0.539, 0.586] | 0.624 [0.602, 0.647] | 0.603 [0.580, 0.625] | 0.618 [0.595, 0.640] | 0.567 [0.544, 0.591] | 0.583 [0.552, 0.612] | 0.640 [0.604, 0.672] | 0.233 | 0.191 |
-| GPT OSS 120B | 0.506 [0.483, 0.529] | 0.476 [0.452, 0.500] | 0.497 [0.474, 0.521] | 0.493 [0.470, 0.516] | 0.496 [0.473, 0.520] | 0.490 [0.466, 0.514] | 0.392 [0.365, 0.419] | 0.462 [0.427, 0.495] | 0.056 | 0.059 |
+| GPT 5.4 mini | 0.567 [0.544, 0.590] | 0.533 [0.509, 0.556] | 0.564 [0.540, 0.587] | 0.552 [0.529, 0.574] | 0.569 [0.546, 0.592] | 0.560 [0.537, 0.584] | 0.568 [0.534, 0.599] | 0.667 [0.632, 0.699] | 0.236 [0.197, 0.274] | 0.182 [0.149, 0.214] |
+| GPT 5.4 | 0.571 [0.547, 0.594] | 0.550 [0.527, 0.574] | 0.572 [0.549, 0.595] | 0.556 [0.534, 0.579] | 0.570 [0.546, 0.593] | 0.563 [0.539, 0.586] | 0.589 [0.558, 0.619] | 0.706 [0.670, 0.739] | 0.235 [0.199, 0.272] | 0.182 [0.149, 0.213] |
+| Gemini 3.5 Flash | 0.600 [0.577, 0.623] | 0.593 [0.569, 0.616] | 0.603 [0.580, 0.625] | 0.583 [0.560, 0.605] | 0.604 [0.581, 0.627] | 0.599 [0.576, 0.622] | 0.669 [0.636, 0.700] | 0.741 [0.706, 0.773] | 0.260 [0.222, 0.297] | 0.186 [0.151, 0.216] |
+| Gemma 4 31B | 0.616 [0.593, 0.639] | 0.563 [0.539, 0.586] | 0.624 [0.602, 0.647] | 0.603 [0.580, 0.625] | 0.618 [0.595, 0.640] | 0.567 [0.544, 0.591] | 0.583 [0.552, 0.612] | 0.640 [0.604, 0.672] | 0.233 [0.200, 0.269] | 0.191 [0.154, 0.225] |
+| GPT OSS 120B | 0.506 [0.483, 0.529] | 0.476 [0.452, 0.500] | 0.497 [0.474, 0.521] | 0.493 [0.470, 0.516] | 0.496 [0.473, 0.520] | 0.490 [0.466, 0.514] | 0.392 [0.365, 0.419] | 0.462 [0.427, 0.495] | 0.056 [0.032, 0.084] | 0.059 [0.029, 0.091] |
 
 **Table 2: Baselines.** MCQ random assumes uniform four way guessing; MCQ majority position always answers the modal gold position, A; sentiment majority class always predicts the modal label, Positive; figures carry a 95 percent Wilson interval where one applies. n = 1,747 for MCQ, n = 1,150 for sentiment.
 
