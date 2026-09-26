@@ -226,7 +226,7 @@ This research received no external funding.
 
 ## AI Usage Disclosure
 
-Claude (Anthropic) was used in two capacities during this work. During experimentation, it was used to generate code for the data repair pipeline, the evaluation harness, the contamination probes, and the statistical analysis reported in this paper. During manuscript preparation, it was used for paraphrasing, editing, and grammar correction of author drafted text. All experimental design, data interpretation, and scientific claims in this paper are the authors' own; AI generated code and text were reviewed and verified by the authors before inclusion, and AI assistance does not constitute authorship.
+Claude (Anthropic) assisted with code generation for the experiments and with paraphrasing, editing, and grammar correction of the manuscript text. All code and text were reviewed and verified by the authors, who take full responsibility for the paper's content.
 
 ---
 
