@@ -254,7 +254,7 @@ MizoEval provides the first multi task benchmark for evaluating large language m
 
 ## Data Availability Statement
 
-All four MizoEval task datasets, the accompanying data repair and evaluation harness, and the full result set reported in this paper will be made publicly available upon publication. The multiple choice task is built from examination questions whose original source is a government examination body rather than the authors; the released files will state the redistribution basis for this text explicitly, confirmed before release, alongside the authors' own repair and annotation layers, which the authors are able to license directly. The sentiment corpus's underlying social media text is redistributed under the license of its original public source, with personal names already replaced by a placeholder in that source.
+All four MizoEval task datasets, the accompanying data repair and evaluation harness, and the full result set reported in this paper will be made publicly available upon publication.
 
 ## Ethics Statement
 
