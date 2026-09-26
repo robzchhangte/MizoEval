@@ -117,14 +117,42 @@ def _corpus_chrf(pairs: Sequence[tuple[str, str]]) -> float:
 
 
 def score_mt(records: Sequence[dict[str, Any]], resamples: int = 1000) -> MTResult:
+    import numpy as np
     import sacrebleu
+    from sacrebleu.metrics import CHRF
+
+    from mizoeval.metrics.stats import DEFAULT_SEED
+
+    if not records:
+        return MTResult(0, Interval(0.0, 0.0, 0.0, 0), 0.0, 0.0, 0.0)
 
     pairs = [(r.get("hypothesis") or "", r["reference"]) for r in records]
     hyps = [h for h, _ in pairs]
     refs = [[r for _, r in pairs]]
+
+    chrf = CHRF(word_order=2)
+    stats = chrf._extract_corpus_statistics(hyps, refs)
+    stats_np = np.array(stats, dtype="float32")
+
+    n = len(pairs)
+    point_score = chrf.corpus_score(hyps, refs).score
+
+    if resamples > 0 and n > 0:
+        rng = np.random.default_rng(DEFAULT_SEED)
+        idx = np.arange(n)
+        draws = []
+        for _ in range(resamples):
+            sample_idx = rng.choice(idx, size=n, replace=True)
+            sample_stats = stats_np[sample_idx].sum(axis=0)
+            draws.append(chrf._compute_score_from_stats(sample_stats.tolist()).score)
+        low = float(np.percentile(draws, 2.5))
+        high = float(np.percentile(draws, 97.5))
+    else:
+        low, high = point_score, point_score
+
     return MTResult(
-        n=len(records),
-        chrf=bootstrap_interval(pairs, _corpus_chrf, resamples=resamples),
+        n=n,
+        chrf=Interval(point=point_score, low=low, high=high, n=n),
         bleu=sacrebleu.corpus_bleu(hyps, refs).score if records else 0.0,
         ter=sacrebleu.corpus_ter(hyps, refs).score if records else 0.0,
         empty_output_rate=sum(1 for h in hyps if not h.strip()) / len(hyps) if hyps else 0.0,

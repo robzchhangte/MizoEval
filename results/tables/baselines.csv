@@ -1,0 +1,4 @@
+task,baseline,value,ci_low,ci_high,n
+mcq,majority-position (A),0.3005151688609044,0.27947232863022875,0.3224334063031884,1747
+mcq,random (4-way),0.25,,,1747
+sentiment,majority-class (Positive),0.5678260869565217,0.5390155777374772,0.596184955853962,1150
