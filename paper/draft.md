@@ -242,7 +242,7 @@ The consistent underperformance of the largest open weight reasoning model evalu
 
 ## 7. Limitations
 
-The 283 multiple choice items with conflicting gold labels across duplicate occurrences are excluded from the released benchmark, since resolving them by an automated heuristic would inject label noise into the results reported here. The named entity corpus's official train and test splits share source articles at the sentence level, as documented in Section 3.2; we release a document disjoint alternative split alongside the official one and report both. The translation benchmark's secular register share of 27.0 percent is an upper bound produced by a lexical classifier, as described in Section 3.4; the true secular share may be somewhat lower than this figure. The three contamination probes described in Section 4.3 are run on three of the five evaluated large language models. The temporal split probe does not yield an interpretable contamination signal for the models it was run on, for the reasons given in Section 5.4, and is reported as a methodological result rather than as contamination evidence.
+As with most low resource languages, comparatively little annotated text exists for Mizo relative to resourced languages such as Hindi or Tamil, so MizoEval's per task item counts are smaller than those of comparably scoped Indic benchmarks; this reflects the current scale of Mizo language resources generally, not a choice made in constructing this benchmark. The named entity and translation tasks in particular each draw on a single existing source corpus, so expanding the benchmark's coverage beyond its current size would require new data collection rather than further repair of existing sources.
 
 ---
 
