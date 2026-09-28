@@ -13,7 +13,8 @@
 - License: Creative Commons Attribution 4.0 International
 - Keywords: Mizo; low resource languages; large language model evaluation; benchmark; machine translation; data contamination; named entity recognition; sentiment analysis
 - Languages: lus, eng
-- Related works: "is supplement to" -> https://huggingface.co/datasets/robzchhangte/MizoEval (URL); add the paper DOI when available
+- Related works: "is supplement to" -> https://huggingface.co/datasets/robzchhangte/MizoEval (URL); "is supplement to" -> https://github.com/robzchhangte/MizoEval (URL); add the paper DOI when available
+- Software > Repository URL: https://github.com/robzchhangte/MizoEval
 - Files: release/MizoEval-v1.0.0.zip
 
 ## Description (paste)
