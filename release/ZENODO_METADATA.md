@@ -1,5 +1,7 @@
 # Zenodo form values
 
+- DOI reserved: https://doi.org/10.5281/zenodo.23022114 (do not click Publish until the paper is accepted; the reserved DOI already resolves once you do)
+
 - Resource type: Dataset
 - Title: MizoEval: A Multi Task Benchmark for Mizo with a Contamination Aware Machine Translation Protocol
 - Authors (Family, Given; affiliation):

@@ -254,7 +254,7 @@ MizoEval provides the first multi task benchmark for evaluating large language m
 
 ## Data Availability Statement
 
-All four MizoEval task datasets will be made publicly available on Hugging Face, and the accompanying data repair and evaluation harness on GitHub, upon publication. Archived copies of the datasets, the harness, and the full result set reported in this paper will be deposited on Zenodo with a persistent DOI.
+All four MizoEval task datasets will be made publicly available on Hugging Face, and the accompanying data repair and evaluation harness on GitHub, upon publication. Archived copies of the datasets, the harness, and the full result set reported in this paper are deposited on Zenodo at https://doi.org/10.5281/zenodo.23022114, released on publication.
 
 ## Ethics Statement
 
