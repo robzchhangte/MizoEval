@@ -19,6 +19,7 @@ head = r'''% MizoEval -- manuscript for Language Resources and Evaluation (Sprin
 % that file or draft.md, then rerun build.py.
 
 \documentclass[pdflatex,sn-mathphys-ay]{sn-jnl}
+\usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{url}
