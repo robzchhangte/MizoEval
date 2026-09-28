@@ -256,12 +256,13 @@ native-speaker **human evaluation** (MT adequacy/fluency, MCQ conflict adjudicat
 NER spot-audit); the analysis module that assembles `results/` into the paper's
 tables and figures; manuscript.
 
-## Licensing (unresolved)
+## Release and licensing
 
-The four sources carry different terms — MT is CC-BY-4.0 and currently **private**,
-sentiment is MIT, NER carries an India-Data DUA, and MCQ provenance is government
-examination papers. Redistribution terms for the MCQ material and public release of
-the MT benchmark are open questions that gate the artefact release.
+All four sources are publicly available. Release plan: datasets on Hugging Face,
+harness on GitHub, archived copies with a DOI on Zenodo, all made public on
+publication. Per-task sources, terms, and the takedown contact are in
+`release/DATASET_CARD.md`, which becomes the Hugging Face dataset card. The
+NER release carries the India Data user agreement and links to the original.
 
 ## Citation
 
