@@ -1,0 +1,411 @@
+% MizoEval -- manuscript for Language Resources and Evaluation (Springer)
+% Built from paper/draft.md with the Springer Nature LaTeX template
+% (sn-jnl.cls, author-year style sn-mathphys-ay). The journal uses
+% single-blind review, so author details appear in the title block.
+% Body text is generated from paper/latex/main.tex by build.py; edit
+% that file or draft.md, then rerun build.py.
+
+\documentclass[pdflatex,sn-mathphys-ay]{sn-jnl}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+
+\begin{document}
+
+\title[MizoEval]{MizoEval: A Multi Task Benchmark for Mizo with a Contamination Aware Machine Translation Protocol}
+
+\author*[1]{\fnm{Robert} \sur{Lalramhluna}}\email{dt21cs003@nitmz.ac.in}
+
+\author[1]{\fnm{Sandeep Kumar} \sur{Dash}}\email{sandeep.cse@nitmz.ac.in}
+
+\author[2]{\fnm{Partha} \sur{Pakray}}\email{partha@cse.nits.ac.in}
+
+\affil*[1]{\orgdiv{Department of Computer Science and Engineering}, \orgname{National Institute of Technology Mizoram}, \orgaddress{\city{Aizawl}, \postcode{796012}, \state{Mizoram}, \country{India}}}
+
+\affil[2]{\orgdiv{Department of Computer Science and Engineering}, \orgname{National Institute of Technology Silchar}, \orgaddress{\city{Silchar}, \postcode{788010}, \state{Assam}, \country{India}}}
+
+\abstract{Mizo (\texttt{lus}), a Tibeto Burman language spoken by roughly one million people in Mizoram, northeast India, has no dedicated benchmark for evaluating large language models, despite active recent computational work on the language and despite its exclusion from every major Indic benchmark suite, including MILU, IndicGLUE, IndicXTREME, and Global MMLU. We introduce MizoEval, a four task benchmark spanning regional knowledge multiple choice questions drawn from Mizoram civil service examinations, sentiment classification, named entity recognition, and bidirectional English Mizo translation. Beyond filling this coverage gap, MizoEval contributes a contamination aware evaluation protocol for low resource machine translation: we show that a widely available parallel corpus for this language pair is dominated by scripture text that is freely available online in both languages, and that scoring it in aggregate substantially overstates genuine translation ability. Stratifying the corpus into scripture, other religious text, and secular text, and examining the resulting pattern with three targeted probes (verse completion, closed book item recall, and a temporal split, of which the first two corroborate the contamination signal for the models they were run on), we find that every evaluated model's secular stratum score sits below its scripture stratum score, with the gap ranging from 2.6 to 21.0 chrF++ points across models and translation directions. We evaluate five large language models and a dedicated translation baseline across all four tasks under matched zero shot, few shot, and chain of thought regimes, and report choice order permutation controls, entity level statistics, and Holm Bonferroni corrected significance tests throughout. MizoEval and its evaluation harness are released to support future work on typologically and geographically underrepresented languages.}
+
+\keywords{Mizo, low resource languages, large language model evaluation, benchmark, machine translation, data contamination}
+
+\maketitle
+
+\section{Introduction}
+
+Large language model benchmarks for South Asian languages have grown quickly over the past several years, but their coverage has a consistent shape. MILU builds its multiple choice items from state level competitive examinations across eleven Indic languages. IndicGLUE and its successor IndicXTREME assemble suites of classification, generation, and structured prediction tasks across a similarly wide but similarly shaped set of languages. Global MMLU extends the MMLU paradigm to dozens of languages worldwide. In every one of these efforts, the languages covered are Indo Aryan or Dravidian. Mizo, a Tibeto Burman language of the Kuki Chin branch spoken across Mizoram and neighboring areas of northeast India, Myanmar, and Bangladesh, appears in none of them.
+
+This omission is not a reflection of an absence of computational interest in the language. Mizo already has a dedicated pretrained encoder, part of speech taggers, named entity recognizers, machine translation systems, and text classification work spanning news categorization and abusive content detection. What is missing is a benchmark that lets the current generation of large language models be evaluated on Mizo the way MILU, IndicGLUE, and Global MMLU let them be evaluated on Hindi, Tamil, or Bengali: with regional knowledge questions, sentiment labels, entity annotations, and translation pairs assembled, audited, and released as a single coherent suite.
+
+We introduce MizoEval to close this gap. MizoEval spans four tasks. The first is a regional knowledge multiple choice task built from Mizoram civil service examination questions, following the paradigm MILU established of drawing benchmark items from real competitive examinations rather than constructing them synthetically. The second is sentiment classification over Mizo social media text. The third is named entity recognition over Mizo news text. The fourth is bidirectional translation between English and Mizo.
+
+Assembling this benchmark required more than collecting existing datasets. A systematic audit of each component surfaced defects that would each independently undermine a benchmark's validity, and repairing them is a substantial part of this paper's contribution rather than a preliminary step to be mentioned in passing. The audit found duplicate items and internally conflicting gold labels in the multiple choice source, a document level information leak between the official training and test splits of the named entity corpus, and, most consequentially, a translation benchmark whose content is overwhelmingly religious text: the King James Bible and its Mizo translation, both of which circulate freely on the open web and are consequently likely to have been seen verbatim during the pretraining of every large language model under evaluation.
+
+This last finding motivates the paper's second contribution. Low resource machine translation evaluation routinely reports a single aggregate score over whatever parallel data is available, and religious text is disproportionately represented in low resource parallel corpora precisely because Bible translation projects are among the most complete parallel text resources for many under documented languages. If a model has memorized the source text, a high aggregate score reflects recall rather than translation competence, and the field has no standard protocol for detecting or correcting this. We stratify our translation benchmark by register, into scripture, other religious text, and secular text, and we examine the resulting contamination signal with three complementary probes, two of which corroborate it for the models they were run on: a verse completion probe that measures whether a model can continue a held out portion of a passage it was never shown, a closed book item recall probe for the multiple choice task, and a temporal split that compares performance on items dated before and after each model's training cutoff. The result is a general protocol, not specific to Mizo, for auditing whether a low resource benchmark's headline number is measuring translation ability or memorization.
+
+We evaluate five large language models, spanning both proprietary and open weight releases, together with a dedicated neural machine translation baseline, across all four tasks under zero shot, few shot, and, for the multiple choice task, chain of thought prompting, with a choice order permutation control to separate genuine knowledge from positional guessing. Every headline number in the paper is reported with a bootstrap or Wilson confidence interval, and every cross model comparison carries a Holm Bonferroni corrected significance test.
+
+The remainder of the paper proceeds as follows. Section \ref{sec:related} situates MizoEval against the Indic benchmarking literature, the low resource translation and religious corpus literature, prior Mizo specific computational work, and the growing literature on contamination detection. Section \ref{sec:data} describes each of the four tasks, the audit that produced the released version of each, and the design decisions, including the choice permutation variant and the register stratification, that follow from that audit. Section \ref{sec:protocol} describes the evaluation protocol, the model roster, and the three contamination probes. Section \ref{sec:results} reports results. Section \ref{sec:discussion} discusses what the findings imply for low resource machine translation evaluation more broadly and for multiple choice evaluation practice specifically. Section \ref{sec:limitations} states the study's limitations precisely. Section \ref{sec:conclusion} concludes.
+
+\section{Related Work}
+\label{sec:related}
+
+\subsection{Indic and multilingual benchmarking}
+
+MILU \citep{verma2025milu} establishes the paradigm this work extends: build a multiple choice benchmark from real state level competitive examinations rather than from synthetically constructed items, and cover a wide language set with a consistent methodology. Its eleven covered languages are Indo Aryan and Dravidian throughout. IndicGLUE \citep{kakwani2020indicnlpsuite} and its successor IndicXTREME \citep{doddapaneni2023indicxtreme} assemble a broader multi task suite across a similarly shaped language set, establishing classification, structured prediction, and generation tasks as the expected coverage for an Indic language benchmark. Global MMLU \citep{singh2024globalmmlu} extends the MMLU knowledge testing paradigm worldwide, again without Tibeto Burman coverage. MizoEval follows the methodological template these efforts set while extending it to a language family and a region these suites do not reach.
+
+\subsection{Low resource translation and the religious corpus problem}
+
+Parallel Bible text is one of the most complete parallel resources available for many under documented languages, and religious corpora such as the eBible Corpus \citep{akerman2023ebible} are widely used for exactly this reason in low resource machine translation research. No Language Left Behind \citep{nllbteam2022}, which introduces the FLORES-200 evaluation benchmark alongside the NLLB-200 model family, represents the current standard for broad coverage low resource machine translation and evaluation data, and includes Mizo. The methodological contribution of this paper, a register stratified evaluation protocol examined with a set of contamination probes, addresses a gap in how corpora of this kind are evaluated: religious text's dual role as both a valuable parallel resource and a likely pretraining contaminant is, to our knowledge, not addressed by a standard auditing protocol in prior low resource machine translation evaluation work.
+
+\subsection{Mizo specific computational work}
+\label{sec:mizo-compute}
+
+Mizo has an active, if still developing, computational linguistics literature, and the gap MizoEval addresses is not an absence of prior work on the language but the absence of a benchmark built for the models the field now evaluates by default. At the resource level, a crawled news corpus of over one hundred thousand sentences \citep{lalrempuii2023lus} and a separate collection of four million sentences \citep{mwirelabs2024corpus} are both publicly available, so a language model with no Mizo competence cannot be excused by a lack of monolingual text to have learned from. At the task level, every capability MizoEval evaluates already has a precedent built without a large language model: \citet{nunsanga2021postagging} trained a conditional random field part of speech tagger, \citet{bentham2016ner} built a rule based named entity recognizer, and \citet{pathak2019mizonmt} and \citet{thangkhanhau2023parallelcorpus} developed neural and statistical machine translation systems trained on a 529 thousand pair parallel corpus they also constructed; \citet{lalthangmawii2025sentiment} report a transformer based sentiment classifier, and \citet{bala2024summarization} extend this line of work into abstractive summarization, a generation task MizoEval does not yet cover. A pretrained Mizo encoder, MizBERT \citep{lalramhluna2024mizbert}, together with news categorization \citep{lalramhluna2023newsclassificationa,lalramhluna2023newsclassificationb} and abusive comment detection \citep{lalrinmawii2025abusive} built on it, shows this same ecosystem already supports fine tuned modeling on Mizo social media text, the register MizoEval's own sentiment task draws on. What none of these efforts do, individually or together, is assemble a multi task suite that lets an instruction following large language model be evaluated the way it already would be on a resourced language; MizoEval is built directly on top of this data and modeling foundation rather than around it.
+
+\subsection{Contamination and memorization detection}
+
+Detecting whether an evaluation item was present in a model's training data is an active area of general purpose language model evaluation, surveyed independently by \citet{xu2024contaminationsurvey} and \citet{cheng2025contaminationsurvey}; both surveys point to a similar practical divide, between methods that require access to a model's internal token probabilities and methods that do not. \citet{shi2023detecting} and \citet{zhang2024minkpp} fall on the first side, proposing likelihood based membership inference methods, Min-K\% and Min-K\%++ respectively, that closed API models frequently do not expose the access needed to run at all. \citet{golchin2024timetravel} fall on the second, and their guided instruction method, prompting with a partial reference and checking for near exact completion, is structurally the closest precedent to the closed book canary probe used in this paper. \citet{elangovan2021memorization} raise the same underlying concern at a different granularity, documenting leakage at the level of whole documents rather than individual items, which is exactly the failure mode the named entity corpus audited in Section \ref{sec:data} turns out to have. The verse completion, canary, and temporal split probes introduced here all work through an ordinary chat completion interface for the same reason Golchin and Surdeanu's method does: auditing a closed frontier model for contamination has to be possible without the logprob access that method requires and that most production APIs do not grant.
+
+\subsection{Benchmark paradigm and prompting foundations}
+
+The prompting regimes evaluated in this paper are not arbitrary choices among equally reasonable alternatives; each follows a body of work that established why it should behave differently from the others. Zero shot and few shot prompting follow \citet{brown2020fewshot}, whose central finding, that a sufficiently large language model can perform a new task from a handful of in context examples without any parameter update, is exactly the capability MizoEval's five shot regime is designed to measure directly rather than assume. Chain of thought prompting follows \citet{wei2022chainofthought}, who show that eliciting intermediate reasoning steps before an answer improves performance on tasks that benefit from multi step inference; whether this holds for a regional knowledge multiple choice task, where the needed information is recall rather than multi step reasoning, is an open question this paper's chain of thought results speak to directly. The multiple choice knowledge testing format follows \citet{hendrycks2021mmlu}, whose MMLU established closed form, single correct answer questions as the standard instrument for probing what a language model knows, as distinct from what it can generate; MILU and MizoEval both inherit this format for the same reason, so that a raw accuracy score is unambiguous and directly comparable across models.
+
+\subsection{Position bias}
+
+\citet{pezeshkpour2024positionbias} document that large language models' multiple choice accuracy is sensitive to the ordering of answer options independent of the underlying knowledge being tested, with reported swings of thirteen to seventy five accuracy points across benchmarks depending on how heavily a model favors a particular position. This finding is not a minor caveat for MizoEval specifically: the gold answer distribution recovered in Section \ref{sec:data} is itself non uniform across positions, so a model with even a mild positional preference could score above the random baseline on content it does not understand. Section \ref{sec:data} introduces a choice order permutation variant of the multiple choice task for exactly this reason, and Section \ref{sec:results} reports the resulting position sensitivity per model rather than assuming, as an unpermuted benchmark would have to, that the effect \citet{pezeshkpour2024positionbias} document either does or does not apply here.
+
+\subsection{Named entity recognition methodology}
+
+The entity level evaluation methodology used for the named entity task follows the convention established by the CoNLL 2003 shared task \citep{tjongkimsang2003conll}, which scores a predicted span as correct only when both its boundaries and its type label match the gold span exactly, rather than crediting partial token level overlap. This distinction matters for MizoEval specifically because the source corpus's tagging scheme mixes named entity spans with a separate keyword identification layer under the same BIO prefixes; entity level scoring only measures what it is supposed to measure once that layer is separated out, which is exactly the repair Section \ref{sec:ner-data} describes. Following an established entity level convention, rather than defining a bespoke one for this corpus, also keeps a MizoEval named entity recognition score comparable to entity level results reported for other languages under the same standard.
+
+\subsection{Regional comparanda}
+
+Recent work extends large language model evaluation and adaptation to other under resourced languages of northeast India, and two efforts are close enough in scope to warrant direct comparison rather than a passing mention. \citet{dhawan2026bm25} evaluate translation into and out of eleven languages of the region, including Mizo, using retrieval augmented many shot prompting rather than fine tuning, which makes their results the closest existing comparandum for the translation evaluation reported here. \citet{nyalang2026meiteiroberta} take the opposite approach for Meitei, another regional language underserved by general multilingual models, building a dedicated pretrained monolingual encoder rather than evaluating an existing large language model; this mirrors the encoder side of the Mizo computational literature surveyed in Section \ref{sec:mizo-compute} more than it mirrors MizoEval's own evaluation focused design. Read together, these two efforts show the region's languages being addressed from both directions at once, adaptation through dedicated modeling and evaluation through benchmark construction, and MizoEval contributes to the evaluation side specifically.
+
+\section{MizoEval: Tasks and Data}
+\label{sec:data}
+
+Each of the four MizoEval tasks is built from an existing data source. In every case, a systematic audit preceded release, and the released version differs from the source in ways that materially affect what a reported score means. This section describes each task's content, the audit, and the resulting design decisions.
+
+\subsection{Regional knowledge multiple choice}
+\label{sec:mcq-data}
+
+The multiple choice task is drawn from Mizoram civil service examination questions. The source collection contains 2,400 items. An audit for duplicate stems, defined as matching question text paired with a matching choice set, found 315 duplicate groups accounting for 247 rows beyond the first occurrence of each group. Within these duplicate groups, 117 groups, comprising 283 items in total, carry mutually contradictory gold answers across their duplicate occurrences: the same question, worded identically, is marked correct with two different answers in different rows. Rather than resolving these conflicts by an automated heuristic, which would silently inject label noise into the released benchmark, these 283 items are excluded from the released set. The remaining 1,870 items form the released multiple choice benchmark.
+
+Not every released item follows a uniform four option format. Partitioning by answer key shape yields 1,747 items with exactly four options, which we designate the headline \texttt{mcq4} subset and use for all primary reporting; 57 items with a different option count; 54 items using a true or false key; and 12 items using Roman numeral keys. All formats are released, with \texttt{mcq4} as the subset used throughout the results in this paper.
+
+The gold answer distribution within \texttt{mcq4} is not uniform across positions: position A accounts for 30.1\% of items, B for 29.9\%, C for 24.8\%, and D for only 15.2\%. A model that answers A disproportionately would therefore score above chance without engaging with the question content. To make this effect measurable, we release a choice order permutation variant of \texttt{mcq4}, which randomizes the position of each item's correct answer to a near uniform distribution while holding question content fixed. The 39 items in the released set that include an all of the above or none of the above option are flagged and excluded from the permuted variant, since permuting choice order for these items would change their semantics.
+
+\subsection{Named entity recognition}
+\label{sec:ner-data}
+
+The named entity corpus is sourced from Mizo news text and released with train, validation, and test splits of 3,576, 447, and 447 sentences respectively. The tagging scheme uses lowercase BIO prefixes in the source, which we uppercase to the standard convention, and includes a \texttt{KEYWORD} tag layer that annotates a distinct keyword identification task rather than named entities; we separate this into its own released file so that the entity level score reported for MizoEval measures named entity recognition specifically, rather than a mixture of two different annotation tasks. Three tag types with fewer than five instances total across all three splits, none of which appear in validation or test, are dropped from the tagset, leaving seven released entity types.
+
+An audit of source provenance found that all three splits are drawn from the same news outlet, and that the released split assigns individual sentences rather than whole source articles to each split. Measured directly, 100\% of validation sentences and 99.6\% of test sentences originate from a source article that also appears in the training split. We report this measurement as a description of the released corpus's structure rather than as an assessment of the corpus's value, since the same data supports a second, document disjoint split we construct alongside the official one: articles are assigned to a single split in their entirety, and sentences that are reposted verbatim under a different article identifier are removed from held out sets, yielding a train, validation, and test split of 3,576, 444, and 436 sentences with zero shared source articles between any pair of splits. Both the official and the document disjoint splits are released and both are evaluated in this paper, the official split for comparability with any prior work on this corpus and the document disjoint split as the uninflated measurement.
+
+\subsection{Sentiment classification}
+\label{sec:sentiment-data}
+
+The sentiment corpus is sourced from Mizo social media text and released with three labels: Positive, Neutral, and Negative. The source contains 1,220 rows; after removing 70 duplicate texts, 1,150 items are released. The label distribution is imbalanced, with Positive accounting for 653 items, Neutral for 320, and Negative for 177, giving a majority class baseline accuracy of 56.8\%. Because this baseline is already high, we report macro averaged F1 as the primary metric for this task throughout the paper rather than accuracy, and we assign five stratified folds so that each fold mirrors the corpus label distribution. The corpus is heavily code mixed with English: 151 items exceed a 0.3 out of vocabulary rate against a Mizo lexicon, and 170 items carry a placeholder marking a redacted personal name, reflecting the corpus's social media origin and its prior anonymization.
+
+\subsection{Machine translation}
+\label{sec:mt-data}
+
+The translation benchmark consists of 3,000 English Mizo sentence pairs, held as a single test split with no accompanying training data. A lexical and citation based classifier stratifies the corpus into three registers: 1,373 pairs (45.8\%) are scripture, drawn from the King James Bible and its Mizo translation; 818 pairs (27.3\%) are other religious text; and 809 pairs (27.0\%) are secular text. Combined, 73.0\% of the corpus is religious in register. Because the classifier operates on lexical and citation cues, a modern paraphrase of scripture that names no biblical figure and cites no verse number can pass as secular, so the 27.0\% secular figure is an upper bound on the true secular share and every religious register figure in this paper is correspondingly a lower bound.
+
+The scripture and religious registers matter because both the King James Bible and its Mizo translation circulate freely on the open web, making verbatim memorization during pretraining plausible for any model with substantial web crawl exposure. Section \ref{sec:protocol} describes the three probes used to test this directly, and Section \ref{sec:results} reports both the register stratified translation scores and the probe results together, since the two analyses corroborate each other.
+
+\section{Evaluation Protocol}
+\label{sec:protocol}
+
+\subsection{Model roster}
+
+We evaluate five large language models: two OpenAI models of different scale from the same family, a Google Gemini model, an open weight model served through a cloud inference provider, and a second, larger open weight reasoning model served the same way. Alongside these five, we evaluate a dedicated multilingual neural machine translation model on the translation task as an engineered baseline, since a model purpose built for translation provides a useful reference point distinct from the general purpose instruction following systems that form the paper's main comparison. Every model is pinned to a specific, non floating version identifier for the duration of the study: a dated snapshot string for the two OpenAI models, and a specific provider confirmed model tag, verified available on a stated date, for the Gemini, Gemma, and GPT OSS models, none of which accept a ``latest'' or ``preview'' alias. The exact identifiers are listed in Appendix \ref{sec:appendix-a}, so that a reported number remains attributable to a specific, reproducible system rather than to a floating alias that could change between the experiments reported here and any later reproduction attempt.
+
+\subsection{Prompting regimes}
+
+The multiple choice task is evaluated under four regimes: zero shot, five shot with exemplars drawn from a held out pool, chain of thought with a required answer tag, and the choice order permuted variant of both the zero shot and chain of thought regimes, to separate genuine knowledge from positional guessing as described in Section \ref{sec:mcq-data}. Sentiment classification is evaluated zero shot and five shot, with exemplars drawn from a fold held out of both training and evaluation. Named entity recognition is evaluated few shot, with a tag definition preamble and structured output that is parsed and aligned back to the source tokens rather than requiring the model to reproduce token level tagging directly, since general purpose chat models handle free text span extraction considerably better than they handle raw sequence tagging. Translation is evaluated zero shot in both directions.
+
+\subsection{Contamination probes}
+\label{sec:probes}
+
+Three probes test directly whether a model's performance on the register stratified translation task and on the multiple choice task reflects memorization of the specific evaluation items rather than the underlying competence each task is meant to measure.
+
+The verse completion probe presents a model with the first half of a sentence pair's text, split at a word boundary, and scores the character level similarity of the model's continuation against the withheld second half. This is applied on both the English and the Mizo side of a stratified sample of pairs, since a model can memorize either or both directions of a bilingual text independently. A calibration check precedes the main probe: every model under this probe is confirmed to complete a held out portion of the single most quoted verse in the King James Bible at a chrF score of 100, while continuing a set of freshly written, previously unpublished Mizo sentences at a chrF score of 16 to 20, confirming that the probe distinguishes genuine memorization from an artifact of the scoring metric itself.
+
+These probes are applied to three of the five evaluated large language models; the remaining two, one of which shows one of the largest register gaps in the main translation results reported in Section \ref{sec:mt-results}, are not covered. Section \ref{sec:probe-results} states explicitly which of its findings are probe corroborated and which rest on the register gap alone.
+
+The closed book canary probe presents the multiple choice task's question stem with all four answer options withheld, scoring a hit when the model's free text response matches the gold answer and clearly outperforms the alternative options it was never shown. A guided variant of the same probe additionally names the source examination and year in the prompt, to test whether a model has learned an association between the examination's identity and its specific contents, beyond simply having encountered the question text itself.
+
+The temporal split regroups the already collected multiple choice zero shot results by each item's recorded source year, comparing performance on items dated before 2023 against items dated 2025 or 2026, on the reasoning that items published after a model's training cutoff cannot have been memorized during pretraining while items published well before it plausibly could have been.
+
+\subsection{Statistical reporting}
+
+Translation quality is reported primarily as chrF++ \citep{popovic2015chrf,popovic2017chrfpp}, which correlates better with human judgment than BLEU at this resource level and degrades more gracefully under the morphological variation Mizo shows freely; BLEU is reported alongside it for comparability with prior work on the language pair. Every accuracy figure in the paper carries a Wilson score interval. Every corpus level metric, including chrF++, macro averaged F1, and entity level F1 for named entity recognition, carries a percentile bootstrap interval computed over 1,000 resamples. Model versus model comparisons on the multiple choice task use an exact McNemar test restricted to items on which the two models disagree, with a Holm Bonferroni correction applied across the full family of pairwise comparisons reported in a given table, since a table reporting many pairwise comparisons at an uncorrected significance threshold would be expected to show several spuriously significant results by chance alone.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Main results}
+
+Table \ref{tab:mcq-main} reports accuracy for the multiple choice task across its zero shot, choice order permuted, five shot, chain of thought, and chain of thought permuted regimes. Table \ref{tab:sent-ner-main} reports macro averaged F1 for sentiment classification under zero shot and five shot regimes, and entity level F1 for named entity recognition on both the official and document disjoint splits, for all five evaluated large language models, each with a bootstrap or Wilson interval where applicable.
+
+\begin{table*}[t]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Model} & \textbf{MCQ 0-shot} & \textbf{MCQ permuted} & \textbf{MCQ 5-shot} & \textbf{MCQ all formats} & \textbf{MCQ CoT} & \textbf{MCQ CoT permuted} \\
+\midrule
+GPT 5.4 mini & 0.567 [0.544, 0.590] & 0.533 [0.509, 0.556] & 0.564 [0.540, 0.587] & 0.552 [0.529, 0.574] & 0.569 [0.546, 0.592] & 0.560 [0.537, 0.584] \\
+GPT 5.4 & 0.571 [0.547, 0.594] & 0.550 [0.527, 0.574] & 0.572 [0.549, 0.595] & 0.556 [0.534, 0.579] & 0.570 [0.546, 0.593] & 0.563 [0.539, 0.586] \\
+Gemini 3.5 Flash & 0.600 [0.577, 0.623] & 0.593 [0.569, 0.616] & 0.603 [0.580, 0.625] & 0.583 [0.560, 0.605] & 0.604 [0.581, 0.627] & 0.599 [0.576, 0.622] \\
+Gemma 4 31B & 0.616 [0.593, 0.639] & 0.563 [0.539, 0.586] & 0.624 [0.602, 0.647] & 0.603 [0.580, 0.625] & 0.618 [0.595, 0.640] & 0.567 [0.544, 0.591] \\
+GPT OSS 120B & 0.506 [0.483, 0.529] & 0.476 [0.452, 0.500] & 0.497 [0.474, 0.521] & 0.493 [0.470, 0.516] & 0.496 [0.473, 0.520] & 0.490 [0.466, 0.514] \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Multiple choice accuracy, 95\% Wilson interval, n as given per column. \texttt{mcq4} subset throughout.}
+\label{tab:mcq-main}
+\end{table*}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Model} & \textbf{Sent. 0-shot} & \textbf{Sent. 5-shot} & \textbf{NER off. / doc.} \\
+\midrule
+GPT 5.4 mini & 0.568 [.534,.599] & 0.667 [.632,.699] & 0.236 [.20,.27] / 0.182 [.15,.21] \\
+GPT 5.4 & 0.589 [.558,.619] & 0.706 [.670,.739] & 0.235 [.20,.27] / 0.182 [.15,.21] \\
+Gemini 3.5 Flash & 0.669 [.636,.700] & 0.741 [.706,.773] & 0.260 [.22,.30] / 0.186 [.15,.22] \\
+Gemma 4 31B & 0.583 [.552,.612] & 0.640 [.604,.672] & 0.233 [.20,.27] / 0.191 [.15,.23] \\
+GPT OSS 120B & 0.392 [.365,.419] & 0.462 [.427,.495] & 0.056 [.03,.08] / 0.059 [.03,.09] \\
+\bottomrule
+\end{tabular}
+\caption{Sentiment (macro-F1, 95\% bootstrap interval) and NER (entity-level F1, 95\% bootstrap interval over 1,000 sentence-level resamples; $n{=}447$ official, $n{=}436$ document-disjoint). Full-precision intervals for NER are given in the accompanying released tables.}
+\label{tab:sent-ner-main}
+\end{table}
+
+Gemma 4 31B reaches the highest zero shot MCQ accuracy of the five evaluated models, and every model clears both baselines in Table \ref{tab:baselines} by a wide margin, indicating genuine engagement with question content beyond positional or majority guessing.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{llc}
+\toprule
+\textbf{Task} & \textbf{Baseline} & \textbf{Value} \\
+\midrule
+MCQ & Random, 4-way & 0.250 \\
+MCQ & Majority position & 0.301 [0.279, 0.322] \\
+Sentiment & Majority class & 0.568 [0.539, 0.596] \\
+\bottomrule
+\end{tabular}
+\caption{Baselines. $n{=}1{,}747$ for MCQ, $n{=}1{,}150$ for sentiment.}
+\label{tab:baselines}
+\end{table}
+
+Table \ref{tab:pairwise} reports pairwise significance for the ten model comparisons on the MCQ zero shot task, using the same Holm Bonferroni corrected exact McNemar procedure used for the position bias analysis in Section \ref{sec:position-bias}; four of the ten comparisons remain significant after correction, with GPT OSS 120B significantly below every other model and Gemma 4 31B significantly above both GPT 5.4 and GPT 5.4 mini. Gemini 3.5 Flash is not significantly distinguishable from Gemma 4 31B, GPT 5.4 mini, or GPT 5.4, so the ordering among these four models is only partially resolved at this sample size, with the largest pairwise gaps, not the full ranking, reaching significance after correction.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{llcc}
+\toprule
+\textbf{Model A} & \textbf{Model B} & \textbf{Corr. $p$} & \textbf{Sig.} \\
+\midrule
+GPT 5.4 mini & GPT 5.4 & 0.816 & no \\
+GPT 5.4 mini & Gemini 3.5 Flash & 0.070 & no \\
+GPT 5.4 mini & Gemma 4 31B & 0.002 & yes \\
+GPT 5.4 mini & GPT OSS 120B & $<$0.001 & yes \\
+GPT 5.4 & Gemini 3.5 Flash & 0.070 & no \\
+GPT 5.4 & Gemma 4 31B & 0.002 & yes \\
+GPT 5.4 & GPT OSS 120B & $<$0.001 & yes \\
+Gemini 3.5 Flash & Gemma 4 31B & 0.539 & no \\
+Gemini 3.5 Flash & GPT OSS 120B & $<$0.001 & yes \\
+Gemma 4 31B & GPT OSS 120B & $<$0.001 & yes \\
+\bottomrule
+\end{tabular}
+\caption{Pairwise MCQ significance, zero shot, Holm Bonferroni corrected across all ten comparisons. Exact McNemar test restricted to items on which the two models disagree; $n{=}1{,}747$ paired items per comparison.}
+\label{tab:pairwise}
+\end{table}
+
+Five shot exemplars produce a consistent gain on sentiment classification for every model, most notably lifting GPT 5.4 and GPT 5.4 mini by roughly ten to twelve macro F1 points over their zero shot scores; Gemma 4 31B shows the smallest five shot gain of the five models, under six points, despite reaching the highest zero shot MCQ accuracy. Chain of thought prompting produces at most a small shift on MCQ accuracy relative to zero shot for any model.
+
+\subsection{Position bias}
+\label{sec:position-bias}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Model} & \textbf{0-shot} & \textbf{Perm.} & \textbf{Shift} & \textbf{Corr. $p$} & \textbf{Sig.} \\
+\midrule
+GPT 5.4 mini & 0.567 & 0.533 & 0.034 & 0.0105 & yes \\
+GPT 5.4 & 0.571 & 0.550 & 0.020 & 0.159 & no \\
+Gemini 3.5 Flash & 0.600 & 0.593 & 0.008 & 0.417 & no \\
+Gemma 4 31B & 0.616 & 0.563 & 0.054 & $<$0.001 & yes \\
+GPT OSS 120B & 0.506 & 0.476 & 0.030 & 0.035 & yes \\
+\bottomrule
+\end{tabular}
+\caption{Position sensitivity. Accuracy shift under choice order permutation, exact McNemar test, Holm Bonferroni corrected across the five model family.}
+\label{tab:position-bias}
+\end{table}
+
+Permuting choice order produces a significant accuracy shift, by a Holm Bonferroni corrected exact McNemar test, for three of the five evaluated models, with Gemma 4 31B showing the largest shift at 5.4 accuracy points. For GPT 5.4 and Gemini 3.5 Flash, the observed shift does not reach significance at the corrected threshold. This distinction matters: position sensitivity in multiple choice evaluation is real for a majority of the models evaluated here but is not a uniform property of large language models generally, and reporting a permutation control lets this distinction be measured per model rather than assumed for the family as a whole.
+
+\subsection{Machine translation by register}
+\label{sec:mt-results}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+\textbf{Model} & \textbf{Mz$\to$En gap} & \textbf{En$\to$Mz gap} \\
+\midrule
+Gemini 3.5 Flash & 21.0 & 9.6 \\
+GPT 5.4 & 15.3 & 12.0 \\
+NLLB 200 (3.3B, baseline) & 15.2 & 11.7 \\
+GPT 5.4 mini & 10.0 & 3.6 \\
+Gemma 4 31B & 4.8 & 2.6 \\
+\bottomrule
+\end{tabular}
+\caption{Secular register chrF++ relative to scripture register, zero shot, by model and direction. Positive values indicate a scripture score above the secular score; $n{=}1{,}373$ scripture, $809$ secular per direction. GPT OSS 120B and the five shot Gemma 4 31B cells are omitted; see prose below.}
+\label{tab:mt-register}
+\end{table}
+
+Every model shown in Table \ref{tab:mt-register}, including the dedicated translation baseline, scores higher on the scripture register than on the secular register in both directions, with the gap ranging from 2.6 to 21.0 chrF++ points depending on model and direction. The engineered translation baseline showing a gap of comparable size to the general purpose language models, 15.2 and 11.7 chrF++ points, is consistent with two distinct explanations that Table \ref{tab:mt-register} alone cannot separate: memorization of near identical sentence pairs during that model's supervised training, which is a form of contamination in kind if not in mechanism with an LLM's pretraining memorization, or a genuine difference in how translatable the two registers are, independent of whether any specific pair was seen before. Section \ref{sec:probe-results} reports a direct measurement of the second possibility. GPT OSS 120B is excluded from Table \ref{tab:mt-register}; its translation output is empty for a substantial share of items across every register in both directions, so its per register comparison reflects output reliability rather than register sensitive scoring and is reported separately as part of the discussion of that model's behavior in Section \ref{sec:discussion}. The five shot Gemma 4 31B cells are also omitted from Table \ref{tab:mt-register}, since five shot prompting was run for that model only and including a single model's five shot column alongside four models' zero shot columns would not support a like for like comparison; Section \ref{sec:protocol} and Table \ref{tab:mcq-main} report the five shot condition where it applies.
+
+\subsection{Contamination probes}
+\label{sec:probe-results}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{llccc}
+\toprule
+\textbf{Model} & \textbf{Side} & \textbf{Scr.} & \textbf{Sec.} & \textbf{Verb.} \\
+\midrule
+Gemini 3.5 Flash & En & 73.7 & 19.6 & 0.567 \\
+GPT 5.4 mini & En & 67.0 & 20.8 & 0.420 \\
+Gemma 4 31B & En & 29.5 & 18.5 & 0.007 \\
+Gemini 3.5 Flash & Mz & 38.3 & 19.8 & 0.013 \\
+GPT 5.4 mini & Mz & 21.0 & 18.1 & 0.000 \\
+Gemma 4 31B & Mz & 20.8 & 19.1 & 0.000 \\
+\bottomrule
+\end{tabular}
+\caption{Verse completion probe. chrF of the continuation of a withheld sentence half (scripture, Scr.; secular, Sec.), and the share of scripture continuations reproduced near verbatim (Verb.; $\geq$80\% word overlap, in order); $n{=}150$ pairs per stratum per side.}
+\label{tab:verse-probe}
+\end{table}
+
+The verse completion probe corroborates the register stratified translation finding directly. On the English side, every probed model completes held out scripture text well above its secular baseline, from an 11.0 point gap for Gemma 4 31B to a 54.0 point gap for Gemini 3.5 Flash, with Gemini 3.5 Flash and GPT 5.4 mini additionally reproducing 56.7\% and 42.0\% of held out scripture continuations near verbatim, against a verbatim rate near zero for every model on the secular stratum. On the Mizo side, the same models diverge sharply: Gemini 3.5 Flash shows an 18.5 point scripture side gap, indicating it has ingested the Mizo translation of the source text specifically and not only the English original, while GPT 5.4 mini and Gemma 4 31B show only a 2.9 and 1.6 point gap respectively. This asymmetry demonstrates that contamination in this setting is model specific and side specific, and that a single aggregate contamination adjustment across all models would misstate the effect for at least one of the three probed models in either direction.
+
+This probe based evidence is necessarily limited to the three models it was run on. For the remaining two evaluated large language models and for the NLLB baseline, all of which also show a scripture secular gap in Table \ref{tab:mt-register}, the gap alone cannot distinguish memorization from the alternative raised in Section \ref{sec:mt-results}, that the scripture register is simply more translatable independent of whether these specific pairs were seen before. Measured directly, the scripture stratum's fifty most frequent word types account for approximately half of all word tokens on both the English and Mizo sides, against roughly thirty seven to forty four percent for the secular stratum, so the scripture register is measurably more repetitive at the corpus level, a property that would tend to raise a character n-gram metric like chrF++ for any translation system regardless of prior exposure to these exact sentences. We report this measurement so that the probe corroborated finding for the three tested models is not conflated with the weaker, gap only evidence available for the other three systems in Table \ref{tab:mt-register}.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{Model} & \textbf{Canary blind} & \textbf{Canary guided} \\
+\midrule
+Gemini 3.5 Flash & 0.260 [.214,.312] & 0.270 [.223,.323] \\
+GPT 5.4 mini & 0.200 [.159,.249] & 0.203 [.162,.253] \\
+Gemma 4 31B & 0.180 [.141,.227] & 0.170 [.132,.217] \\
+\bottomrule
+\end{tabular}
+\vspace{0.3em}
+\begin{tabular}{lcc}
+\textbf{Model} & \textbf{Acc. before 2023} & \textbf{Acc. 2025--26} \\
+\midrule
+Gemini 3.5 Flash & 0.544 [.498,.590] (439) & 0.675 [.638,.710] (650) \\
+GPT 5.4 mini & 0.500 [.455,.545] (470) & 0.635 [.597,.671] (657) \\
+Gemma 4 31B & 0.514 [.467,.560] (440) & 0.729 [.693,.761] (656) \\
+\bottomrule
+\end{tabular}
+\caption{Canary recall and temporal split. Canary recall is the share of closed book answers matching gold, 95\% Wilson interval, $n{=}300$; temporal split is MCQ zero shot accuracy by source year, 95\% Wilson interval, $n$ as given.}
+\label{tab:canary-temporal}
+\end{table}
+
+The closed book canary probe finds that all three probed models recall a meaningful share of gold answers with no options shown at all, from 18.0\% to 26.0\%, indicating some degree of item level familiarity with the multiple choice source material. Naming the source examination and year in the prompt changes recall by at most one percentage point in either direction for any of the three models, indicating this familiarity is with the item content itself rather than with a learned association between the examination's identity and its contents.
+
+The temporal split does not support a clean contamination reading in either direction: recently dated items score 13.1 to 21.5 points higher, not lower, than older items for all three probed models. Because the probed models' training data plausibly extends into the recently dated period, and because the subset of items dated before 2023 in Table \ref{tab:canary-temporal} is substantially smaller than the 2025 to 2026 subset, this comparison cannot distinguish contamination from a genuine difficulty or format difference between older and newer examination items, and we do not use it to support the paper's contamination claim.
+
+\section{Discussion}
+\label{sec:discussion}
+
+The central empirical pattern in this paper, a substantial and consistent gap between a translation benchmark's religious register score and its secular register score, corroborated by an independently calibrated verse completion probe for the three large language models that probe was run on, has an implication beyond MizoEval specifically. Religious text is disproportionately represented in the parallel corpora available for many low resource language pairs, for the practical reason that Bible translation projects are among the most complete parallel text resources that exist for under documented languages. Any low resource translation evaluation that draws on such a corpus without auditing its register composition is at risk of reporting memorization as translation ability, in exactly the way an aggregate score over the unstratified MizoEval translation benchmark would. The register stratification and validated probe protocol introduced here generalize directly to any language pair whose available parallel data leans on religious text, which describes a large share of the world's lower resource language pairs.
+
+The position bias finding carries a narrower but still practically relevant implication for multiple choice evaluation of large language models generally. A choice order permutation control is inexpensive to run alongside a standard multiple choice evaluation, and the finding that three of five models here show a significant position sensitivity while two do not means that a benchmark reporting multiple choice accuracy without a permutation control cannot distinguish, for any individual model, whether its reported number is inflated by positional guessing. This is a general property of the evaluation format, observed here on a benchmark with a non uniform gold answer distribution across positions, and the same risk applies to any multiple choice benchmark whose gold distribution is not perfectly uniform, a condition that is difficult to guarantee by construction and that is worth measuring directly rather than assuming away.
+
+The consistent underperformance of the largest open weight reasoning model evaluated here, across every task, and its particularly severe failure on the translation task specifically, where a large share of its output is empty rather than merely inaccurate, illustrates a distinct evaluation concern from contamination: output reliability under a fixed prompting protocol is itself a property worth measuring and reporting per model, since a model that frequently produces no usable output at all is not well characterized by an accuracy or F1 score computed only over the items it did respond to.
+
+\section{Limitations}
+\label{sec:limitations}
+
+As with most low resource languages, comparatively little annotated text exists for Mizo relative to resourced languages such as Hindi or Tamil, so MizoEval's per task item counts are smaller than those of comparably scoped Indic benchmarks; this reflects the current scale of Mizo language resources generally, not a choice made in constructing this benchmark. The named entity and translation tasks in particular each draw on a single existing source corpus, so expanding the benchmark's coverage beyond its current size would require new data collection rather than further repair of existing sources.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+MizoEval provides the first multi task benchmark for evaluating large language models on Mizo, assembled through a systematic audit of each component dataset and released together with the audit's findings so that every reported number is traceable to a documented decision about the underlying data. Its contamination aware machine translation protocol, corroborated by two of three targeted probes for the models those probes were run on, demonstrates that a substantial share of the apparent translation quality on a widely used class of low resource parallel corpora reflects memorization of freely available religious text rather than translation competence, a pattern we expect generalizes well beyond this specific language pair. We release MizoEval, its repair and evaluation harness, and its full result set to support future evaluation work on Mizo and on other typologically and geographically underrepresented languages.
+
+\backmatter
+
+\section*{Declarations}
+
+\bmhead{Funding}
+This research received no external funding.
+
+\bmhead{Conflict of interest}
+The authors declare no competing interests.
+
+\bmhead{Ethics approval and consent to participate}
+This study uses existing, previously collected text data; no new human subjects data was collected for the results reported in this paper.
+
+\bmhead{Consent for publication}
+Not applicable.
+
+\bmhead{Data availability}
+All four MizoEval task datasets, the accompanying data repair and evaluation harness, and the full result set reported in this paper will be made publicly available upon publication.
+
+\bmhead{Author contributions}
+Following the CRediT taxonomy: Robert Lalramhluna contributed conceptualization, data curation, formal analysis, investigation, methodology, software, and the original draft. Sandeep Kumar Dash contributed supervision and writing review and editing. Partha Pakray contributed supervision and writing review and editing.
+
+\bmhead{AI usage disclosure}
+Claude (Anthropic) assisted with code generation for the experiments and with paraphrasing, editing, and grammar correction of the manuscript text. All code and text were reviewed and verified by the authors, who take full responsibility for the paper's content.
+
+\begin{appendices}
+
+\section{Model Version Identifiers}
+\label{sec:appendix-a}
+
+Referenced from Section \ref{sec:protocol}. Each identifier is the exact string passed to the provider's API for every call reported in this paper; no alias resolves to a different underlying model over time.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Model} & \textbf{Provider identifier} \\
+\midrule
+GPT 5.4 mini & \texttt{gpt-5.4-mini-2026-03-17} \\
+GPT 5.4 & \texttt{gpt-5.4-2026-03-05} \\
+Gemini 3.5 Flash & \texttt{gemini-3.5-flash} \\
+Gemma 4 31B & \texttt{gemma4:31b-cloud} \\
+GPT OSS 120B & \texttt{gpt-oss:120b} \\
+NLLB-200 (baseline) & \texttt{facebook/nllb-200-3.3B} \\
+\bottomrule
+\end{tabular}
+\caption{Pinning basis: dated snapshot for the two OpenAI models; provider-hosted tag, confirmed available on a stated date, for Gemini, Gemma, and GPT OSS; fixed open-weight release for NLLB-200.}
+\label{tab:appendix-ids}
+\end{table}
+
+\end{appendices}
+
+\bibliography{references}
+
+\end{document}

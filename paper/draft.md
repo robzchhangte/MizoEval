@@ -1,6 +1,6 @@
 # MizoEval: A Multi Task Benchmark for Mizo with a Contamination Aware Machine Translation Protocol
 
-**Target venue:** Transactions of the Association for Computational Linguistics (TACL)
+**Target venue:** Language Resources and Evaluation (Springer)
 
 Robert Lalramhluna, Department of Computer Science and Engineering, National Institute of Technology Mizoram, Aizawl, Mizoram 796012, India (dt21cs003@nitmz.ac.in), corresponding author
 
