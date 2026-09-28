@@ -24,3 +24,4 @@ results/cache.sqlite-*
 
 # large public-domain reference text, re-downloaded on demand by mt_stratify
 data/external/kjv.txt
+release/*.zip
